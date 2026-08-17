@@ -21,7 +21,6 @@ export default function SkillDetail() {
   }
 
   const similar = SKILLS.filter((s) => s.slug !== skill.slug && s.category === skill.category).slice(0, 3)
-  const moreFromAuthor = SKILLS.filter((s) => s.slug !== skill.slug && s.author === skill.author).slice(0, 3)
 
   const visibleSteps = expanded ? skill.howItWorks : skill.howItWorks.slice(0, 2)
 
@@ -56,9 +55,10 @@ export default function SkillDetail() {
           label="Claude Code (Recommended) — 1. Add the marketplace"
           command={`/plugin marketplace add ${MARKETPLACE_REPO}`}
         />
+        <CopyCommand label="2. Install this skill" command={`/plugin install ${skill.slug}@${MARKETPLACE_NAME}`} />
         <CopyCommand
-          label="2. Install this skill"
-          command={`/plugin install ${skill.slug}@${MARKETPLACE_NAME}`}
+          label="3. Use it"
+          command={`/${skill.slug}:${skill.slug} ${skill.argumentHint}`}
         />
         <div className="tools-note">
           Also usable with {OTHER_COMPATIBLE_TOOLS.join(', ')} — these tools don't share Claude Code's plugin
@@ -143,22 +143,6 @@ export default function SkillDetail() {
         </div>
       ) : (
         <div className="empty-state">No similar skills yet.</div>
-      )}
-
-      <div className="section-heading">
-        <h4>More from {skill.author}</h4>
-        <Link to={`/skills?author=${encodeURIComponent(skill.author)}`} className="view-all-link">
-          View all
-        </Link>
-      </div>
-      {moreFromAuthor.length ? (
-        <div className="grid small">
-          {moreFromAuthor.map((s) => (
-            <SkillCard key={s.slug} skill={s} />
-          ))}
-        </div>
-      ) : (
-        <div className="empty-state">This is the only skill from {skill.author} so far.</div>
       )}
     </div>
   )

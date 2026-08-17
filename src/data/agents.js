@@ -32,7 +32,7 @@ export const AGENTS = [
   {
     slug: 'api-integration-engineer',
     name: 'API Integration Engineer',
-    author: 'pixelforge',
+    author: 'Cognivexa',
     category: 'Development',
     addedDate: '2026-02-03',
     icon: '🔌',
@@ -88,7 +88,7 @@ export const AGENTS = [
   {
     slug: 'technical-seo-auditor',
     name: 'Technical SEO Auditor',
-    author: 'seosignal',
+    author: 'Cognivexa',
     category: 'SEO',
     addedDate: '2026-01-22',
     icon: '🔍',
@@ -144,7 +144,7 @@ export const AGENTS = [
   {
     slug: 'blog-content-editor',
     name: 'Blog Content Editor',
-    author: 'inkwell-co',
+    author: 'Cognivexa',
     category: 'Content Editor',
     addedDate: '2026-01-15',
     icon: '📝',
@@ -199,7 +199,7 @@ export const AGENTS = [
   {
     slug: 'growth-marketing-strategist',
     name: 'Growth Marketing Strategist',
-    author: 'northstar-labs',
+    author: 'Cognivexa',
     category: 'Marketing',
     addedDate: '2026-02-10',
     icon: '📈',
@@ -254,7 +254,7 @@ export const AGENTS = [
   {
     slug: 'data-pipeline-analyst',
     name: 'Data Pipeline Analyst',
-    author: 'datawrangler',
+    author: 'Cognivexa',
     category: 'Data Analysis',
     addedDate: '2026-01-28',
     icon: '📊',
@@ -309,7 +309,7 @@ export const AGENTS = [
   {
     slug: 'workflow-automation-builder',
     name: 'Workflow Automation Builder',
-    author: 'flowbot',
+    author: 'Cognivexa',
     category: 'Automation',
     addedDate: '2026-02-14',
     icon: '⚙️',
@@ -364,7 +364,7 @@ export const AGENTS = [
   {
     slug: 'market-research-analyst',
     name: 'Market Research Analyst',
-    author: 'northstar-labs',
+    author: 'Cognivexa',
     category: 'Research',
     addedDate: '2026-01-09',
     icon: '🧭',
@@ -419,7 +419,7 @@ export const AGENTS = [
   {
     slug: 'long-form-copywriter',
     name: 'Long-form Copywriter',
-    author: 'inkwell-co',
+    author: 'Cognivexa',
     category: 'Writing',
     addedDate: '2026-02-01',
     icon: '🖋️',
@@ -474,7 +474,7 @@ export const AGENTS = [
   {
     slug: 'design-systems-specialist',
     name: 'Design Systems Specialist',
-    author: 'pixelforge',
+    author: 'Cognivexa',
     category: 'Design',
     addedDate: '2026-01-30',
     icon: '🎨',
@@ -529,7 +529,7 @@ export const AGENTS = [
   {
     slug: 'personal-productivity-coach',
     name: 'Personal Productivity Coach',
-    author: 'flowbot',
+    author: 'Cognivexa',
     category: 'Productivity',
     addedDate: '2026-02-06',
     icon: '⏱️',
@@ -583,7 +583,7 @@ export const AGENTS = [
   {
     slug: 'product-requirements-strategist',
     name: 'Product Requirements Strategist',
-    author: 'productlane',
+    author: 'Cognivexa',
     category: 'Product',
     addedDate: '2026-02-18',
     icon: '📋',
@@ -638,7 +638,7 @@ export const AGENTS = [
   {
     slug: 'roadmap-prioritization-lead',
     name: 'Roadmap Prioritization Lead',
-    author: 'productlane',
+    author: 'Cognivexa',
     category: 'Product',
     addedDate: '2026-01-24',
     icon: '🗺️',
@@ -693,7 +693,7 @@ export const AGENTS = [
   {
     slug: 'user-research-ops-manager',
     name: 'User Research Ops Manager',
-    author: 'productlane',
+    author: 'Cognivexa',
     category: 'Product',
     addedDate: '2026-02-05',
     icon: '🔬',
@@ -748,7 +748,7 @@ export const AGENTS = [
   {
     slug: 'data-privacy-compliance-officer',
     name: 'Data Privacy Compliance Officer',
-    author: 'compliancecore',
+    author: 'Cognivexa',
     category: 'Compliance',
     addedDate: '2026-02-11',
     icon: '🛡️',
@@ -803,7 +803,7 @@ export const AGENTS = [
   {
     slug: 'soc2-readiness-auditor',
     name: 'SOC 2 Readiness Auditor',
-    author: 'compliancecore',
+    author: 'Cognivexa',
     category: 'Compliance',
     addedDate: '2026-01-29',
     icon: '📑',
@@ -858,7 +858,7 @@ export const AGENTS = [
   {
     slug: 'regulatory-change-monitor',
     name: 'Regulatory Change Monitor',
-    author: 'compliancecore',
+    author: 'Cognivexa',
     category: 'Compliance',
     addedDate: '2026-02-16',
     icon: '📡',
@@ -913,7 +913,7 @@ export const AGENTS = [
   {
     slug: 'chief-of-staff-advisor',
     name: 'Chief of Staff Advisor',
-    author: 'boardroom-labs',
+    author: 'Cognivexa',
     category: 'C-Level Advisory',
     addedDate: '2026-02-13',
     icon: '🧩',
@@ -968,7 +968,7 @@ export const AGENTS = [
   {
     slug: 'fractional-cfo-advisor',
     name: 'Fractional CFO Advisor',
-    author: 'boardroom-labs',
+    author: 'Cognivexa',
     category: 'C-Level Advisory',
     addedDate: '2026-01-19',
     icon: '💼',
@@ -1023,7 +1023,7 @@ export const AGENTS = [
   {
     slug: 'strategic-narrative-coach',
     name: 'Strategic Narrative Coach',
-    author: 'boardroom-labs',
+    author: 'Cognivexa',
     category: 'C-Level Advisory',
     addedDate: '2026-02-04',
     icon: '🎙️',
@@ -1078,7 +1078,7 @@ export const AGENTS = [
   {
     slug: 'vendor-management-specialist',
     name: 'Vendor Management Specialist',
-    author: 'opsgrid',
+    author: 'Cognivexa',
     category: 'Business Operations',
     addedDate: '2026-01-26',
     icon: '🤝',
@@ -1133,7 +1133,7 @@ export const AGENTS = [
   {
     slug: 'people-operations-coordinator',
     name: 'People Operations Coordinator',
-    author: 'opsgrid',
+    author: 'Cognivexa',
     category: 'Business Operations',
     addedDate: '2026-02-09',
     icon: '🧑‍🤝‍🧑',
@@ -1188,7 +1188,7 @@ export const AGENTS = [
   {
     slug: 'process-improvement-analyst',
     name: 'Process Improvement Analyst',
-    author: 'opsgrid',
+    author: 'Cognivexa',
     category: 'Business Operations',
     addedDate: '2026-01-31',
     icon: '🔄',
@@ -1243,7 +1243,7 @@ export const AGENTS = [
   {
     slug: 'sales-proposal-engineer',
     name: 'Sales Proposal Engineer',
-    author: 'ledgerworks',
+    author: 'Cognivexa',
     category: 'Commercial & Finance',
     addedDate: '2026-02-07',
     icon: '📃',
@@ -1298,7 +1298,7 @@ export const AGENTS = [
   {
     slug: 'revenue-operations-analyst',
     name: 'Revenue Operations Analyst',
-    author: 'ledgerworks',
+    author: 'Cognivexa',
     category: 'Commercial & Finance',
     addedDate: '2026-01-21',
     icon: '📉',
@@ -1353,7 +1353,7 @@ export const AGENTS = [
   {
     slug: 'fpa-modeling-specialist',
     name: 'FP&A Modeling Specialist',
-    author: 'ledgerworks',
+    author: 'Cognivexa',
     category: 'Commercial & Finance',
     addedDate: '2026-02-17',
     icon: '📐',
@@ -1408,7 +1408,7 @@ export const AGENTS = [
   {
     slug: 'ci-cd-pipeline-engineer',
     name: 'CI/CD Pipeline Engineer',
-    author: 'shipline',
+    author: 'Cognivexa',
     category: 'DevOps',
     addedDate: '2026-02-19',
     icon: '🚀',
@@ -1464,7 +1464,7 @@ export const AGENTS = [
   {
     slug: 'infrastructure-as-code-architect',
     name: 'Infrastructure as Code Architect',
-    author: 'shipline',
+    author: 'Cognivexa',
     category: 'DevOps',
     addedDate: '2026-02-24',
     icon: '🏗️',
@@ -1520,7 +1520,7 @@ export const AGENTS = [
   {
     slug: 'site-reliability-engineer',
     name: 'Site Reliability Engineer',
-    author: 'shipline',
+    author: 'Cognivexa',
     category: 'DevOps',
     addedDate: '2026-03-05',
     icon: '📈',
@@ -1576,7 +1576,7 @@ export const AGENTS = [
   {
     slug: 'application-security-reviewer',
     name: 'Application Security Reviewer',
-    author: 'vaultguard',
+    author: 'Cognivexa',
     category: 'Security',
     addedDate: '2026-02-20',
     icon: '🛡️',
@@ -1632,7 +1632,7 @@ export const AGENTS = [
   {
     slug: 'secrets-and-cloud-security-engineer',
     name: 'Secrets & Cloud Security Engineer',
-    author: 'vaultguard',
+    author: 'Cognivexa',
     category: 'Security',
     addedDate: '2026-02-27',
     icon: '🔐',
@@ -1688,7 +1688,7 @@ export const AGENTS = [
   {
     slug: 'incident-response-threat-hunter',
     name: 'Incident Response & Threat Hunter',
-    author: 'vaultguard',
+    author: 'Cognivexa',
     category: 'Security',
     addedDate: '2026-03-08',
     icon: '🕵️',
@@ -1744,7 +1744,7 @@ export const AGENTS = [
   {
     slug: 'web-perf-budget-keeper',
     name: 'Web Performance Budget Keeper',
-    author: 'pixelrun',
+    author: 'Cognivexa',
     category: 'Frontend',
     addedDate: '2026-02-19',
     icon: '⚡',
@@ -1799,7 +1799,7 @@ export const AGENTS = [
   {
     slug: 'component-system-architect',
     name: 'Component System Architect',
-    author: 'pixelrun',
+    author: 'Cognivexa',
     category: 'Frontend',
     addedDate: '2026-02-24',
     icon: '🧩',
@@ -1854,7 +1854,7 @@ export const AGENTS = [
   {
     slug: 'rendering-strategy-engineer',
     name: 'Rendering Strategy Engineer',
-    author: 'pixelrun',
+    author: 'Cognivexa',
     category: 'Frontend',
     addedDate: '2026-03-02',
     icon: '🌐',
@@ -1909,7 +1909,7 @@ export const AGENTS = [
   {
     slug: 'usability-heuristics-auditor',
     name: 'Usability Heuristics Auditor',
-    author: 'formaui',
+    author: 'Cognivexa',
     category: 'UI/UX',
     addedDate: '2026-02-20',
     icon: '🔍',
@@ -1964,7 +1964,7 @@ export const AGENTS = [
   {
     slug: 'information-architecture-planner',
     name: 'Information Architecture Planner',
-    author: 'formaui',
+    author: 'Cognivexa',
     category: 'UI/UX',
     addedDate: '2026-02-27',
     icon: '🗺️',
@@ -2019,7 +2019,7 @@ export const AGENTS = [
   {
     slug: 'ux-writing-microcopy-specialist',
     name: 'UX Writing Microcopy Specialist',
-    author: 'formaui',
+    author: 'Cognivexa',
     category: 'UI/UX',
     addedDate: '2026-03-06',
     icon: '✍️',
@@ -2074,7 +2074,7 @@ export const AGENTS = [
   {
     slug: 'rag-pipeline-architect',
     name: 'RAG Pipeline Architect',
-    author: 'modelforge',
+    author: 'Cognivexa',
     category: 'AI Engineering',
     addedDate: '2026-02-19',
     icon: '📚',
@@ -2130,7 +2130,7 @@ export const AGENTS = [
   {
     slug: 'llm-eval-prompt-engineer',
     name: 'LLM Evaluation & Prompt Engineering Specialist',
-    author: 'modelforge',
+    author: 'Cognivexa',
     category: 'AI Engineering',
     addedDate: '2026-02-25',
     icon: '🎯',
@@ -2186,7 +2186,7 @@ export const AGENTS = [
   {
     slug: 'agent-tooling-reliability-engineer',
     name: 'Agent Tool-Use Reliability Engineer',
-    author: 'modelforge',
+    author: 'Cognivexa',
     category: 'AI Engineering',
     addedDate: '2026-03-04',
     icon: '🛠️',
@@ -2242,7 +2242,7 @@ export const AGENTS = [
   {
     slug: 'ab-testing-experimentation-scientist',
     name: 'Experimentation & A/B Testing Scientist',
-    author: 'signalstack',
+    author: 'Cognivexa',
     category: 'Data Science',
     addedDate: '2026-02-22',
     icon: '🧪',
@@ -2298,7 +2298,7 @@ export const AGENTS = [
   {
     slug: 'causal-inference-analyst',
     name: 'Causal Inference Analyst',
-    author: 'signalstack',
+    author: 'Cognivexa',
     category: 'Data Science',
     addedDate: '2026-02-28',
     icon: '⚖️',
@@ -2354,7 +2354,7 @@ export const AGENTS = [
   {
     slug: 'ml-monitoring-drift-engineer',
     name: 'ML Monitoring & Drift Engineer',
-    author: 'signalstack',
+    author: 'Cognivexa',
     category: 'Data Science',
     addedDate: '2026-03-10',
     icon: '📉',
@@ -2410,7 +2410,7 @@ export const AGENTS = [
   {
     slug: 'internal-change-comms-lead',
     name: 'Internal Change Communication Lead',
-    author: 'clearchannel',
+    author: 'Cognivexa',
     category: 'Communication',
     addedDate: '2026-02-21',
     icon: '🧭',
@@ -2466,7 +2466,7 @@ export const AGENTS = [
   {
     slug: 'crisis-communication-director',
     name: 'Crisis Communication Director',
-    author: 'clearchannel',
+    author: 'Cognivexa',
     category: 'Communication',
     addedDate: '2026-02-27',
     icon: '🚨',
@@ -2522,7 +2522,7 @@ export const AGENTS = [
   {
     slug: 'cross-team-communication-facilitator',
     name: 'Cross-Team Communication Facilitator',
-    author: 'clearchannel',
+    author: 'Cognivexa',
     category: 'Communication',
     addedDate: '2026-03-05',
     icon: '🤝',

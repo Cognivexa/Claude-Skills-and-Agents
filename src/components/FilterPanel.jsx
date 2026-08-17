@@ -6,9 +6,6 @@ export default function FilterPanel({
   totalCount,
   category,
   onCategory,
-  authors,
-  author,
-  onAuthor,
   allTags,
   activeTags,
   onToggleTag,
@@ -38,18 +35,6 @@ export default function FilterPanel({
             </button>
           ))}
         </div>
-      </div>
-
-      <div className="filter-panel-section">
-        <div className="filter-panel-title">Author</div>
-        <select className="filter-select full" value={author || ''} onChange={(e) => onAuthor(e.target.value || null)}>
-          <option value="">All authors</option>
-          {authors.map((a) => (
-            <option key={a} value={a}>
-              {a}
-            </option>
-          ))}
-        </select>
       </div>
 
       <div className="filter-panel-section">

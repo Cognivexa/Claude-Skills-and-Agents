@@ -8,7 +8,6 @@ import FilterPanel from '../components/FilterPanel.jsx'
 export default function AgentsBrowse() {
   const [searchParams, setSearchParams] = useSearchParams()
   const category = searchParams.get('category')
-  const author = searchParams.get('author')
   const [query, setQuery] = useState('')
   const [sort, setSort] = useState('newest')
   const [activeTags, setActiveTags] = useState([])
@@ -20,24 +19,17 @@ export default function AgentsBrowse() {
     setSearchParams(next)
   }
 
-  const authors = useMemo(() => [...new Set(AGENTS.map((a) => a.author))].sort(), [])
-
-  const authorFiltered = useMemo(
-    () => (author ? AGENTS.filter((a) => a.author === author) : AGENTS),
-    [author]
-  )
-
   const categoryCounts = useMemo(() => {
     const counts = {}
-    authorFiltered.forEach((a) => {
+    AGENTS.forEach((a) => {
       counts[a.category] = (counts[a.category] || 0) + 1
     })
     return counts
-  }, [authorFiltered])
+  }, [])
 
   const categoryFiltered = useMemo(
-    () => (category ? authorFiltered.filter((a) => a.category === category) : authorFiltered),
-    [authorFiltered, category]
+    () => (category ? AGENTS.filter((a) => a.category === category) : AGENTS),
+    [category]
   )
 
   const allTags = useMemo(
@@ -71,20 +63,17 @@ export default function AgentsBrowse() {
     <div className="content">
       <PageHeader
         title="Agents"
-        subtitle="Specialist subagents you can delegate work to inside Claude Code — one persona and workflow per job."
-        stats={[`${AGENTS.length} agents`, `${AGENT_CATEGORIES.length} categories`, `${authors.length} authors`]}
+        subtitle="Specialist subagents you can delegate work to inside Claude Code — one persona and workflow per job. Designed by Cognivexa."
+        stats={[`${AGENTS.length} agents`, `${AGENT_CATEGORIES.length} categories`, `Published by Cognivexa`]}
       />
 
       <div className="browse-layout">
         <FilterPanel
           categories={AGENT_CATEGORIES}
           categoryCounts={categoryCounts}
-          totalCount={authorFiltered.length}
+          totalCount={AGENTS.length}
           category={category}
           onCategory={(c) => updateParam('category', c)}
-          authors={authors}
-          author={author}
-          onAuthor={(a) => updateParam('author', a)}
           allTags={allTags}
           activeTags={activeTags}
           onToggleTag={toggleTag}
@@ -110,7 +99,6 @@ export default function AgentsBrowse() {
           <div className="results-count">
             {results.length} agent{results.length === 1 ? '' : 's'} found
             {category ? ` in ${category}` : ''}
-            {author ? ` by ${author}` : ''}
           </div>
           {results.length === 0 ? (
             <div className="empty-state">No agents match your filters.</div>

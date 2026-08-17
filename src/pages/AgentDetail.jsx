@@ -20,7 +20,6 @@ export default function AgentDetail() {
   }
 
   const similar = AGENTS.filter((a) => a.slug !== agent.slug && a.category === agent.category).slice(0, 3)
-  const moreFromAuthor = AGENTS.filter((a) => a.slug !== agent.slug && a.author === agent.author).slice(0, 3)
 
   return (
     <div className="content">
@@ -50,9 +49,10 @@ export default function AgentDetail() {
           label="Claude Code (Recommended) — 1. Add the marketplace"
           command={`/plugin marketplace add ${MARKETPLACE_REPO}`}
         />
+        <CopyCommand label="2. Install this agent" command={`/plugin install ${agent.slug}@${MARKETPLACE_NAME}`} />
         <CopyCommand
-          label="2. Install this agent"
-          command={`/plugin install ${agent.slug}@${MARKETPLACE_NAME}`}
+          label="3. Use it (or just describe a task — Claude Code delegates to it automatically)"
+          command={`@agent-${agent.slug}:${agent.slug} your request here`}
         />
         <div className="tools-note">
           Also usable with {OTHER_COMPATIBLE_TOOLS.join(', ')} — these tools don't share Claude Code's plugin
@@ -177,22 +177,6 @@ export default function AgentDetail() {
         </div>
       ) : (
         <div className="empty-state">No similar agents yet.</div>
-      )}
-
-      <div className="section-heading">
-        <h4>More from {agent.author}</h4>
-        <Link to={`/agents?author=${encodeURIComponent(agent.author)}`} className="view-all-link">
-          View all
-        </Link>
-      </div>
-      {moreFromAuthor.length ? (
-        <div className="grid small">
-          {moreFromAuthor.map((a) => (
-            <AgentCard key={a.slug} agent={a} />
-          ))}
-        </div>
-      ) : (
-        <div className="empty-state">This is the only agent from {agent.author} so far.</div>
       )}
     </div>
   )

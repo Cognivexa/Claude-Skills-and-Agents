@@ -25,7 +25,7 @@ export const SKILLS = [
   {
     slug: 'literature-review-assistant',
     name: 'Literature Review Assistant',
-    author: 'openmind',
+    author: 'Cognivexa',
     category: 'Research & Learning',
     stars: 412,
     forks: 38,
@@ -48,7 +48,7 @@ export const SKILLS = [
   {
     slug: 'zettelkasten-notes',
     name: 'Zettelkasten Notes',
-    author: 'openmind',
+    author: 'Cognivexa',
     category: 'Knowledge Management',
     stars: 289,
     forks: 21,
@@ -71,7 +71,7 @@ export const SKILLS = [
   {
     slug: 'technical-docs-writer',
     name: 'Technical Docs Writer',
-    author: 'docsmith',
+    author: 'Cognivexa',
     category: 'Writing & Docs',
     stars: 1204,
     forks: 156,
@@ -94,7 +94,7 @@ export const SKILLS = [
   {
     slug: 'youtube-script-planner',
     name: 'YouTube Script Planner',
-    author: 'clipcraft',
+    author: 'Cognivexa',
     category: 'Media & YouTube',
     stars: 567,
     forks: 44,
@@ -117,7 +117,7 @@ export const SKILLS = [
   {
     slug: 'rest-api-scaffolder',
     name: 'REST API Scaffolder',
-    author: 'devkit',
+    author: 'Cognivexa',
     category: 'Code & Dev',
     stars: 2318,
     forks: 301,
@@ -140,7 +140,7 @@ export const SKILLS = [
   {
     slug: 'spreadsheet-insights',
     name: 'Spreadsheet Insights',
-    author: 'tidydata',
+    author: 'Cognivexa',
     category: 'Data & Analysis',
     stars: 890,
     forks: 62,
@@ -163,7 +163,7 @@ export const SKILLS = [
   {
     slug: 'flaky-test-hunter',
     name: 'Flaky Test Hunter',
-    author: 'testwatch',
+    author: 'Cognivexa',
     category: 'Debug & Test',
     stars: 1540,
     forks: 118,
@@ -186,7 +186,7 @@ export const SKILLS = [
   {
     slug: 'file-organizer-pro',
     name: 'File Organizer Pro',
-    author: 'shelfware',
+    author: 'Cognivexa',
     category: 'Utility',
     stars: 733,
     forks: 55,
@@ -209,7 +209,7 @@ export const SKILLS = [
   {
     slug: 'onboarding-kit',
     name: 'Onboarding Kit',
-    author: 'docsmith',
+    author: 'Cognivexa',
     category: 'Collections',
     stars: 344,
     forks: 29,
@@ -235,7 +235,7 @@ export const SKILLS = [
   {
     slug: 'prompt-chain-builder',
     name: 'Prompt Chain Builder',
-    author: 'chainworks',
+    author: 'Cognivexa',
     category: 'Code & Dev',
     stars: 1876,
     forks: 203,
@@ -258,7 +258,7 @@ export const SKILLS = [
   {
     slug: 'dataset-cleaner',
     name: 'Dataset Cleaner',
-    author: 'tidydata',
+    author: 'Cognivexa',
     category: 'Data & Analysis',
     stars: 654,
     forks: 47,
@@ -281,7 +281,7 @@ export const SKILLS = [
   {
     slug: 'meeting-notes-digest',
     name: 'Meeting Notes Digest',
-    author: 'openmind',
+    author: 'Cognivexa',
     category: 'Knowledge Management',
     stars: 498,
     forks: 33,
@@ -304,7 +304,7 @@ export const SKILLS = [
   {
     slug: 'regression-triage',
     name: 'Regression Triage',
-    author: 'testwatch',
+    author: 'Cognivexa',
     category: 'Debug & Test',
     stars: 1021,
     forks: 89,
@@ -327,7 +327,7 @@ export const SKILLS = [
   {
     slug: 'style-guide-enforcer',
     name: 'Style Guide Enforcer',
-    author: 'docsmith',
+    author: 'Cognivexa',
     category: 'Writing & Docs',
     stars: 712,
     forks: 51,
@@ -350,7 +350,7 @@ export const SKILLS = [
   {
     slug: 'prd-template-builder',
     name: 'PRD Template Builder',
-    author: 'productlane',
+    author: 'Cognivexa',
     category: 'Product',
     stars: 601,
     forks: 48,
@@ -373,7 +373,7 @@ export const SKILLS = [
   {
     slug: 'feature-flag-rollout-planner',
     name: 'Feature Flag Rollout Planner',
-    author: 'productlane',
+    author: 'Cognivexa',
     category: 'Product',
     stars: 388,
     forks: 27,
@@ -396,7 +396,7 @@ export const SKILLS = [
   {
     slug: 'policy-gap-analyzer',
     name: 'Policy Gap Analyzer',
-    author: 'compliancecore',
+    author: 'Cognivexa',
     category: 'Compliance',
     stars: 512,
     forks: 39,
@@ -419,7 +419,7 @@ export const SKILLS = [
   {
     slug: 'audit-evidence-collector',
     name: 'Audit Evidence Collector',
-    author: 'compliancecore',
+    author: 'Cognivexa',
     category: 'Compliance',
     stars: 347,
     forks: 22,
@@ -442,7 +442,7 @@ export const SKILLS = [
   {
     slug: 'board-deck-builder',
     name: 'Board Deck Builder',
-    author: 'boardroom-labs',
+    author: 'Cognivexa',
     category: 'C-Level Advisory',
     stars: 729,
     forks: 61,
@@ -465,7 +465,7 @@ export const SKILLS = [
   {
     slug: 'executive-briefing-digest',
     name: 'Executive Briefing Digest',
-    author: 'boardroom-labs',
+    author: 'Cognivexa',
     category: 'C-Level Advisory',
     stars: 455,
     forks: 34,
@@ -488,7 +488,7 @@ export const SKILLS = [
   {
     slug: 'sop-writer',
     name: 'SOP Writer',
-    author: 'opsgrid',
+    author: 'Cognivexa',
     category: 'Business Operations',
     stars: 668,
     forks: 52,
@@ -511,7 +511,7 @@ export const SKILLS = [
   {
     slug: 'vendor-contract-tracker',
     name: 'Vendor Contract Tracker',
-    author: 'opsgrid',
+    author: 'Cognivexa',
     category: 'Business Operations',
     stars: 421,
     forks: 30,
@@ -534,7 +534,7 @@ export const SKILLS = [
   {
     slug: 'proposal-pricing-table-generator',
     name: 'Proposal Pricing Table Generator',
-    author: 'ledgerworks',
+    author: 'Cognivexa',
     category: 'Commercial & Finance',
     stars: 502,
     forks: 41,
@@ -557,7 +557,7 @@ export const SKILLS = [
   {
     slug: 'deal-desk-checklist',
     name: 'Deal Desk Checklist',
-    author: 'ledgerworks',
+    author: 'Cognivexa',
     category: 'Commercial & Finance',
     stars: 376,
     forks: 25,
@@ -580,7 +580,7 @@ export const SKILLS = [
   {
     slug: 'dockerfile-hardening-checker',
     name: 'Dockerfile Hardening Checker',
-    author: 'shipline',
+    author: 'Cognivexa',
     category: 'DevOps',
     stars: 1847,
     forks: 129,
@@ -603,7 +603,7 @@ export const SKILLS = [
   {
     slug: 'ci-pipeline-linter',
     name: 'CI Pipeline Linter',
-    author: 'shipline',
+    author: 'Cognivexa',
     category: 'DevOps',
     stars: 1120,
     forks: 78,
@@ -626,7 +626,7 @@ export const SKILLS = [
   {
     slug: 'infra-drift-detector',
     name: 'Infra Drift Detector',
-    author: 'shipline',
+    author: 'Cognivexa',
     category: 'DevOps',
     stars: 970,
     forks: 68,
@@ -649,7 +649,7 @@ export const SKILLS = [
   {
     slug: 'dependency-vuln-triage',
     name: 'Dependency Vulnerability Triage',
-    author: 'vaultguard',
+    author: 'Cognivexa',
     category: 'Security',
     stars: 2140,
     forks: 158,
@@ -672,7 +672,7 @@ export const SKILLS = [
   {
     slug: 'secrets-in-code-scanner',
     name: 'Secrets In Code Scanner',
-    author: 'vaultguard',
+    author: 'Cognivexa',
     category: 'Security',
     stars: 1560,
     forks: 112,
@@ -695,7 +695,7 @@ export const SKILLS = [
   {
     slug: 'security-questionnaire-responder',
     name: 'Security Questionnaire Responder',
-    author: 'vaultguard',
+    author: 'Cognivexa',
     category: 'Security',
     stars: 640,
     forks: 48,
@@ -718,7 +718,7 @@ export const SKILLS = [
   {
     slug: 'app-store-release-notes',
     name: 'App Store Release Notes Drafter',
-    author: 'pocketbuild',
+    author: 'Cognivexa',
     category: 'Mobile Development',
     stars: 1450,
     forks: 110,
@@ -741,7 +741,7 @@ export const SKILLS = [
   {
     slug: 'crash-report-triage',
     name: 'Mobile Crash Report Triage',
-    author: 'pocketbuild',
+    author: 'Cognivexa',
     category: 'Mobile Development',
     stars: 1890,
     forks: 150,
@@ -764,7 +764,7 @@ export const SKILLS = [
   {
     slug: 'mobile-bundle-size-audit',
     name: 'Mobile Bundle Size Auditor',
-    author: 'pocketbuild',
+    author: 'Cognivexa',
     category: 'Mobile Development',
     stars: 980,
     forks: 75,
@@ -787,7 +787,7 @@ export const SKILLS = [
   {
     slug: 'commit-message-linter',
     name: 'Commit Message Quality Checker',
-    author: 'committext',
+    author: 'Cognivexa',
     category: 'Git & Version Control',
     stars: 2100,
     forks: 165,
@@ -810,7 +810,7 @@ export const SKILLS = [
   {
     slug: 'changelog-from-history',
     name: 'Changelog Generator From Commit History',
-    author: 'committext',
+    author: 'Cognivexa',
     category: 'Git & Version Control',
     stars: 1620,
     forks: 130,
@@ -833,7 +833,7 @@ export const SKILLS = [
   {
     slug: 'stale-branch-cleanup-planner',
     name: 'Stale Branch Cleanup Planner',
-    author: 'committext',
+    author: 'Cognivexa',
     category: 'Git & Version Control',
     stars: 760,
     forks: 55,
@@ -856,7 +856,7 @@ export const SKILLS = [
   {
     slug: 'prompt-regression-guard',
     name: 'Prompt Regression Guard',
-    author: 'modelforge',
+    author: 'Cognivexa',
     category: 'AI Engineering',
     stars: 1450,
     forks: 102,
@@ -879,7 +879,7 @@ export const SKILLS = [
   {
     slug: 'eval-set-forge',
     name: 'Eval Set Forge',
-    author: 'modelforge',
+    author: 'Cognivexa',
     category: 'AI Engineering',
     stars: 980,
     forks: 68,
@@ -902,7 +902,7 @@ export const SKILLS = [
   {
     slug: 'chain-cost-auditor',
     name: 'Chain Cost Auditor',
-    author: 'modelforge',
+    author: 'Cognivexa',
     category: 'AI Engineering',
     stars: 720,
     forks: 55,
@@ -925,7 +925,7 @@ export const SKILLS = [
   {
     slug: 'alt-text-composer',
     name: 'Alt Text Composer',
-    author: 'assetloom',
+    author: 'Cognivexa',
     category: 'Media & Graphics',
     stars: 1680,
     forks: 130,
@@ -948,7 +948,7 @@ export const SKILLS = [
   {
     slug: 'asset-namer',
     name: 'Asset Namer',
-    author: 'assetloom',
+    author: 'Cognivexa',
     category: 'Media & Graphics',
     stars: 540,
     forks: 40,
@@ -971,7 +971,7 @@ export const SKILLS = [
   {
     slug: 'social-crop-kit',
     name: 'Social Crop Kit',
-    author: 'assetloom',
+    author: 'Cognivexa',
     category: 'Media & Graphics',
     stars: 1920,
     forks: 160,

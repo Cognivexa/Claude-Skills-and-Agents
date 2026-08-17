@@ -8,7 +8,6 @@ import FilterPanel from '../components/FilterPanel.jsx'
 export default function SkillsBrowse() {
   const [searchParams, setSearchParams] = useSearchParams()
   const category = searchParams.get('category')
-  const author = searchParams.get('author')
   const [query, setQuery] = useState('')
   const [sort, setSort] = useState('newest')
   const [activeTags, setActiveTags] = useState([])
@@ -20,24 +19,17 @@ export default function SkillsBrowse() {
     setSearchParams(next)
   }
 
-  const authors = useMemo(() => [...new Set(SKILLS.map((s) => s.author))].sort(), [])
-
-  const authorFiltered = useMemo(
-    () => (author ? SKILLS.filter((s) => s.author === author) : SKILLS),
-    [author]
-  )
-
   const categoryCounts = useMemo(() => {
     const counts = {}
-    authorFiltered.forEach((s) => {
+    SKILLS.forEach((s) => {
       counts[s.category] = (counts[s.category] || 0) + 1
     })
     return counts
-  }, [authorFiltered])
+  }, [])
 
   const categoryFiltered = useMemo(
-    () => (category ? authorFiltered.filter((s) => s.category === category) : authorFiltered),
-    [authorFiltered, category]
+    () => (category ? SKILLS.filter((s) => s.category === category) : SKILLS),
+    [category]
   )
 
   const allTags = useMemo(
@@ -72,20 +64,17 @@ export default function SkillsBrowse() {
     <div className="content">
       <PageHeader
         title="Skills"
-        subtitle="Reusable Markdown skills Claude Code loads on demand — drop them in and invoke by name."
-        stats={[`${SKILLS.length} skills`, `${SKILL_CATEGORIES.length} categories`, `${authors.length} authors`]}
+        subtitle="Reusable Markdown skills Claude Code loads on demand — drop them in and invoke by name. Designed by Cognivexa."
+        stats={[`${SKILLS.length} skills`, `${SKILL_CATEGORIES.length} categories`, `Published by Cognivexa`]}
       />
 
       <div className="browse-layout">
         <FilterPanel
           categories={SKILL_CATEGORIES}
           categoryCounts={categoryCounts}
-          totalCount={authorFiltered.length}
+          totalCount={SKILLS.length}
           category={category}
           onCategory={(c) => updateParam('category', c)}
-          authors={authors}
-          author={author}
-          onAuthor={(a) => updateParam('author', a)}
           allTags={allTags}
           activeTags={activeTags}
           onToggleTag={toggleTag}
@@ -112,7 +101,6 @@ export default function SkillsBrowse() {
           <div className="results-count">
             {results.length} skill{results.length === 1 ? '' : 's'} found
             {category ? ` in ${category}` : ''}
-            {author ? ` by ${author}` : ''}
           </div>
           {results.length === 0 ? (
             <div className="empty-state">No skills match your filters.</div>
