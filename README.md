@@ -15,31 +15,63 @@ locally.
 
 ## Install with Claude Code (recommended)
 
-These are Claude Code **slash commands**, typed straight into a Claude Code
-session — in the integrated terminal of VS Code, JetBrains, or any other
-editor Claude Code runs in, or in a plain terminal with no editor at all.
-The plugin system lives inside Claude Code itself, so the two commands
-below are identical no matter where Claude Code is running:
+Everything below is typed into an **active Claude Code chat session** —
+that's the integrated terminal or chat panel of the VS Code / JetBrains
+extension, or a plain terminal running `claude` with no editor at all. It is
+**not** a GitHub URL field, an "Add MCP server" dialog, or any other box in
+your editor — if a UI asks you for a bare `owner/repo` with no chat input
+next to it, that's a different feature; use the chat-based commands below
+instead.
 
-**Step 1 — register this repo as a plugin marketplace** (do this once):
+Run the three commands **one at a time**, in order, waiting for each one to
+finish before typing the next. Do not combine them into a single line, and
+do not append anything to Step 1.
+
+**Step 1 — register this repo as a marketplace (run this exactly once, ever,
+per machine):**
 
 ```
 /plugin marketplace add Cognivexa/claude-skills-and-agents
 ```
 
-**Step 2 — install any individual agent or skill you want:**
+Type it exactly as shown, nothing added. You do this once no matter how
+many agents or skills from this repo you go on to install.
+
+**Step 2 — install one specific agent or skill:**
 
 ```
 /plugin install <plugin-name>@claude-skills-and-agents
 ```
 
-Every plugin name matches its slug in the catalog — e.g.:
+Replace `<plugin-name>` with the slug shown on that agent/skill's page in
+the catalog. Run this again, separately, for every additional plugin you
+want — Step 1 is never repeated.
+
+**Step 3 — use it.** Skills run as a slash command; agents are invoked
+automatically or with an @-mention. See the worked example below.
+
+### Full worked example, start to finish
+
+Installing and using the `dataset-cleaner` skill looks like this — four
+separate commands, typed one after another in the same chat session:
 
 ```
-/plugin install sop-writer@claude-skills-and-agents
-/plugin install api-integration-engineer@claude-skills-and-agents
-/plugin install data-privacy-compliance-officer@claude-skills-and-agents
+/plugin marketplace add Cognivexa/claude-skills-and-agents
+/plugin install dataset-cleaner@claude-skills-and-agents
+/dataset-cleaner:dataset-cleaner path/to/messy-data.csv
 ```
+
+Installing and using the `api-integration-engineer` agent:
+
+```
+/plugin marketplace add Cognivexa/claude-skills-and-agents
+/plugin install api-integration-engineer@claude-skills-and-agents
+@agent-api-integration-engineer:api-integration-engineer wire up the Stripe webhook handler
+```
+
+Notice the first line is identical in both examples — that's Step 1, and
+you only need to run it the first time. Every other line is specific to
+that one plugin.
 
 Don't have Claude Code installed yet? `npm install -g @anthropic-ai/claude-code`,
 then run `claude` from a terminal (including VS Code's or JetBrains') to
@@ -53,26 +85,15 @@ start a session before using the commands above.
 /plugin-name:skill-name [arguments]
 ```
 
-For example, after installing `sop-writer`:
-
-```
-/sop-writer:sop-writer <process-description>
-```
-
-Arguments after the command follow that skill's `argument-hint`.
+Arguments after the command follow that skill's `argument-hint`, shown on
+its catalog page (e.g. `<dataset-file>`).
 
 **Agents** don't need to be invoked manually — Claude Code automatically
-delegates to an installed agent when a task matches its `description`. To
+delegates to an installed agent when a task matches its description. To
 invoke one explicitly instead, @-mention it in chat:
 
 ```
 @agent-plugin-name:agent-name your request here
-```
-
-For example, after installing `technical-seo-auditor`:
-
-```
-@agent-technical-seo-auditor:technical-seo-auditor audit this site for crawl issues
 ```
 
 Both skills and agents show up in autocomplete and `/help` once installed.

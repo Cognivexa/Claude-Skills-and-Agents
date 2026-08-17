@@ -51,15 +51,22 @@ export default function SkillDetail() {
       </div>
 
       <div className="install-block">
-        <CopyCommand
-          label="Claude Code (Recommended) — 1. Add the marketplace"
-          command={`/plugin marketplace add ${MARKETPLACE_REPO}`}
-        />
+        <div className="install-heading">Install with Claude Code</div>
+        <p className="install-intro">
+          Open a Claude Code chat session — the terminal, or the chat panel of the VS Code / JetBrains extension —
+          and run these <strong>one at a time</strong>, waiting for each to finish before the next:
+        </p>
+
+        <CopyCommand label="1. Add this repo as a marketplace — run once, ever" command={`/plugin marketplace add ${MARKETPLACE_REPO}`} />
+        <div className="install-warning">
+          Type this exactly as shown — just the repo, nothing appended. You only run this once per machine, no
+          matter how many agents or skills from this repo you plan to install.
+        </div>
+
         <CopyCommand label="2. Install this skill" command={`/plugin install ${skill.slug}@${MARKETPLACE_NAME}`} />
-        <CopyCommand
-          label="3. Use it"
-          command={`/${skill.slug}:${skill.slug} ${skill.argumentHint}`}
-        />
+
+        <CopyCommand label="3. Use it" command={`/${skill.slug}:${skill.slug} ${skill.argumentHint}`} />
+
         <div className="tools-note">
           Also usable with {OTHER_COMPATIBLE_TOOLS.join(', ')} — these tools don't share Claude Code's plugin
           format, but each supports its own custom instructions/rules mechanism this Markdown file can be adapted
