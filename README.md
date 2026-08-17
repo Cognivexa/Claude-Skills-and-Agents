@@ -45,6 +45,38 @@ Don't have Claude Code installed yet? `npm install -g @anthropic-ai/claude-code`
 then run `claude` from a terminal (including VS Code's or JetBrains') to
 start a session before using the commands above.
 
+## Using an agent or skill after installing
+
+**Skills** run as a slash command, namespaced with the plugin name:
+
+```
+/plugin-name:skill-name [arguments]
+```
+
+For example, after installing `sop-writer`:
+
+```
+/sop-writer:sop-writer <process-description>
+```
+
+Arguments after the command follow that skill's `argument-hint`.
+
+**Agents** don't need to be invoked manually — Claude Code automatically
+delegates to an installed agent when a task matches its `description`. To
+invoke one explicitly instead, @-mention it in chat:
+
+```
+@agent-plugin-name:agent-name your request here
+```
+
+For example, after installing `technical-seo-auditor`:
+
+```
+@agent-technical-seo-auditor:technical-seo-auditor audit this site for crawl issues
+```
+
+Both skills and agents show up in autocomplete and `/help` once installed.
+
 ## Other coding agents
 
 Every plugin here is a plain Markdown agent/skill file under `plugins/`.
