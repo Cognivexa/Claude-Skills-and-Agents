@@ -1,12 +1,16 @@
 ---
 name: prompt-chain-builder
 description: Design multi-step prompt chains with explicit inputs/outputs per step, so failures are traceable to one stage.
-argument-hint: <task-description>
+argument-hint: [task-description]
 ---
 
 # Prompt Chain Builder
 
 Break a fuzzy multi-step task into named stages with clear inputs and outputs.
+
+## Input
+
+$ARGUMENTS
 
 ## How It Works
 

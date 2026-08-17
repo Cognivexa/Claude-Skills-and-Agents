@@ -1,12 +1,16 @@
 ---
 name: prompt-regression-guard
 description: Runs your prompt templates against a versioned snapshot suite before every deploy, diffing model outputs field-by-field to flag silent behavior drift.
-argument-hint: <prompt-dir>
+argument-hint: [prompt-dir]
 ---
 
 # Prompt Regression Guard
 
 Catches silent prompt breakage before it reaches production, not after.
+
+## Input
+
+$ARGUMENTS
 
 ## How It Works
 

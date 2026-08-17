@@ -1,12 +1,16 @@
 ---
 name: regression-triage
 description: Triage a reported regression: bisect the likely commit range, reproduce locally, and hand off with a minimal repro.
-argument-hint: <bug-report>
+argument-hint: [bug-report]
 ---
 
 # Regression Triage
 
 Hand off a minimal, reproducible case instead of a vague bug report.
+
+## Input
+
+$ARGUMENTS
 
 ## How It Works
 

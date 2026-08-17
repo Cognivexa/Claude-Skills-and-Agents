@@ -1,12 +1,16 @@
 ---
 name: prd-template-builder
 description: Draft a structured PRD from a rough feature request: problem statement, scope, success metrics, and open questions.
-argument-hint: <feature-request>
+argument-hint: [feature-request]
 ---
 
 # PRD Template Builder
 
 Turn a rough feature request into a spec engineering can actually estimate against.
+
+## Input
+
+$ARGUMENTS
 
 ## How It Works
 

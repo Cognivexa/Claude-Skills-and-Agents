@@ -1,12 +1,16 @@
 ---
 name: sop-writer
 description: Turn a described process into a numbered standard operating procedure with clear ownership at each step.
-argument-hint: <process-description>
+argument-hint: [process-description]
 ---
 
 # SOP Writer
 
 Write the SOP with the fewest steps that still actually work.
+
+## Input
+
+$ARGUMENTS
 
 ## How It Works
 

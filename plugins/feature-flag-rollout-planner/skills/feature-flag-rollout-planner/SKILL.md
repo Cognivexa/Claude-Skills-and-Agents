@@ -1,12 +1,16 @@
 ---
 name: feature-flag-rollout-planner
 description: Plan a staged feature flag rollout with explicit rollback criteria and monitoring checkpoints per stage.
-argument-hint: <feature-name>
+argument-hint: [feature-name]
 ---
 
 # Feature Flag Rollout Planner
 
 Plan the rollback criteria before the rollout starts, not after something breaks.
+
+## Input
+
+$ARGUMENTS
 
 ## How It Works
 

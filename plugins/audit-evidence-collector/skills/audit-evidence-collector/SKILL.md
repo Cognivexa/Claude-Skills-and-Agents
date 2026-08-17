@@ -1,12 +1,16 @@
 ---
 name: audit-evidence-collector
 description: Organize evidence artifacts against a control list so audit prep isn't a last-minute scramble.
-argument-hint: <control-list>
+argument-hint: [control-list]
 ---
 
 # Audit Evidence Collector
 
 Know exactly which controls are missing evidence before the auditor asks.
+
+## Input
+
+$ARGUMENTS
 
 ## How It Works
 

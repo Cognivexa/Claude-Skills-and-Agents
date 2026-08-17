@@ -1,12 +1,16 @@
 ---
 name: app-store-release-notes
 description: Turns a range of git commits or a sprint's ticket list into polished, user-facing release notes formatted for App Store Connect and Google Play listings. Produces both a full changelog and a trimmed "what's new" version that respects each store's character limits.
-argument-hint: <version-tag-or-commit-range>
+argument-hint: [version-tag-or-commit-range]
 ---
 
 # App Store Release Notes Drafter
 
 Turns raw commit noise into store-ready release notes in one pass.
+
+## Input
+
+$ARGUMENTS
 
 ## How It Works
 

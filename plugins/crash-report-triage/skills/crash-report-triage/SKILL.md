@@ -1,12 +1,16 @@
 ---
 name: crash-report-triage
 description: Parses symbolicated iOS/Android crash logs from Crashlytics or Sentry exports and clusters them by root stack frame, ranking each cluster by device, OS version, and affected-user impact. Drafts a short triage note per cluster with the suspected file/line and repro hints.
-argument-hint: <crash-log-export-path>
+argument-hint: [crash-log-export-path]
 ---
 
 # Mobile Crash Report Triage
 
 Turns a flood of crash logs into a ranked, actionable fix list.
+
+## Input
+
+$ARGUMENTS
 
 ## How It Works
 

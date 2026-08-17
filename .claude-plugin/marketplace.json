@@ -10,7 +10,7 @@
       "name": "ab-testing-experimentation-scientist",
       "source": "./plugins/ab-testing-experimentation-scientist",
       "displayName": "Experimentation & A/B Testing Scientist",
-      "description": "Designs experiments that hold up to scrutiny, catching sample ratio mismatches, peeking bias, and novelty effects before they turn into false-positive launch decisions.",
+      "description": "Designs experiments that hold up to scrutiny, catching sample ratio mismatches, peeking bias, and novelty effects before they turn into false-positive launch decisions. Use PROACTIVELY before launching an experiment, and again before reading its results.",
       "version": "0.1.0",
       "author": {
         "name": "Cognivexa"
@@ -27,7 +27,7 @@
       "name": "agent-tooling-reliability-engineer",
       "source": "./plugins/agent-tooling-reliability-engineer",
       "displayName": "Agent Tool-Use Reliability Engineer",
-      "description": "Hardens multi-step agent workflows against tool-call hallucination, malformed arguments, and silent failure loops, so autonomous agents fail loudly and recover gracefully instead of spinning.",
+      "description": "Hardens multi-step agent workflows against tool-call hallucination, malformed arguments, and silent failure loops, so autonomous agents fail loudly and recover gracefully instead of spinning. Use PROACTIVELY when an autonomous agent loops, calls the wrong tool, or fails silently in production.",
       "version": "0.1.0",
       "author": {
         "name": "Cognivexa"
@@ -60,7 +60,7 @@
       "name": "api-integration-engineer",
       "source": "./plugins/api-integration-engineer",
       "displayName": "API Integration Engineer",
-      "description": "Senior integration engineer specializing in REST/GraphQL APIs, webhook systems, and third-party SDK wiring across polyglot backends.",
+      "description": "Senior integration engineer specializing in REST/GraphQL APIs, webhook systems, and third-party SDK wiring across polyglot backends. Use PROACTIVELY when wiring a new third-party API, adding a webhook receiver, or reviewing an existing integration for reliability gaps.",
       "version": "0.1.0",
       "author": {
         "name": "Cognivexa"
@@ -93,7 +93,7 @@
       "name": "application-security-reviewer",
       "source": "./plugins/application-security-reviewer",
       "displayName": "Application Security Reviewer",
-      "description": "A senior appsec engineer who manually reviews code changes for real exploitability, not just SAST noise, and triages findings against actual attack paths. Specializes in authentication, authorization, and injection classes of bugs.",
+      "description": "A senior appsec engineer who manually reviews code changes for real exploitability, not just SAST noise, and triages findings against actual attack paths. Specializes in authentication, authorization, and injection classes of bugs. Use immediately after any code change touching authentication, authorization, payments, or external input handling.",
       "version": "0.1.0",
       "author": {
         "name": "Cognivexa"
@@ -141,7 +141,7 @@
       "name": "blog-content-editor",
       "source": "./plugins/blog-content-editor",
       "displayName": "Blog Content Editor",
-      "description": "Senior content editor who tightens structure, voice, and clarity across long-form blog drafts before publish.",
+      "description": "Senior content editor who tightens structure, voice, and clarity across long-form blog drafts before publish. Use immediately after a first draft is ready for editorial review, before it goes to design or scheduling.",
       "version": "0.1.0",
       "author": {
         "name": "Cognivexa"
@@ -173,7 +173,7 @@
       "name": "causal-inference-analyst",
       "source": "./plugins/causal-inference-analyst",
       "displayName": "Causal Inference Analyst",
-      "description": "Untangles correlation from causation in observational data using matching, instrumental variables, and diff-in-diff, for teams that can't just run an A/B test.",
+      "description": "Untangles correlation from causation in observational data using matching, instrumental variables, and diff-in-diff, for teams that can't just run an A/B test. Use PROACTIVELY when a stakeholder wants a causal claim from data that was never randomized.",
       "version": "0.1.0",
       "author": {
         "name": "Cognivexa"
@@ -222,7 +222,7 @@
       "name": "chief-of-staff-advisor",
       "source": "./plugins/chief-of-staff-advisor",
       "displayName": "Chief of Staff Advisor",
-      "description": "Chief of staff advisor triaging executive priorities, preparing board materials, and keeping cross-functional work aligned.",
+      "description": "Chief of staff advisor triaging executive priorities, preparing board materials, and keeping cross-functional work aligned. Use PROACTIVELY when triaging an executive's inbox or preparing materials for a leadership meeting.",
       "version": "0.1.0",
       "author": {
         "name": "Cognivexa"
@@ -238,7 +238,7 @@
       "name": "ci-cd-pipeline-engineer",
       "source": "./plugins/ci-cd-pipeline-engineer",
       "displayName": "CI/CD Pipeline Engineer",
-      "description": "A senior release engineer who redesigns brittle, slow build pipelines into fast, gated, rollback-ready delivery systems. Focuses on cutting pipeline duration and flake rate while keeping every merge to main deployable.",
+      "description": "A senior release engineer who redesigns brittle, slow build pipelines into fast, gated, rollback-ready delivery systems. Focuses on cutting pipeline duration and flake rate while keeping every merge to main deployable. Use PROACTIVELY when build times creep up, deploys start failing intermittently, or before scaling deploy frequency.",
       "version": "0.1.0",
       "author": {
         "name": "Cognivexa"
@@ -288,7 +288,7 @@
       "name": "component-system-architect",
       "source": "./plugins/component-system-architect",
       "displayName": "Component System Architect",
-      "description": "Designs component APIs and folder structures that stay coherent as a product scales past a dozen contributors, favoring composition and explicit props over clever abstraction.",
+      "description": "Designs component APIs and folder structures that stay coherent as a product scales past a dozen contributors, favoring composition and explicit props over clever abstraction. Use PROACTIVELY before adding a new shared component, or when duplicate component patterns are found.",
       "version": "0.1.0",
       "author": {
         "name": "Cognivexa"
@@ -322,7 +322,7 @@
       "name": "crisis-communication-director",
       "source": "./plugins/crisis-communication-director",
       "displayName": "Crisis Communication Director",
-      "description": "Directs communication response during incidents, breaches, and public controversies, controlling message accuracy and timing to protect trust while the situation is still unfolding.",
+      "description": "Directs communication response during incidents, breaches, and public controversies, controlling message accuracy and timing to protect trust while the situation is still unfolding. Use immediately when an incident, breach, or public controversy breaks, within the first response window.",
       "version": "0.1.0",
       "author": {
         "name": "Cognivexa"
@@ -339,7 +339,7 @@
       "name": "cross-team-communication-facilitator",
       "source": "./plugins/cross-team-communication-facilitator",
       "displayName": "Cross-Team Communication Facilitator",
-      "description": "Facilitates communication and alignment across departments that don't naturally talk to each other, turning fragmented updates into a shared operating picture for cross-functional initiatives.",
+      "description": "Facilitates communication and alignment across departments that don't naturally talk to each other, turning fragmented updates into a shared operating picture for cross-functional initiatives. Use PROACTIVELY when a cross-functional initiative lacks a shared status format or teams are working from different information.",
       "version": "0.1.0",
       "author": {
         "name": "Cognivexa"
@@ -356,7 +356,7 @@
       "name": "data-pipeline-analyst",
       "source": "./plugins/data-pipeline-analyst",
       "displayName": "Data Pipeline Analyst",
-      "description": "Analytics engineer building reliable ETL pipelines, dashboards, and data quality checks on top of warehouse data.",
+      "description": "Analytics engineer building reliable ETL pipelines, dashboards, and data quality checks on top of warehouse data. Use PROACTIVELY when a dashboard number looks wrong, before shipping a new data model, or when source data freshness is in question.",
       "version": "0.1.0",
       "author": {
         "name": "Cognivexa"
@@ -372,7 +372,7 @@
       "name": "data-privacy-compliance-officer",
       "source": "./plugins/data-privacy-compliance-officer",
       "displayName": "Data Privacy Compliance Officer",
-      "description": "Privacy compliance officer reviewing data flows against GDPR/CCPA-style obligations and flagging gaps before they become incidents.",
+      "description": "Privacy compliance officer reviewing data flows against GDPR/CCPA-style obligations and flagging gaps before they become incidents. Use PROACTIVELY before launching a feature that touches personal data, or when onboarding a new data processor.",
       "version": "0.1.0",
       "author": {
         "name": "Cognivexa"
@@ -437,7 +437,7 @@
       "name": "design-systems-specialist",
       "source": "./plugins/design-systems-specialist",
       "displayName": "Design Systems Specialist",
-      "description": "Product designer building and maintaining component libraries, tokens, and accessibility standards at scale.",
+      "description": "Product designer building and maintaining component libraries, tokens, and accessibility standards at scale. Use PROACTIVELY before adding a new shared component, or when the UI has visibly drifted from existing tokens.",
       "version": "0.1.0",
       "author": {
         "name": "Cognivexa"
@@ -549,7 +549,7 @@
       "name": "fpa-modeling-specialist",
       "source": "./plugins/fpa-modeling-specialist",
       "displayName": "FP&A Modeling Specialist",
-      "description": "FP&A specialist building budget-vs-actual models, scenario plans, and board-ready financial packages.",
+      "description": "FP&A specialist building budget-vs-actual models, scenario plans, and board-ready financial packages. Use PROACTIVELY when actuals diverge from budget or before a board financial package is due.",
       "version": "0.1.0",
       "author": {
         "name": "Cognivexa"
@@ -565,7 +565,7 @@
       "name": "fractional-cfo-advisor",
       "source": "./plugins/fractional-cfo-advisor",
       "displayName": "Fractional CFO Advisor",
-      "description": "Fractional CFO advisor building financial models, runway analysis, and board-ready reporting for growing companies.",
+      "description": "Fractional CFO advisor building financial models, runway analysis, and board-ready reporting for growing companies. Use PROACTIVELY before a board meeting or when the runway model hasn't been updated against the actual cash position.",
       "version": "0.1.0",
       "author": {
         "name": "Cognivexa"
@@ -581,7 +581,7 @@
       "name": "growth-marketing-strategist",
       "source": "./plugins/growth-marketing-strategist",
       "displayName": "Growth Marketing Strategist",
-      "description": "Growth strategist designing acquisition experiments, lifecycle funnels, and channel mix across paid and organic.",
+      "description": "Growth strategist designing acquisition experiments, lifecycle funnels, and channel mix across paid and organic. Use PROACTIVELY when acquisition or retention metrics stall, or before committing budget to a new channel.",
       "version": "0.1.0",
       "author": {
         "name": "Cognivexa"
@@ -597,7 +597,7 @@
       "name": "incident-response-threat-hunter",
       "source": "./plugins/incident-response-threat-hunter",
       "displayName": "Incident Response & Threat Hunter",
-      "description": "A senior incident responder who reconstructs attacker timelines from logs and EDR telemetry and turns each investigation into a lasting detection rule. Keeps containment decisive while preserving evidence for later analysis.",
+      "description": "A senior incident responder who reconstructs attacker timelines from logs and EDR telemetry and turns each investigation into a lasting detection rule. Keeps containment decisive while preserving evidence for later analysis. Use immediately when a security alert is confirmed as a true positive, or a breach is suspected.",
       "version": "0.1.0",
       "author": {
         "name": "Cognivexa"
@@ -613,7 +613,7 @@
       "name": "information-architecture-planner",
       "source": "./plugins/information-architecture-planner",
       "displayName": "Information Architecture Planner",
-      "description": "Structures navigation, taxonomies, and content hierarchies so users can find what they need in two or three clicks, using card-sorting and tree-testing logic rather than guesswork.",
+      "description": "Structures navigation, taxonomies, and content hierarchies so users can find what they need in two or three clicks, using card-sorting and tree-testing logic rather than guesswork. Use PROACTIVELY when navigation complaints recur, or before restructuring a content-heavy product's information architecture.",
       "version": "0.1.0",
       "author": {
         "name": "Cognivexa"
@@ -647,7 +647,7 @@
       "name": "infrastructure-as-code-architect",
       "source": "./plugins/infrastructure-as-code-architect",
       "displayName": "Infrastructure as Code Architect",
-      "description": "A senior cloud infrastructure architect who turns hand-run console changes into versioned, reviewable Terraform modules with drift detection built in. Specializes in multi-account AWS and GCP landing zones that survive team growth.",
+      "description": "A senior cloud infrastructure architect who turns hand-run console changes into versioned, reviewable Terraform modules with drift detection built in. Specializes in multi-account AWS and GCP landing zones that survive team growth. Use PROACTIVELY when manual cloud console changes are suspected, or before a new account or module is provisioned.",
       "version": "0.1.0",
       "author": {
         "name": "Cognivexa"
@@ -664,7 +664,7 @@
       "name": "internal-change-comms-lead",
       "source": "./plugins/internal-change-comms-lead",
       "displayName": "Internal Change Communication Lead",
-      "description": "Leads internal communication strategy for reorgs, restructurings, and major policy shifts, translating leadership decisions into messaging employees can trust and act on.",
+      "description": "Leads internal communication strategy for reorgs, restructurings, and major policy shifts, translating leadership decisions into messaging employees can trust and act on. Use PROACTIVELY before any reorg, restructuring, or major policy change is announced.",
       "version": "0.1.0",
       "author": {
         "name": "Cognivexa"
@@ -697,7 +697,7 @@
       "name": "llm-eval-prompt-engineer",
       "source": "./plugins/llm-eval-prompt-engineer",
       "displayName": "LLM Evaluation & Prompt Engineering Specialist",
-      "description": "Builds rigorous eval harnesses and iterates on prompts with the discipline of an experimentalist, catching regressions that ad-hoc 'looks good to me' testing misses.",
+      "description": "Builds rigorous eval harnesses and iterates on prompts with the discipline of an experimentalist, catching regressions that ad-hoc 'looks good to me' testing misses. Use PROACTIVELY before shipping a prompt change, or when \"looks good to me\" testing is the only quality signal in place.",
       "version": "0.1.0",
       "author": {
         "name": "Cognivexa"
@@ -714,7 +714,7 @@
       "name": "long-form-copywriter",
       "source": "./plugins/long-form-copywriter",
       "displayName": "Long-form Copywriter",
-      "description": "Direct-response copywriter crafting landing pages, email sequences, and case studies that convert without hype.",
+      "description": "Direct-response copywriter crafting landing pages, email sequences, and case studies that convert without hype. Use immediately after proof points and offer details are gathered, before a landing page or sequence goes into design.",
       "version": "0.1.0",
       "author": {
         "name": "Cognivexa"
@@ -730,7 +730,7 @@
       "name": "market-research-analyst",
       "source": "./plugins/market-research-analyst",
       "displayName": "Market Research Analyst",
-      "description": "Research analyst synthesizing competitive landscapes, customer interviews, and market sizing into decision-ready briefs.",
+      "description": "Research analyst synthesizing competitive landscapes, customer interviews, and market sizing into decision-ready briefs. Use PROACTIVELY before a positioning, pricing, or market-entry decision needs to be made.",
       "version": "0.1.0",
       "author": {
         "name": "Cognivexa"
@@ -762,7 +762,7 @@
       "name": "ml-monitoring-drift-engineer",
       "source": "./plugins/ml-monitoring-drift-engineer",
       "displayName": "ML Monitoring & Drift Engineer",
-      "description": "Keeps production models honest after launch by tracking feature drift, label delay, and silent performance decay before it shows up in business metrics.",
+      "description": "Keeps production models honest after launch by tracking feature drift, label delay, and silent performance decay before it shows up in business metrics. Use PROACTIVELY after model launch, and immediately when a business metric dips unexpectedly.",
       "version": "0.1.0",
       "author": {
         "name": "Cognivexa"
@@ -812,7 +812,7 @@
       "name": "people-operations-coordinator",
       "source": "./plugins/people-operations-coordinator",
       "displayName": "People Operations Coordinator",
-      "description": "People operations coordinator building onboarding workflows, policy documentation, and clean org-change processes.",
+      "description": "People operations coordinator building onboarding workflows, policy documentation, and clean org-change processes. Use PROACTIVELY when building or auditing an onboarding, offboarding, or role-change process.",
       "version": "0.1.0",
       "author": {
         "name": "Cognivexa"
@@ -828,7 +828,7 @@
       "name": "personal-productivity-coach",
       "source": "./plugins/personal-productivity-coach",
       "displayName": "Personal Productivity Coach",
-      "description": "Productivity coach turning scattered task lists into prioritized, time-boxed plans that actually get finished.",
+      "description": "Productivity coach turning scattered task lists into prioritized, time-boxed plans that actually get finished. Use PROACTIVELY when a task list has grown unmanageable or before planning the week ahead.",
       "version": "0.1.0",
       "author": {
         "name": "Cognivexa"
@@ -876,7 +876,7 @@
       "name": "process-improvement-analyst",
       "source": "./plugins/process-improvement-analyst",
       "displayName": "Process Improvement Analyst",
-      "description": "Operations analyst mapping workflows, finding the real bottleneck, and designing SOPs people actually follow.",
+      "description": "Operations analyst mapping workflows, finding the real bottleneck, and designing SOPs people actually follow. Use PROACTIVELY when a workflow is a recurring source of complaints or delay.",
       "version": "0.1.0",
       "author": {
         "name": "Cognivexa"
@@ -892,7 +892,7 @@
       "name": "product-requirements-strategist",
       "source": "./plugins/product-requirements-strategist",
       "displayName": "Product Requirements Strategist",
-      "description": "Senior product manager turning fuzzy feature requests into PRDs with explicit success metrics and scope boundaries.",
+      "description": "Senior product manager turning fuzzy feature requests into PRDs with explicit success metrics and scope boundaries. Use PROACTIVELY when a feature request arrives without a written spec, before engineering estimates a project.",
       "version": "0.1.0",
       "author": {
         "name": "Cognivexa"
@@ -957,7 +957,7 @@
       "name": "rag-pipeline-architect",
       "source": "./plugins/rag-pipeline-architect",
       "displayName": "RAG Pipeline Architect",
-      "description": "Designs and hardens retrieval-augmented generation pipelines, from chunking strategy through reranking, for teams that need grounded answers instead of confident-sounding guesses.",
+      "description": "Designs and hardens retrieval-augmented generation pipelines, from chunking strategy through reranking, for teams that need grounded answers instead of confident-sounding guesses. Use PROACTIVELY when generated answers are ungrounded, or when a retrieval eval set doesn't exist yet.",
       "version": "0.1.0",
       "author": {
         "name": "Cognivexa"
@@ -990,7 +990,7 @@
       "name": "regulatory-change-monitor",
       "source": "./plugins/regulatory-change-monitor",
       "displayName": "Regulatory Change Monitor",
-      "description": "Compliance analyst tracking relevant regulatory changes and translating them into concrete impact assessments.",
+      "description": "Compliance analyst tracking relevant regulatory changes and translating them into concrete impact assessments. Use PROACTIVELY on a recurring cadence to scan for regulatory changes in your operating jurisdictions.",
       "version": "0.1.0",
       "author": {
         "name": "Cognivexa"
@@ -1006,7 +1006,7 @@
       "name": "rendering-strategy-engineer",
       "source": "./plugins/rendering-strategy-engineer",
       "displayName": "Rendering Strategy Engineer",
-      "description": "Chooses and tunes the right rendering strategy—SSR, SSG, ISR, or client-only—on a per-route basis, and untangles hydration mismatches that only show up in production.",
+      "description": "Chooses and tunes the right rendering strategy—SSR, SSG, ISR, or client-only—on a per-route basis, and untangles hydration mismatches that only show up in production. Use PROACTIVELY when TTI is slow, hydration errors appear in production logs, or before choosing a rendering mode for a new route.",
       "version": "0.1.0",
       "author": {
         "name": "Cognivexa"
@@ -1039,7 +1039,7 @@
       "name": "revenue-operations-analyst",
       "source": "./plugins/revenue-operations-analyst",
       "displayName": "Revenue Operations Analyst",
-      "description": "RevOps analyst keeping pipeline data clean and forecasts honest instead of aspirational.",
+      "description": "RevOps analyst keeping pipeline data clean and forecasts honest instead of aspirational. Use PROACTIVELY before a forecast call or when pipeline coverage looks off relative to target.",
       "version": "0.1.0",
       "author": {
         "name": "Cognivexa"
@@ -1055,7 +1055,7 @@
       "name": "roadmap-prioritization-lead",
       "source": "./plugins/roadmap-prioritization-lead",
       "displayName": "Roadmap Prioritization Lead",
-      "description": "Product operations lead running a defensible, ICE/RICE-scored backlog instead of a roadmap driven by whoever asked last.",
+      "description": "Product operations lead running a defensible, ICE/RICE-scored backlog instead of a roadmap driven by whoever asked last. Use PROACTIVELY when the backlog has grown past what the team can ship this quarter, or a loud request threatens to jump the queue.",
       "version": "0.1.0",
       "author": {
         "name": "Cognivexa"
@@ -1071,7 +1071,7 @@
       "name": "sales-proposal-engineer",
       "source": "./plugins/sales-proposal-engineer",
       "displayName": "Sales Proposal Engineer",
-      "description": "Sales engineer drafting RFP responses and proposals that answer the actual evaluation criteria instead of generic marketing copy.",
+      "description": "Sales engineer drafting RFP responses and proposals that answer the actual evaluation criteria instead of generic marketing copy. Use PROACTIVELY when an RFP or vendor security questionnaire arrives with a submission deadline.",
       "version": "0.1.0",
       "author": {
         "name": "Cognivexa"
@@ -1087,7 +1087,7 @@
       "name": "secrets-and-cloud-security-engineer",
       "source": "./plugins/secrets-and-cloud-security-engineer",
       "displayName": "Secrets & Cloud Security Engineer",
-      "description": "A senior cloud security engineer who hunts down exposed credentials and over-privileged IAM before attackers do. Specializes in vaulting, key rotation, and closing the gap between granted and used permissions.",
+      "description": "A senior cloud security engineer who hunts down exposed credentials and over-privileged IAM before attackers do. Specializes in vaulting, key rotation, and closing the gap between granted and used permissions. Use PROACTIVELY on a recurring cadence to scan for exposed credentials, and immediately after any suspected leak.",
       "version": "0.1.0",
       "author": {
         "name": "Cognivexa"
@@ -1137,7 +1137,7 @@
       "name": "site-reliability-engineer",
       "source": "./plugins/site-reliability-engineer",
       "displayName": "Site Reliability Engineer",
-      "description": "A senior SRE who builds SLO-driven alerting and on-call runbooks so incidents get caught by symptoms, not guesswork. Treats error budgets as the shared contract between reliability work and feature velocity.",
+      "description": "A senior SRE who builds SLO-driven alerting and on-call runbooks so incidents get caught by symptoms, not guesswork. Treats error budgets as the shared contract between reliability work and feature velocity. Use PROACTIVELY after a SEV incident, or when on-call alert volume feels disproportionate to actual outages.",
       "version": "0.1.0",
       "author": {
         "name": "Cognivexa"
@@ -1154,7 +1154,7 @@
       "name": "soc2-readiness-auditor",
       "source": "./plugins/soc2-readiness-auditor",
       "displayName": "SOC 2 Readiness Auditor",
-      "description": "Compliance auditor mapping security controls to SOC 2 trust criteria and organizing evidence before the real audit starts.",
+      "description": "Compliance auditor mapping security controls to SOC 2 trust criteria and organizing evidence before the real audit starts. Use PROACTIVELY when preparing for a SOC 2 audit window or after a significant infrastructure change.",
       "version": "0.1.0",
       "author": {
         "name": "Cognivexa"
@@ -1234,7 +1234,7 @@
       "name": "strategic-narrative-coach",
       "source": "./plugins/strategic-narrative-coach",
       "displayName": "Strategic Narrative Coach",
-      "description": "Executive communications coach shaping all-hands messaging and investor narrative around a consistent strategic story.",
+      "description": "Executive communications coach shaping all-hands messaging and investor narrative around a consistent strategic story. Use immediately before a major internal or external communication goes out, to check it against the existing narrative.",
       "version": "0.1.0",
       "author": {
         "name": "Cognivexa"
@@ -1282,7 +1282,7 @@
       "name": "technical-seo-auditor",
       "source": "./plugins/technical-seo-auditor",
       "displayName": "Technical SEO Auditor",
-      "description": "Elite technical SEO specialist auditing crawlability, Core Web Vitals, and structured data to recover organic visibility.",
+      "description": "Elite technical SEO specialist auditing crawlability, Core Web Vitals, and structured data to recover organic visibility. Use PROACTIVELY when organic traffic drops, before a CMS or framework migration, or when crawl and indexation issues are suspected.",
       "version": "0.1.0",
       "author": {
         "name": "Cognivexa"
@@ -1298,7 +1298,7 @@
       "name": "usability-heuristics-auditor",
       "source": "./plugins/usability-heuristics-auditor",
       "displayName": "Usability Heuristics Auditor",
-      "description": "Runs structured heuristic evaluations against established usability principles and product-specific conventions, turning vague \"this feels off\" feedback into specific, prioritized usability findings.",
+      "description": "Runs structured heuristic evaluations against established usability principles and product-specific conventions, turning vague \"this feels off\" feedback into specific, prioritized usability findings. Use PROACTIVELY before a launch, or when user feedback about a flow is vague, such as \"this feels off.\"",
       "version": "0.1.0",
       "author": {
         "name": "Cognivexa"
@@ -1315,7 +1315,7 @@
       "name": "user-research-ops-manager",
       "source": "./plugins/user-research-ops-manager",
       "displayName": "User Research Ops Manager",
-      "description": "Research operations manager running the recruiting, session logistics, and synthesis pipeline behind user research.",
+      "description": "Research operations manager running the recruiting, session logistics, and synthesis pipeline behind user research. Use PROACTIVELY before recruiting starts for a new research study.",
       "version": "0.1.0",
       "author": {
         "name": "Cognivexa"
@@ -1331,7 +1331,7 @@
       "name": "ux-writing-microcopy-specialist",
       "source": "./plugins/ux-writing-microcopy-specialist",
       "displayName": "UX Writing Microcopy Specialist",
-      "description": "Rewrites buttons, error messages, empty states, and confirmation dialogs so every word carries its weight, aligning tone and clarity across the entire product surface.",
+      "description": "Rewrites buttons, error messages, empty states, and confirmation dialogs so every word carries its weight, aligning tone and clarity across the entire product surface. Use immediately after new flows, errors, or empty states are designed but before copy is finalized.",
       "version": "0.1.0",
       "author": {
         "name": "Cognivexa"
@@ -1364,7 +1364,7 @@
       "name": "vendor-management-specialist",
       "source": "./plugins/vendor-management-specialist",
       "displayName": "Vendor Management Specialist",
-      "description": "Vendor management specialist tracking contracts, renewal dates, and spend so nothing auto-renews unnoticed.",
+      "description": "Vendor management specialist tracking contracts, renewal dates, and spend so nothing auto-renews unnoticed. Use PROACTIVELY ahead of contract renewal windows or when reviewing SaaS and vendor spend.",
       "version": "0.1.0",
       "author": {
         "name": "Cognivexa"
@@ -1380,7 +1380,7 @@
       "name": "web-perf-budget-keeper",
       "source": "./plugins/web-perf-budget-keeper",
       "displayName": "Web Performance Budget Keeper",
-      "description": "Diagnoses and fixes real-world Core Web Vitals regressions—LCP, INP, CLS—by tracing render-blocking assets and JS execution cost back to the commits that introduced them.",
+      "description": "Diagnoses and fixes real-world Core Web Vitals regressions—LCP, INP, CLS—by tracing render-blocking assets and JS execution cost back to the commits that introduced them. Use PROACTIVELY when Core Web Vitals regress after a release, or before a performance-sensitive launch.",
       "version": "0.1.0",
       "author": {
         "name": "Cognivexa"
@@ -1397,7 +1397,7 @@
       "name": "workflow-automation-builder",
       "source": "./plugins/workflow-automation-builder",
       "displayName": "Workflow Automation Builder",
-      "description": "Automation engineer wiring scripts, cron jobs, and no-code triggers into dependable, observable workflows.",
+      "description": "Automation engineer wiring scripts, cron jobs, and no-code triggers into dependable, observable workflows. Use PROACTIVELY when a manual process is repeated more than a few times a week or has caused a missed step before.",
       "version": "0.1.0",
       "author": {
         "name": "Cognivexa"

@@ -1,12 +1,16 @@
 ---
 name: board-deck-builder
 description: Structure a board meeting deck around decisions needed, with metrics and narrative in a consistent order.
-argument-hint: <meeting-topic>
+argument-hint: [meeting-topic]
 ---
 
 # Board Deck Builder
 
 Lead with the decision the board needs to make, not a wall of status updates.
+
+## Input
+
+$ARGUMENTS
 
 ## How It Works
 

@@ -1,12 +1,16 @@
 ---
 name: deal-desk-checklist
 description: Review a proposed deal against discount and approval policy before it goes to signature.
-argument-hint: <deal-summary>
+argument-hint: [deal-summary]
 ---
 
 # Deal Desk Checklist
 
 Catch policy violations before the deal reaches signature, not after.
+
+## Input
+
+$ARGUMENTS
 
 ## How It Works
 

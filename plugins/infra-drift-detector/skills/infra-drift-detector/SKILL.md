@@ -1,12 +1,16 @@
 ---
 name: infra-drift-detector
 description: Compares a Terraform or Pulumi state file against the live cloud provider API to surface unmanaged changes, then generates a remediation plan to reconcile or import them.
-argument-hint: <terraform-state-path>
+argument-hint: [terraform-state-path]
 ---
 
 # Infra Drift Detector
 
 Finds the manual console changes nobody told the pipeline about, before they cause the next 2am incident.
+
+## Input
+
+$ARGUMENTS
 
 ## How It Works
 

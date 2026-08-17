@@ -1,12 +1,16 @@
 ---
 name: dataset-cleaner
 description: Clean a messy dataset: standardize types, handle missing values deliberately, and log every transformation applied.
-argument-hint: <dataset-file>
+argument-hint: [dataset-file]
 ---
 
 # Dataset Cleaner
 
 Every cleaning decision is logged, so the cleaned dataset stays auditable.
+
+## Input
+
+$ARGUMENTS
 
 ## How It Works
 

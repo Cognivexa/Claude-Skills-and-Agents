@@ -1,12 +1,16 @@
 ---
 name: zettelkasten-notes
 description: Capture atomic notes and link them into a Zettelkasten-style knowledge graph instead of a flat, unsearchable notes dump.
-argument-hint: <note-text-or-file>
+argument-hint: [note-text-or-file]
 ---
 
 # Zettelkasten Notes
 
 Turn raw notes into atomic, linkable knowledge instead of a pile of unstructured text.
+
+## Input
+
+$ARGUMENTS
 
 ## How It Works
 

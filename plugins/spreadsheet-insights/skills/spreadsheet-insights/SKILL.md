@@ -1,12 +1,16 @@
 ---
 name: spreadsheet-insights
 description: Turn a raw spreadsheet into a short set of defensible insights, with the underlying calculation shown for each claim.
-argument-hint: <spreadsheet-file>
+argument-hint: [spreadsheet-file]
 ---
 
 # Spreadsheet Insights
 
 Every insight ships with its calculation attached, so nobody has to trust a number blindly.
+
+## Input
+
+$ARGUMENTS
 
 ## How It Works
 

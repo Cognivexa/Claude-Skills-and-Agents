@@ -1,12 +1,16 @@
 ---
 name: executive-briefing-digest
 description: Condense a long report or thread into a one-page executive brief with the decision and risk stated upfront.
-argument-hint: <source-document>
+argument-hint: [source-document]
 ---
 
 # Executive Briefing Digest
 
 One page, decision first, everything else in an appendix.
+
+## Input
+
+$ARGUMENTS
 
 ## How It Works
 

@@ -124,6 +124,12 @@ export default function SkillDetail() {
                 <h3>{skill.name}</h3>
                 <p>{skill.intro}</p>
 
+                <h3>Input</h3>
+                <div className="code-block">$ARGUMENTS</div>
+                <p style={{ marginTop: 6 }}>
+                  Substituted with whatever follows the command, matching <code>{skill.argumentHint}</code>.
+                </p>
+
                 <h3>How It Works</h3>
                 <ol>
                   {visibleSteps.map((step, i) => (

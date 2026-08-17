@@ -1,12 +1,16 @@
 ---
 name: secrets-in-code-scanner
 description: Sweeps repository history and working tree for hardcoded API keys, tokens, and credentials using entropy analysis and provider-specific pattern matching, then generates revocation steps.
-argument-hint: <repo-path>
+argument-hint: [repo-path]
 ---
 
 # Secrets In Code Scanner
 
 Finds the API key your teammate committed three months ago before an attacker does.
+
+## Input
+
+$ARGUMENTS
 
 ## How It Works
 

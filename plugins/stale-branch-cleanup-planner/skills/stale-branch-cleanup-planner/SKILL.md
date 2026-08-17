@@ -1,12 +1,16 @@
 ---
 name: stale-branch-cleanup-planner
 description: Scans all local and remote branches to find ones already merged, abandoned for 60+ days, or orphaned from deleted PRs, then produces a safe-to-delete list with the evidence behind each entry. It never deletes anything itself; it only outputs the plan and the exact git commands to run.
-argument-hint: <days-inactive-threshold>
+argument-hint: [days-inactive-threshold]
 ---
 
 # Stale Branch Cleanup Planner
 
 Tells you exactly which branches are safe to delete, and why, without touching a single one.
+
+## Input
+
+$ARGUMENTS
 
 ## How It Works
 

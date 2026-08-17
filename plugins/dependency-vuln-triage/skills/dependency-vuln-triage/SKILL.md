@@ -1,12 +1,16 @@
 ---
 name: dependency-vuln-triage
 description: Scans package manifests and lockfiles across npm, pip, and Maven for known CVEs, then ranks each finding by exploitability, reachability in your code, and available patch path.
-argument-hint: <lockfile-or-manifest-path>
+argument-hint: [lockfile-or-manifest-path]
 ---
 
 # Dependency Vulnerability Triage
 
 Cuts through hundreds of CVE alerts to the handful that are actually exploitable in your codebase.
+
+## Input
+
+$ARGUMENTS
 
 ## How It Works
 

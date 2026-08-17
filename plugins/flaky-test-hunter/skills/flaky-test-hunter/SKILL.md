@@ -1,12 +1,16 @@
 ---
 name: flaky-test-hunter
 description: Identify flaky tests from CI history, isolate the non-determinism, and propose a fix instead of a blanket retry.
-argument-hint: <ci-log-or-test-path>
+argument-hint: [ci-log-or-test-path]
 ---
 
 # Flaky Test Hunter
 
 Find the actual source of non-determinism instead of papering over it with retries.
+
+## Input
+
+$ARGUMENTS
 
 ## How It Works
 

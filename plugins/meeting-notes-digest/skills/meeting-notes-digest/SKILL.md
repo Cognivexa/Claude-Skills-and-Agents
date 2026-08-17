@@ -1,12 +1,16 @@
 ---
 name: meeting-notes-digest
 description: Turn raw meeting notes or transcripts into decisions, action items with owners, and open questions.
-argument-hint: <transcript-or-notes>
+argument-hint: [transcript-or-notes]
 ---
 
 # Meeting Notes Digest
 
 Separate decisions from discussion, and action items from vague intentions.
+
+## Input
+
+$ARGUMENTS
 
 ## How It Works
 

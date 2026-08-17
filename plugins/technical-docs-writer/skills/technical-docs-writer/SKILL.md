@@ -1,12 +1,16 @@
 ---
 name: technical-docs-writer
 description: Produce API references, how-to guides, and conceptual docs that follow a consistent structure and stay honest about edge cases.
-argument-hint: <file-or-pattern>
+argument-hint: [file-or-pattern]
 ---
 
 # Technical Docs Writer
 
 Write documentation that a new engineer can follow without pinging the author.
+
+## Input
+
+$ARGUMENTS
 
 ## How It Works
 

@@ -1,12 +1,16 @@
 ---
 name: style-guide-enforcer
 description: Check prose against a project or brand style guide: terminology, tone, formatting, and voice consistency.
-argument-hint: <file-or-pattern>
+argument-hint: [file-or-pattern]
 ---
 
 # Style Guide Enforcer
 
 Enforce the style guide that already exists instead of relying on memory during review.
+
+## Input
+
+$ARGUMENTS
 
 ## How It Works
 

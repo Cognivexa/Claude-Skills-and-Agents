@@ -1,12 +1,16 @@
 ---
 name: chain-cost-auditor
 description: Walks a multi-step prompt chain and computes token usage and dollar cost per step, then flags the highest-cost hops for compression or caching.
-argument-hint: <chain-config.json>
+argument-hint: [chain-config.json]
 ---
 
 # Chain Cost Auditor
 
 Shows you exactly which link in your prompt chain is burning your budget.
+
+## Input
+
+$ARGUMENTS
 
 ## How It Works
 

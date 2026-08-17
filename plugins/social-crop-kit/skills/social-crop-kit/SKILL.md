@@ -1,12 +1,16 @@
 ---
 name: social-crop-kit
 description: Takes one source image and generates a full set of platform-ready crops (square, story, landscape, banner) using subject-aware framing so faces and focal points stay in frame.
-argument-hint: <source-image>
+argument-hint: [source-image]
 ---
 
 # Social Crop Kit
 
 One upload in, a full social media crop kit out, with nothing important cut off.
+
+## Input
+
+$ARGUMENTS
 
 ## How It Works
 

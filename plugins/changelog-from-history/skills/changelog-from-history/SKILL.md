@@ -1,12 +1,16 @@
 ---
 name: changelog-from-history
 description: Walks the git log between two tags, groups commits by Conventional Commit type (feat/fix/chore/breaking), and drafts a Keep-a-Changelog formatted entry with links to detected PR numbers. Breaking changes get pulled into a dedicated "Upgrade Notes" section.
-argument-hint: <from-tag>..<to-tag>
+argument-hint: [from-tag]..[to-tag]
 ---
 
 # Changelog Generator From Commit History
 
 Builds a publish-ready changelog straight from your commit history, no manual copy-pasting.
+
+## Input
+
+$ARGUMENTS
 
 ## How It Works
 

@@ -1,12 +1,16 @@
 ---
 name: alt-text-composer
 description: Generates concise, screen-reader-friendly alt text for batches of images by describing subject, action, and context while stripping redundant phrasing like 'image of'.
-argument-hint: <image-folder>
+argument-hint: [image-folder]
 ---
 
 # Alt Text Composer
 
 Makes an entire image library accessible without writing a single description by hand.
+
+## Input
+
+$ARGUMENTS
 
 ## How It Works
 

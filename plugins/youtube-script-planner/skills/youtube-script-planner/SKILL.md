@@ -1,12 +1,16 @@
 ---
 name: youtube-script-planner
 description: Plan a YouTube script with a retention-focused hook, timestamped beats, and a CTA placed where drop-off is lowest.
-argument-hint: <video-topic>
+argument-hint: [video-topic]
 ---
 
 # YouTube Script Planner
 
 Plan videos around retention curves, not just a topic outline.
+
+## Input
+
+$ARGUMENTS
 
 ## How It Works
 

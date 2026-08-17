@@ -33,7 +33,7 @@ export const SKILLS = [
     icon: '📚',
     description:
       'Guide for structuring a literature review: source triage, claim mapping, and gap identification across academic and industry sources.',
-    argumentHint: '<topic-or-question>',
+    argumentHint: '[topic-or-question]',
     tags: ['research', 'academic', 'synthesis'],
     intro: 'Structure a rigorous literature review instead of a summarized reading list.',
     howItWorks: [
@@ -56,7 +56,7 @@ export const SKILLS = [
     icon: '🗂️',
     description:
       'Capture atomic notes and link them into a Zettelkasten-style knowledge graph instead of a flat, unsearchable notes dump.',
-    argumentHint: '<note-text-or-file>',
+    argumentHint: '[note-text-or-file]',
     tags: ['notes', 'zettelkasten', 'knowledge-graph'],
     intro: 'Turn raw notes into atomic, linkable knowledge instead of a pile of unstructured text.',
     howItWorks: [
@@ -79,7 +79,7 @@ export const SKILLS = [
     icon: '📄',
     description:
       'Produce API references, how-to guides, and conceptual docs that follow a consistent structure and stay honest about edge cases.',
-    argumentHint: '<file-or-pattern>',
+    argumentHint: '[file-or-pattern]',
     tags: ['documentation', 'api-reference', 'style'],
     intro: 'Write documentation that a new engineer can follow without pinging the author.',
     howItWorks: [
@@ -102,7 +102,7 @@ export const SKILLS = [
     icon: '🎬',
     description:
       'Plan a YouTube script with a retention-focused hook, timestamped beats, and a CTA placed where drop-off is lowest.',
-    argumentHint: '<video-topic>',
+    argumentHint: '[video-topic]',
     tags: ['youtube', 'scriptwriting', 'retention'],
     intro: 'Plan videos around retention curves, not just a topic outline.',
     howItWorks: [
@@ -125,7 +125,7 @@ export const SKILLS = [
     icon: '🧱',
     description:
       'Scaffold a REST resource end to end: route, handler, validation schema, and tests, following the project\'s existing conventions.',
-    argumentHint: '<resource-name>',
+    argumentHint: '[resource-name]',
     tags: ['scaffolding', 'rest', 'codegen'],
     intro: 'Generate a new REST resource that matches existing project conventions instead of inventing new ones.',
     howItWorks: [
@@ -148,7 +148,7 @@ export const SKILLS = [
     icon: '📈',
     description:
       'Turn a raw spreadsheet into a short set of defensible insights, with the underlying calculation shown for each claim.',
-    argumentHint: '<spreadsheet-file>',
+    argumentHint: '[spreadsheet-file]',
     tags: ['spreadsheets', 'analysis', 'reporting'],
     intro: 'Every insight ships with its calculation attached, so nobody has to trust a number blindly.',
     howItWorks: [
@@ -171,7 +171,7 @@ export const SKILLS = [
     icon: '🎯',
     description:
       'Identify flaky tests from CI history, isolate the non-determinism, and propose a fix instead of a blanket retry.',
-    argumentHint: '<ci-log-or-test-path>',
+    argumentHint: '[ci-log-or-test-path]',
     tags: ['testing', 'ci', 'flakiness'],
     intro: 'Find the actual source of non-determinism instead of papering over it with retries.',
     howItWorks: [
@@ -194,7 +194,7 @@ export const SKILLS = [
     icon: '🗄️',
     description:
       'Organize files and folders by understanding context and content, suggesting a clearer structure and flagging duplicates.',
-    argumentHint: '<directory>',
+    argumentHint: '[directory]',
     tags: ['file-management', 'organization', 'dedupe'],
     intro: 'Understand what files actually are before moving them, not just their extensions.',
     howItWorks: [
@@ -217,7 +217,7 @@ export const SKILLS = [
     icon: '📦',
     description:
       'A bundled collection of skills for new-hire onboarding: repo tour, glossary builder, and first-week task planner.',
-    argumentHint: '<repo-path>',
+    argumentHint: '[repo-path]',
     tags: ['onboarding', 'collection', 'bundle'],
     intro: 'A curated bundle so a new team member gets oriented without three days of Slack questions.',
     howItWorks: [
@@ -243,7 +243,7 @@ export const SKILLS = [
     icon: '🔗',
     description:
       'Design multi-step prompt chains with explicit inputs/outputs per step, so failures are traceable to one stage.',
-    argumentHint: '<task-description>',
+    argumentHint: '[task-description]',
     tags: ['prompting', 'llm', 'pipelines'],
     intro: 'Break a fuzzy multi-step task into named stages with clear inputs and outputs.',
     howItWorks: [
@@ -266,7 +266,7 @@ export const SKILLS = [
     icon: '🧹',
     description:
       'Clean a messy dataset: standardize types, handle missing values deliberately, and log every transformation applied.',
-    argumentHint: '<dataset-file>',
+    argumentHint: '[dataset-file]',
     tags: ['data-cleaning', 'etl', 'quality'],
     intro: 'Every cleaning decision is logged, so the cleaned dataset stays auditable.',
     howItWorks: [
@@ -289,7 +289,7 @@ export const SKILLS = [
     icon: '🗒️',
     description:
       'Turn raw meeting notes or transcripts into decisions, action items with owners, and open questions.',
-    argumentHint: '<transcript-or-notes>',
+    argumentHint: '[transcript-or-notes]',
     tags: ['meetings', 'summarization', 'action-items'],
     intro: 'Separate decisions from discussion, and action items from vague intentions.',
     howItWorks: [
@@ -312,7 +312,7 @@ export const SKILLS = [
     icon: '🩹',
     description:
       'Triage a reported regression: bisect the likely commit range, reproduce locally, and hand off with a minimal repro.',
-    argumentHint: '<bug-report>',
+    argumentHint: '[bug-report]',
     tags: ['debugging', 'regression', 'bisect'],
     intro: 'Hand off a minimal, reproducible case instead of a vague bug report.',
     howItWorks: [
@@ -335,7 +335,7 @@ export const SKILLS = [
     icon: '✒️',
     description:
       'Check prose against a project or brand style guide: terminology, tone, formatting, and voice consistency.',
-    argumentHint: '<file-or-pattern>',
+    argumentHint: '[file-or-pattern]',
     tags: ['style-guide', 'consistency', 'editing'],
     intro: 'Enforce the style guide that already exists instead of relying on memory during review.',
     howItWorks: [
@@ -358,7 +358,7 @@ export const SKILLS = [
     icon: '📋',
     description:
       'Draft a structured PRD from a rough feature request: problem statement, scope, success metrics, and open questions.',
-    argumentHint: '<feature-request>',
+    argumentHint: '[feature-request]',
     tags: ['product', 'prd', 'requirements'],
     intro: 'Turn a rough feature request into a spec engineering can actually estimate against.',
     howItWorks: [
@@ -381,7 +381,7 @@ export const SKILLS = [
     icon: '🚦',
     description:
       'Plan a staged feature flag rollout with explicit rollback criteria and monitoring checkpoints per stage.',
-    argumentHint: '<feature-name>',
+    argumentHint: '[feature-name]',
     tags: ['feature-flags', 'rollout', 'release'],
     intro: 'Plan the rollback criteria before the rollout starts, not after something breaks.',
     howItWorks: [
@@ -404,7 +404,7 @@ export const SKILLS = [
     icon: '📜',
     description:
       'Compare an internal policy document against a named framework or checklist and report specific gaps.',
-    argumentHint: '<policy-doc> <framework-name>',
+    argumentHint: '[policy-doc] [framework-name]',
     tags: ['compliance', 'policy', 'gap-analysis'],
     intro: 'Report specific, cited gaps instead of a vague "mostly compliant" verdict.',
     howItWorks: [
@@ -427,7 +427,7 @@ export const SKILLS = [
     icon: '🗃️',
     description:
       'Organize evidence artifacts against a control list so audit prep isn\'t a last-minute scramble.',
-    argumentHint: '<control-list>',
+    argumentHint: '[control-list]',
     tags: ['audit', 'evidence', 'controls'],
     intro: 'Know exactly which controls are missing evidence before the auditor asks.',
     howItWorks: [
@@ -450,7 +450,7 @@ export const SKILLS = [
     icon: '🗂️',
     description:
       'Structure a board meeting deck around decisions needed, with metrics and narrative in a consistent order.',
-    argumentHint: '<meeting-topic>',
+    argumentHint: '[meeting-topic]',
     tags: ['board-deck', 'executive', 'reporting'],
     intro: 'Lead with the decision the board needs to make, not a wall of status updates.',
     howItWorks: [
@@ -473,7 +473,7 @@ export const SKILLS = [
     icon: '📰',
     description:
       'Condense a long report or thread into a one-page executive brief with the decision and risk stated upfront.',
-    argumentHint: '<source-document>',
+    argumentHint: '[source-document]',
     tags: ['executive-brief', 'summarization'],
     intro: 'One page, decision first, everything else in an appendix.',
     howItWorks: [
@@ -496,7 +496,7 @@ export const SKILLS = [
     icon: '📝',
     description:
       'Turn a described process into a numbered standard operating procedure with clear ownership at each step.',
-    argumentHint: '<process-description>',
+    argumentHint: '[process-description]',
     tags: ['sop', 'operations', 'documentation'],
     intro: 'Write the SOP with the fewest steps that still actually work.',
     howItWorks: [
@@ -519,7 +519,7 @@ export const SKILLS = [
     icon: '📇',
     description:
       'Extract renewal dates, notice periods, and auto-renewal terms from contract text into a tracked summary.',
-    argumentHint: '<contract-file>',
+    argumentHint: '[contract-file]',
     tags: ['contracts', 'vendor-management', 'procurement'],
     intro: 'Never let an auto-renewal clause be a surprise again.',
     howItWorks: [
@@ -542,7 +542,7 @@ export const SKILLS = [
     icon: '💲',
     description:
       'Build a pricing or tiering table for a sales proposal from a rate card and the deal\'s specific terms.',
-    argumentHint: '<rate-card> <deal-terms>',
+    argumentHint: '[rate-card] [deal-terms]',
     tags: ['pricing', 'proposals', 'sales'],
     intro: 'Generate a pricing table that matches the deal terms exactly, not a generic template.',
     howItWorks: [
@@ -565,7 +565,7 @@ export const SKILLS = [
     icon: '✅',
     description:
       'Review a proposed deal against discount and approval policy before it goes to signature.',
-    argumentHint: '<deal-summary>',
+    argumentHint: '[deal-summary]',
     tags: ['deal-desk', 'sales-ops', 'approvals'],
     intro: 'Catch policy violations before the deal reaches signature, not after.',
     howItWorks: [
@@ -588,7 +588,7 @@ export const SKILLS = [
     icon: '🐳',
     description:
       'Scans Dockerfiles and Compose files for insecure base images, root-user execution, exposed secrets, and missing multi-stage build patterns, then rewrites offending lines with hardened equivalents.',
-    argumentHint: '<dockerfile-path>',
+    argumentHint: '[dockerfile-path]',
     tags: ['docker', 'container-security', 'hardening', 'ci-cd'],
     intro: 'Turns a sloppy Dockerfile into a production-hardened one in seconds, not a code review cycle.',
     howItWorks: [
@@ -611,7 +611,7 @@ export const SKILLS = [
     icon: '⚙️',
     description:
       'Lints GitHub Actions, GitLab CI, and CircleCI YAML configs for slow, flaky, or insecure pipeline patterns such as unpinned actions, missing caching, and unbounded job timeouts.',
-    argumentHint: '<workflow-file-or-dir>',
+    argumentHint: '[workflow-file-or-dir]',
     tags: ['ci-cd', 'yaml-lint', 'github-actions', 'pipeline'],
     intro: 'Catches the pipeline mistakes that quietly cost you build minutes and security posture before they ship.',
     howItWorks: [
@@ -634,7 +634,7 @@ export const SKILLS = [
     icon: '🛰️',
     description:
       'Compares a Terraform or Pulumi state file against the live cloud provider API to surface unmanaged changes, then generates a remediation plan to reconcile or import them.',
-    argumentHint: '<terraform-state-path>',
+    argumentHint: '[terraform-state-path]',
     tags: ['terraform', 'drift-detection', 'iac', 'cloud-ops'],
     intro: 'Finds the manual console changes nobody told the pipeline about, before they cause the next 2am incident.',
     howItWorks: [
@@ -657,7 +657,7 @@ export const SKILLS = [
     icon: '🛡️',
     description:
       'Scans package manifests and lockfiles across npm, pip, and Maven for known CVEs, then ranks each finding by exploitability, reachability in your code, and available patch path.',
-    argumentHint: '<lockfile-or-manifest-path>',
+    argumentHint: '[lockfile-or-manifest-path]',
     tags: ['vulnerability-scan', 'dependency-management', 'cve', 'sca'],
     intro: 'Cuts through hundreds of CVE alerts to the handful that are actually exploitable in your codebase.',
     howItWorks: [
@@ -680,7 +680,7 @@ export const SKILLS = [
     icon: '🔑',
     description:
       'Sweeps repository history and working tree for hardcoded API keys, tokens, and credentials using entropy analysis and provider-specific pattern matching, then generates revocation steps.',
-    argumentHint: '<repo-path>',
+    argumentHint: '[repo-path]',
     tags: ['secrets-detection', 'credential-leak', 'git-history', 'sast'],
     intro: 'Finds the API key your teammate committed three months ago before an attacker does.',
     howItWorks: [
@@ -703,7 +703,7 @@ export const SKILLS = [
     icon: '📋',
     description:
       'Drafts answers to vendor security questionnaires and SOC 2/ISO 27001 audit requests by pulling evidence from your existing policy docs, architecture diagrams, and control matrices.',
-    argumentHint: '<questionnaire-file>',
+    argumentHint: '[questionnaire-file]',
     tags: ['soc2', 'compliance', 'questionnaire', 'audit-prep'],
     intro: 'Turns a 200-question vendor security review from a week of scrambling into an afternoon of review.',
     howItWorks: [
@@ -726,7 +726,7 @@ export const SKILLS = [
     icon: '📱',
     description:
       'Turns a range of git commits or a sprint\'s ticket list into polished, user-facing release notes formatted for App Store Connect and Google Play listings. Produces both a full changelog and a trimmed "what\'s new" version that respects each store\'s character limits.',
-    argumentHint: '<version-tag-or-commit-range>',
+    argumentHint: '[version-tag-or-commit-range]',
     tags: ['release-notes', 'app-store', 'changelog', 'mobile-release'],
     intro: 'Turns raw commit noise into store-ready release notes in one pass.',
     howItWorks: [
@@ -749,7 +749,7 @@ export const SKILLS = [
     icon: '🧯',
     description:
       'Parses symbolicated iOS/Android crash logs from Crashlytics or Sentry exports and clusters them by root stack frame, ranking each cluster by device, OS version, and affected-user impact. Drafts a short triage note per cluster with the suspected file/line and repro hints.',
-    argumentHint: '<crash-log-export-path>',
+    argumentHint: '[crash-log-export-path]',
     tags: ['crash-triage', 'crashlytics', 'ios', 'android'],
     intro: 'Turns a flood of crash logs into a ranked, actionable fix list.',
     howItWorks: [
@@ -772,7 +772,7 @@ export const SKILLS = [
     icon: '📦',
     description:
       'Analyzes an APK/AAB or IPA build artifact to break down size by module, asset type, and third-party library, then diffs against the previous release to flag regressions. Suggests concrete trims such as duplicate asset removal, unused resource stripping, and lazy-loadable modules.',
-    argumentHint: '<build-artifact-path>',
+    argumentHint: '[build-artifact-path]',
     tags: ['bundle-size', 'apk', 'ipa', 'performance'],
     intro: 'Finds exactly what\'s bloating your app and how much each fix would save.',
     howItWorks: [
@@ -795,7 +795,7 @@ export const SKILLS = [
     icon: '✅',
     description:
       'Reviews a range of commits against Conventional Commits and imperative-mood style rules, flagging vague messages like "fix stuff" and suggesting rewrites grounded in the actual diff content. Also checks subject-line length and body wrapping conventions.',
-    argumentHint: '<commit-range>',
+    argumentHint: '[commit-range]',
     tags: ['commit-messages', 'conventional-commits', 'linting'],
     intro: 'Catches lazy commit messages before they land in permanent history.',
     howItWorks: [
@@ -818,7 +818,7 @@ export const SKILLS = [
     icon: '📜',
     description:
       'Walks the git log between two tags, groups commits by Conventional Commit type (feat/fix/chore/breaking), and drafts a Keep-a-Changelog formatted entry with links to detected PR numbers. Breaking changes get pulled into a dedicated "Upgrade Notes" section.',
-    argumentHint: '<from-tag>..<to-tag>',
+    argumentHint: '[from-tag]..[to-tag]',
     tags: ['changelog', 'git-log', 'release-notes'],
     intro: 'Builds a publish-ready changelog straight from your commit history, no manual copy-pasting.',
     howItWorks: [
@@ -841,7 +841,7 @@ export const SKILLS = [
     icon: '🧹',
     description:
       'Scans all local and remote branches to find ones already merged, abandoned for 60+ days, or orphaned from deleted PRs, then produces a safe-to-delete list with the evidence behind each entry. It never deletes anything itself; it only outputs the plan and the exact git commands to run.',
-    argumentHint: '<days-inactive-threshold>',
+    argumentHint: '[days-inactive-threshold]',
     tags: ['branch-cleanup', 'git-branches', 'repo-hygiene'],
     intro: 'Tells you exactly which branches are safe to delete, and why, without touching a single one.',
     howItWorks: [
@@ -864,7 +864,7 @@ export const SKILLS = [
     icon: '🧪',
     description:
       'Runs your prompt templates against a versioned snapshot suite before every deploy, diffing model outputs field-by-field to flag silent behavior drift.',
-    argumentHint: '<prompt-dir>',
+    argumentHint: '[prompt-dir]',
     tags: ['prompt-testing', 'regression', 'llm-eval', 'ci'],
     intro: 'Catches silent prompt breakage before it reaches production, not after.',
     howItWorks: [
@@ -887,7 +887,7 @@ export const SKILLS = [
     icon: '📋',
     description:
       'Builds structured evaluation datasets from raw production transcripts by clustering similar queries, sampling edge cases, and drafting rubric-based grading criteria.',
-    argumentHint: '<logs-path>',
+    argumentHint: '[logs-path]',
     tags: ['eval-sets', 'dataset-curation', 'rubrics'],
     intro: 'Turns a pile of production transcripts into a defensible, reusable eval suite in minutes.',
     howItWorks: [
@@ -910,7 +910,7 @@ export const SKILLS = [
     icon: '💸',
     description:
       'Walks a multi-step prompt chain and computes token usage and dollar cost per step, then flags the highest-cost hops for compression or caching.',
-    argumentHint: '<chain-config.json>',
+    argumentHint: '[chain-config.json]',
     tags: ['token-cost', 'prompt-chains', 'cost-optimization'],
     intro: 'Shows you exactly which link in your prompt chain is burning your budget.',
     howItWorks: [
@@ -933,7 +933,7 @@ export const SKILLS = [
     icon: '🖼️',
     description:
       'Generates concise, screen-reader-friendly alt text for batches of images by describing subject, action, and context while stripping redundant phrasing like \'image of\'.',
-    argumentHint: '<image-folder>',
+    argumentHint: '[image-folder]',
     tags: ['alt-text', 'accessibility', 'image-batch'],
     intro: 'Makes an entire image library accessible without writing a single description by hand.',
     howItWorks: [
@@ -956,7 +956,7 @@ export const SKILLS = [
     icon: '🗂️',
     description:
       'Renames and sorts a messy folder of design exports into a consistent convention (project-type-variant-size-version) and rebuilds folder structure by asset type.',
-    argumentHint: '<source-folder>',
+    argumentHint: '[source-folder]',
     tags: ['file-naming', 'asset-organization', 'batch-rename'],
     intro: 'Turns a chaotic export dump into a predictable, searchable asset library in one pass.',
     howItWorks: [
@@ -979,7 +979,7 @@ export const SKILLS = [
     icon: '✂️',
     description:
       'Takes one source image and generates a full set of platform-ready crops (square, story, landscape, banner) using subject-aware framing so faces and focal points stay in frame.',
-    argumentHint: '<source-image>',
+    argumentHint: '[source-image]',
     tags: ['image-cropping', 'social-media', 'aspect-ratio'],
     intro: 'One upload in, a full social media crop kit out, with nothing important cut off.',
     howItWorks: [

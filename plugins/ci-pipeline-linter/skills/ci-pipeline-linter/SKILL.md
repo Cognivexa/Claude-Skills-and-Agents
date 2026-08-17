@@ -1,12 +1,16 @@
 ---
 name: ci-pipeline-linter
 description: Lints GitHub Actions, GitLab CI, and CircleCI YAML configs for slow, flaky, or insecure pipeline patterns such as unpinned actions, missing caching, and unbounded job timeouts.
-argument-hint: <workflow-file-or-dir>
+argument-hint: [workflow-file-or-dir]
 ---
 
 # CI Pipeline Linter
 
 Catches the pipeline mistakes that quietly cost you build minutes and security posture before they ship.
+
+## Input
+
+$ARGUMENTS
 
 ## How It Works
 

@@ -102,6 +102,10 @@ export default function AgentDetail() {
               <div className="fm-key">tools</div>
               <div className="fm-value">{agent.tools.join(', ')}</div>
             </div>
+            <div className="fm-row">
+              <div className="fm-key">model</div>
+              <div className="fm-value">{agent.model || 'inherit'}</div>
+            </div>
           </div>
 
           {mode === 'raw' ? (
@@ -151,6 +155,9 @@ export default function AgentDetail() {
                   </div>
                 </div>
               ))}
+
+              <h3>Output Format</h3>
+              <p>{agent.outputFormat}</p>
 
               <h3>Communication Protocol</h3>
               <p>Initialize by querying the context manager for the current engagement's requirements.</p>

@@ -1,12 +1,16 @@
 ---
 name: dockerfile-hardening-checker
 description: Scans Dockerfiles and Compose files for insecure base images, root-user execution, exposed secrets, and missing multi-stage build patterns, then rewrites offending lines with hardened equivalents.
-argument-hint: <dockerfile-path>
+argument-hint: [dockerfile-path]
 ---
 
 # Dockerfile Hardening Checker
 
 Turns a sloppy Dockerfile into a production-hardened one in seconds, not a code review cycle.
+
+## Input
+
+$ARGUMENTS
 
 ## How It Works
 

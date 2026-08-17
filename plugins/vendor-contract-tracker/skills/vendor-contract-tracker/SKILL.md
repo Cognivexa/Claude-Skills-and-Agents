@@ -1,12 +1,16 @@
 ---
 name: vendor-contract-tracker
 description: Extract renewal dates, notice periods, and auto-renewal terms from contract text into a tracked summary.
-argument-hint: <contract-file>
+argument-hint: [contract-file]
 ---
 
 # Vendor Contract Tracker
 
 Never let an auto-renewal clause be a surprise again.
+
+## Input
+
+$ARGUMENTS
 
 ## How It Works
 

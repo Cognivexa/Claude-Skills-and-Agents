@@ -1,12 +1,16 @@
 ---
 name: rest-api-scaffolder
 description: Scaffold a REST resource end to end: route, handler, validation schema, and tests, following the project's existing conventions.
-argument-hint: <resource-name>
+argument-hint: [resource-name]
 ---
 
 # REST API Scaffolder
 
 Generate a new REST resource that matches existing project conventions instead of inventing new ones.
+
+## Input
+
+$ARGUMENTS
 
 ## How It Works
 

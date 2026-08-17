@@ -1,12 +1,16 @@
 ---
 name: policy-gap-analyzer
 description: Compare an internal policy document against a named framework or checklist and report specific gaps.
-argument-hint: <policy-doc> <framework-name>
+argument-hint: [policy-doc] [framework-name]
 ---
 
 # Policy Gap Analyzer
 
 Report specific, cited gaps instead of a vague "mostly compliant" verdict.
+
+## Input
+
+$ARGUMENTS
 
 ## How It Works
 

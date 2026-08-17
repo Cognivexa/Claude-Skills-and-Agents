@@ -1,12 +1,16 @@
 ---
 name: literature-review-assistant
 description: Guide for structuring a literature review: source triage, claim mapping, and gap identification across academic and industry sources.
-argument-hint: <topic-or-question>
+argument-hint: [topic-or-question]
 ---
 
 # Literature Review Assistant
 
 Structure a rigorous literature review instead of a summarized reading list.
+
+## Input
+
+$ARGUMENTS
 
 ## How It Works
 

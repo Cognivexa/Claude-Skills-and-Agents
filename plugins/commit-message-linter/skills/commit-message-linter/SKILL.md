@@ -1,12 +1,16 @@
 ---
 name: commit-message-linter
 description: Reviews a range of commits against Conventional Commits and imperative-mood style rules, flagging vague messages like "fix stuff" and suggesting rewrites grounded in the actual diff content. Also checks subject-line length and body wrapping conventions.
-argument-hint: <commit-range>
+argument-hint: [commit-range]
 ---
 
 # Commit Message Quality Checker
 
 Catches lazy commit messages before they land in permanent history.
+
+## Input
+
+$ARGUMENTS
 
 ## How It Works
 

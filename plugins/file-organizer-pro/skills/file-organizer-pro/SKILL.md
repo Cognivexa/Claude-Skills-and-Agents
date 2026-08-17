@@ -1,12 +1,16 @@
 ---
 name: file-organizer-pro
 description: Organize files and folders by understanding context and content, suggesting a clearer structure and flagging duplicates.
-argument-hint: <directory>
+argument-hint: [directory]
 ---
 
 # File Organizer Pro
 
 Understand what files actually are before moving them, not just their extensions.
+
+## Input
+
+$ARGUMENTS
 
 ## How It Works
 

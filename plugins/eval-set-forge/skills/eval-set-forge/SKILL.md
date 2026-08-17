@@ -1,12 +1,16 @@
 ---
 name: eval-set-forge
 description: Builds structured evaluation datasets from raw production transcripts by clustering similar queries, sampling edge cases, and drafting rubric-based grading criteria.
-argument-hint: <logs-path>
+argument-hint: [logs-path]
 ---
 
 # Eval Set Forge
 
 Turns a pile of production transcripts into a defensible, reusable eval suite in minutes.
+
+## Input
+
+$ARGUMENTS
 
 ## How It Works
 
