@@ -34,8 +34,16 @@ per machine):**
 /plugin marketplace add Cognivexa/claude-skills-and-agents
 ```
 
-Type it exactly as shown, nothing added. You do this once no matter how
-many agents or skills from this repo you go on to install.
+Type it exactly as shown, nothing added. **This step installs nothing** —
+it only tells Claude Code where to find plugins in this repo. None of the
+88 plugins are downloaded yet. You do this once no matter how many agents
+or skills from this repo you go on to install afterward.
+
+There is no single-command shortcut that skips this step — Claude Code's
+plugin system always requires registering the marketplace before installing
+anything from it, even if you only ever want one plugin. A command like
+`/plugin marketplace add owner/repo/plugin-name` is not valid syntax and
+will fail; the plugin name never goes into the marketplace-add command.
 
 **Step 2 — install one specific agent or skill:**
 

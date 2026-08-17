@@ -59,11 +59,13 @@ export default function SkillDetail() {
 
         <CopyCommand label="1. Add this repo as a marketplace — run once, ever" command={`/plugin marketplace add ${MARKETPLACE_REPO}`} />
         <div className="install-warning">
-          Type this exactly as shown — just the repo, nothing appended. You only run this once per machine, no
-          matter how many agents or skills from this repo you plan to install.
+          Type this exactly as shown — just the repo, nothing appended. This step installs <strong>nothing</strong>{' '}
+          — it only tells Claude Code where to find plugins in this repo. None of the 88 plugins are downloaded
+          until you run step 2 for the specific one you want. You only run this once per machine, no matter how
+          many agents or skills from this repo you plan to install afterward.
         </div>
 
-        <CopyCommand label="2. Install this skill" command={`/plugin install ${skill.slug}@${MARKETPLACE_NAME}`} />
+        <CopyCommand label="2. Install only this skill — nothing else" command={`/plugin install ${skill.slug}@${MARKETPLACE_NAME}`} />
 
         <CopyCommand label="3. Use it" command={`/${skill.slug}:${skill.slug} ${skill.argumentHint}`} />
 
