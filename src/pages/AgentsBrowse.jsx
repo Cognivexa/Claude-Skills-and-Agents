@@ -3,12 +3,7 @@ import { useSearchParams } from 'react-router-dom'
 import { AGENTS, AGENT_CATEGORIES } from '../data/agents.js'
 import AgentCard from '../components/AgentCard.jsx'
 import PageHeader from '../components/PageHeader.jsx'
-import FilterBar from '../components/FilterBar.jsx'
-
-const SORT_OPTIONS = [
-  { value: 'newest', label: 'Newest' },
-  { value: 'name', label: 'Name' },
-]
+import FilterPanel from '../components/FilterPanel.jsx'
 
 export default function AgentsBrowse() {
   const [searchParams, setSearchParams] = useSearchParams()
@@ -27,12 +22,23 @@ export default function AgentsBrowse() {
 
   const authors = useMemo(() => [...new Set(AGENTS.map((a) => a.author))].sort(), [])
 
-  const categoryFiltered = useMemo(() => {
-    let list = AGENTS.slice()
-    if (category) list = list.filter((a) => a.category === category)
-    if (author) list = list.filter((a) => a.author === author)
-    return list
-  }, [category, author])
+  const authorFiltered = useMemo(
+    () => (author ? AGENTS.filter((a) => a.author === author) : AGENTS),
+    [author]
+  )
+
+  const categoryCounts = useMemo(() => {
+    const counts = {}
+    authorFiltered.forEach((a) => {
+      counts[a.category] = (counts[a.category] || 0) + 1
+    })
+    return counts
+  }, [authorFiltered])
+
+  const categoryFiltered = useMemo(
+    () => (category ? authorFiltered.filter((a) => a.category === category) : authorFiltered),
+    [authorFiltered, category]
+  )
 
   const allTags = useMemo(
     () => [...new Set(categoryFiltered.flatMap((a) => a.tags))].sort(),
@@ -69,38 +75,54 @@ export default function AgentsBrowse() {
         stats={[`${AGENTS.length} agents`, `${AGENT_CATEGORIES.length} categories`, `${authors.length} authors`]}
       />
 
-      <FilterBar
-        query={query}
-        onQuery={setQuery}
-        searchPlaceholder="Search agents..."
-        categories={AGENT_CATEGORIES}
-        category={category}
-        onCategory={(c) => updateParam('category', c)}
-        authors={authors}
-        author={author}
-        onAuthor={(a) => updateParam('author', a)}
-        sort={sort}
-        onSort={setSort}
-        sortOptions={SORT_OPTIONS}
-        allTags={allTags}
-        activeTags={activeTags}
-        onToggleTag={toggleTag}
-      />
+      <div className="browse-layout">
+        <FilterPanel
+          categories={AGENT_CATEGORIES}
+          categoryCounts={categoryCounts}
+          totalCount={authorFiltered.length}
+          category={category}
+          onCategory={(c) => updateParam('category', c)}
+          authors={authors}
+          author={author}
+          onAuthor={(a) => updateParam('author', a)}
+          allTags={allTags}
+          activeTags={activeTags}
+          onToggleTag={toggleTag}
+        />
 
-      <div className="results-count">
-        {results.length} agent{results.length === 1 ? '' : 's'} found
-        {category ? ` in ${category}` : ''}
-        {author ? ` by ${author}` : ''}
-      </div>
-      {results.length === 0 ? (
-        <div className="empty-state">No agents match your filters.</div>
-      ) : (
-        <div className="grid">
-          {results.map((a) => (
-            <AgentCard key={a.slug} agent={a} />
-          ))}
+        <div>
+          <div className="browse-toolbar-row">
+            <div className="search-input-wrap">
+              <span className="search-icon">⌕</span>
+              <input
+                className="search-input"
+                placeholder="Search agents..."
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+              />
+            </div>
+            <select className="filter-select" value={sort} onChange={(e) => setSort(e.target.value)}>
+              <option value="newest">Newest</option>
+              <option value="name">Name</option>
+            </select>
+          </div>
+
+          <div className="results-count">
+            {results.length} agent{results.length === 1 ? '' : 's'} found
+            {category ? ` in ${category}` : ''}
+            {author ? ` by ${author}` : ''}
+          </div>
+          {results.length === 0 ? (
+            <div className="empty-state">No agents match your filters.</div>
+          ) : (
+            <div className="grid">
+              {results.map((a) => (
+                <AgentCard key={a.slug} agent={a} />
+              ))}
+            </div>
+          )}
         </div>
-      )}
+      </div>
     </div>
   )
 }

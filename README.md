@@ -80,3 +80,7 @@ C-Level Advisory, Business Operations, Commercial & Finance.
 ## License
 
 All content in this repository is original work authored for this project.
+
+## Developer
+
+Cognivexa

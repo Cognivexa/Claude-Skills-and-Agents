@@ -7,6 +7,56 @@
   "version": "0.1.0",
   "plugins": [
     {
+      "name": "ab-testing-experimentation-scientist",
+      "source": "./plugins/ab-testing-experimentation-scientist",
+      "displayName": "Experimentation & A/B Testing Scientist",
+      "description": "Designs experiments that hold up to scrutiny, catching sample ratio mismatches, peeking bias, and novelty effects before they turn into false-positive launch decisions.",
+      "version": "0.1.0",
+      "author": {
+        "name": "signalstack"
+      },
+      "category": "Data Science",
+      "keywords": [
+        "ab-testing",
+        "experimentation",
+        "statistics",
+        "causal-inference"
+      ]
+    },
+    {
+      "name": "agent-tooling-reliability-engineer",
+      "source": "./plugins/agent-tooling-reliability-engineer",
+      "displayName": "Agent Tool-Use Reliability Engineer",
+      "description": "Hardens multi-step agent workflows against tool-call hallucination, malformed arguments, and silent failure loops, so autonomous agents fail loudly and recover gracefully instead of spinning.",
+      "version": "0.1.0",
+      "author": {
+        "name": "modelforge"
+      },
+      "category": "AI Engineering",
+      "keywords": [
+        "agents",
+        "tool-use",
+        "function-calling",
+        "reliability"
+      ]
+    },
+    {
+      "name": "alt-text-composer",
+      "source": "./plugins/alt-text-composer",
+      "displayName": "Alt Text Composer",
+      "description": "Generates concise, screen-reader-friendly alt text for batches of images by describing subject, action, and context while stripping redundant phrasing like 'image of'.",
+      "version": "0.1.0",
+      "author": {
+        "name": "assetloom"
+      },
+      "category": "Media & Graphics",
+      "keywords": [
+        "alt-text",
+        "accessibility",
+        "image-batch"
+      ]
+    },
+    {
       "name": "api-integration-engineer",
       "source": "./plugins/api-integration-engineer",
       "displayName": "API Integration Engineer",
@@ -20,6 +70,55 @@
         "api",
         "integrations",
         "webhooks"
+      ]
+    },
+    {
+      "name": "app-store-release-notes",
+      "source": "./plugins/app-store-release-notes",
+      "displayName": "App Store Release Notes Drafter",
+      "description": "Turns a range of git commits or a sprint's ticket list into polished, user-facing release notes formatted for App Store Connect and Google Play listings. Produces both a full changelog and a trimmed \"what's new\" version that respects each store's character limits.",
+      "version": "0.1.0",
+      "author": {
+        "name": "pocketbuild"
+      },
+      "category": "Mobile Development",
+      "keywords": [
+        "release-notes",
+        "app-store",
+        "changelog",
+        "mobile-release"
+      ]
+    },
+    {
+      "name": "application-security-reviewer",
+      "source": "./plugins/application-security-reviewer",
+      "displayName": "Application Security Reviewer",
+      "description": "A senior appsec engineer who manually reviews code changes for real exploitability, not just SAST noise, and triages findings against actual attack paths. Specializes in authentication, authorization, and injection classes of bugs.",
+      "version": "0.1.0",
+      "author": {
+        "name": "vaultguard"
+      },
+      "category": "Security",
+      "keywords": [
+        "appsec",
+        "code-review",
+        "vulnerability-assessment"
+      ]
+    },
+    {
+      "name": "asset-namer",
+      "source": "./plugins/asset-namer",
+      "displayName": "Asset Namer",
+      "description": "Renames and sorts a messy folder of design exports into a consistent convention (project-type-variant-size-version) and rebuilds folder structure by asset type.",
+      "version": "0.1.0",
+      "author": {
+        "name": "assetloom"
+      },
+      "category": "Media & Graphics",
+      "keywords": [
+        "file-naming",
+        "asset-organization",
+        "batch-rename"
       ]
     },
     {
@@ -71,6 +170,55 @@
       ]
     },
     {
+      "name": "causal-inference-analyst",
+      "source": "./plugins/causal-inference-analyst",
+      "displayName": "Causal Inference Analyst",
+      "description": "Untangles correlation from causation in observational data using matching, instrumental variables, and diff-in-diff, for teams that can't just run an A/B test.",
+      "version": "0.1.0",
+      "author": {
+        "name": "signalstack"
+      },
+      "category": "Data Science",
+      "keywords": [
+        "causal-inference",
+        "observational-data",
+        "econometrics",
+        "bias"
+      ]
+    },
+    {
+      "name": "chain-cost-auditor",
+      "source": "./plugins/chain-cost-auditor",
+      "displayName": "Chain Cost Auditor",
+      "description": "Walks a multi-step prompt chain and computes token usage and dollar cost per step, then flags the highest-cost hops for compression or caching.",
+      "version": "0.1.0",
+      "author": {
+        "name": "modelforge"
+      },
+      "category": "AI Engineering",
+      "keywords": [
+        "token-cost",
+        "prompt-chains",
+        "cost-optimization"
+      ]
+    },
+    {
+      "name": "changelog-from-history",
+      "source": "./plugins/changelog-from-history",
+      "displayName": "Changelog Generator From Commit History",
+      "description": "Walks the git log between two tags, groups commits by Conventional Commit type (feat/fix/chore/breaking), and drafts a Keep-a-Changelog formatted entry with links to detected PR numbers. Breaking changes get pulled into a dedicated \"Upgrade Notes\" section.",
+      "version": "0.1.0",
+      "author": {
+        "name": "committext"
+      },
+      "category": "Git & Version Control",
+      "keywords": [
+        "changelog",
+        "git-log",
+        "release-notes"
+      ]
+    },
+    {
       "name": "chief-of-staff-advisor",
       "source": "./plugins/chief-of-staff-advisor",
       "displayName": "Chief of Staff Advisor",
@@ -84,6 +232,124 @@
         "executive",
         "chief-of-staff",
         "alignment"
+      ]
+    },
+    {
+      "name": "ci-cd-pipeline-engineer",
+      "source": "./plugins/ci-cd-pipeline-engineer",
+      "displayName": "CI/CD Pipeline Engineer",
+      "description": "A senior release engineer who redesigns brittle, slow build pipelines into fast, gated, rollback-ready delivery systems. Focuses on cutting pipeline duration and flake rate while keeping every merge to main deployable.",
+      "version": "0.1.0",
+      "author": {
+        "name": "shipline"
+      },
+      "category": "DevOps",
+      "keywords": [
+        "ci-cd",
+        "pipeline",
+        "release-engineering",
+        "automation"
+      ]
+    },
+    {
+      "name": "ci-pipeline-linter",
+      "source": "./plugins/ci-pipeline-linter",
+      "displayName": "CI Pipeline Linter",
+      "description": "Lints GitHub Actions, GitLab CI, and CircleCI YAML configs for slow, flaky, or insecure pipeline patterns such as unpinned actions, missing caching, and unbounded job timeouts.",
+      "version": "0.1.0",
+      "author": {
+        "name": "shipline"
+      },
+      "category": "DevOps",
+      "keywords": [
+        "ci-cd",
+        "yaml-lint",
+        "github-actions",
+        "pipeline"
+      ]
+    },
+    {
+      "name": "commit-message-linter",
+      "source": "./plugins/commit-message-linter",
+      "displayName": "Commit Message Quality Checker",
+      "description": "Reviews a range of commits against Conventional Commits and imperative-mood style rules, flagging vague messages like \"fix stuff\" and suggesting rewrites grounded in the actual diff content. Also checks subject-line length and body wrapping conventions.",
+      "version": "0.1.0",
+      "author": {
+        "name": "committext"
+      },
+      "category": "Git & Version Control",
+      "keywords": [
+        "commit-messages",
+        "conventional-commits",
+        "linting"
+      ]
+    },
+    {
+      "name": "component-system-architect",
+      "source": "./plugins/component-system-architect",
+      "displayName": "Component System Architect",
+      "description": "Designs component APIs and folder structures that stay coherent as a product scales past a dozen contributors, favoring composition and explicit props over clever abstraction.",
+      "version": "0.1.0",
+      "author": {
+        "name": "pixelrun"
+      },
+      "category": "Frontend",
+      "keywords": [
+        "component-architecture",
+        "design-systems",
+        "react",
+        "api-design"
+      ]
+    },
+    {
+      "name": "crash-report-triage",
+      "source": "./plugins/crash-report-triage",
+      "displayName": "Mobile Crash Report Triage",
+      "description": "Parses symbolicated iOS/Android crash logs from Crashlytics or Sentry exports and clusters them by root stack frame, ranking each cluster by device, OS version, and affected-user impact. Drafts a short triage note per cluster with the suspected file/line and repro hints.",
+      "version": "0.1.0",
+      "author": {
+        "name": "pocketbuild"
+      },
+      "category": "Mobile Development",
+      "keywords": [
+        "crash-triage",
+        "crashlytics",
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "name": "crisis-communication-director",
+      "source": "./plugins/crisis-communication-director",
+      "displayName": "Crisis Communication Director",
+      "description": "Directs communication response during incidents, breaches, and public controversies, controlling message accuracy and timing to protect trust while the situation is still unfolding.",
+      "version": "0.1.0",
+      "author": {
+        "name": "clearchannel"
+      },
+      "category": "Communication",
+      "keywords": [
+        "crisis-comms",
+        "incident-response",
+        "reputation-management",
+        "spokesperson"
+      ]
+    },
+    {
+      "name": "cross-team-communication-facilitator",
+      "source": "./plugins/cross-team-communication-facilitator",
+      "displayName": "Cross-Team Communication Facilitator",
+      "description": "Facilitates communication and alignment across departments that don't naturally talk to each other, turning fragmented updates into a shared operating picture for cross-functional initiatives.",
+      "version": "0.1.0",
+      "author": {
+        "name": "clearchannel"
+      },
+      "category": "Communication",
+      "keywords": [
+        "cross-team",
+        "facilitation",
+        "stakeholder-alignment",
+        "status-reporting"
       ]
     },
     {
@@ -151,6 +417,23 @@
       ]
     },
     {
+      "name": "dependency-vuln-triage",
+      "source": "./plugins/dependency-vuln-triage",
+      "displayName": "Dependency Vulnerability Triage",
+      "description": "Scans package manifests and lockfiles across npm, pip, and Maven for known CVEs, then ranks each finding by exploitability, reachability in your code, and available patch path.",
+      "version": "0.1.0",
+      "author": {
+        "name": "vaultguard"
+      },
+      "category": "Security",
+      "keywords": [
+        "vulnerability-scan",
+        "dependency-management",
+        "cve",
+        "sca"
+      ]
+    },
+    {
       "name": "design-systems-specialist",
       "source": "./plugins/design-systems-specialist",
       "displayName": "Design Systems Specialist",
@@ -164,6 +447,39 @@
         "design-systems",
         "accessibility",
         "tokens"
+      ]
+    },
+    {
+      "name": "dockerfile-hardening-checker",
+      "source": "./plugins/dockerfile-hardening-checker",
+      "displayName": "Dockerfile Hardening Checker",
+      "description": "Scans Dockerfiles and Compose files for insecure base images, root-user execution, exposed secrets, and missing multi-stage build patterns, then rewrites offending lines with hardened equivalents.",
+      "version": "0.1.0",
+      "author": {
+        "name": "shipline"
+      },
+      "category": "DevOps",
+      "keywords": [
+        "docker",
+        "container-security",
+        "hardening",
+        "ci-cd"
+      ]
+    },
+    {
+      "name": "eval-set-forge",
+      "source": "./plugins/eval-set-forge",
+      "displayName": "Eval Set Forge",
+      "description": "Builds structured evaluation datasets from raw production transcripts by clustering similar queries, sampling edge cases, and drafting rubric-based grading criteria.",
+      "version": "0.1.0",
+      "author": {
+        "name": "modelforge"
+      },
+      "category": "AI Engineering",
+      "keywords": [
+        "eval-sets",
+        "dataset-curation",
+        "rubrics"
       ]
     },
     {
@@ -278,6 +594,90 @@
       ]
     },
     {
+      "name": "incident-response-threat-hunter",
+      "source": "./plugins/incident-response-threat-hunter",
+      "displayName": "Incident Response & Threat Hunter",
+      "description": "A senior incident responder who reconstructs attacker timelines from logs and EDR telemetry and turns each investigation into a lasting detection rule. Keeps containment decisive while preserving evidence for later analysis.",
+      "version": "0.1.0",
+      "author": {
+        "name": "vaultguard"
+      },
+      "category": "Security",
+      "keywords": [
+        "incident-response",
+        "threat-hunting",
+        "forensics"
+      ]
+    },
+    {
+      "name": "information-architecture-planner",
+      "source": "./plugins/information-architecture-planner",
+      "displayName": "Information Architecture Planner",
+      "description": "Structures navigation, taxonomies, and content hierarchies so users can find what they need in two or three clicks, using card-sorting and tree-testing logic rather than guesswork.",
+      "version": "0.1.0",
+      "author": {
+        "name": "formaui"
+      },
+      "category": "UI/UX",
+      "keywords": [
+        "information-architecture",
+        "navigation",
+        "content-structure",
+        "taxonomy"
+      ]
+    },
+    {
+      "name": "infra-drift-detector",
+      "source": "./plugins/infra-drift-detector",
+      "displayName": "Infra Drift Detector",
+      "description": "Compares a Terraform or Pulumi state file against the live cloud provider API to surface unmanaged changes, then generates a remediation plan to reconcile or import them.",
+      "version": "0.1.0",
+      "author": {
+        "name": "shipline"
+      },
+      "category": "DevOps",
+      "keywords": [
+        "terraform",
+        "drift-detection",
+        "iac",
+        "cloud-ops"
+      ]
+    },
+    {
+      "name": "infrastructure-as-code-architect",
+      "source": "./plugins/infrastructure-as-code-architect",
+      "displayName": "Infrastructure as Code Architect",
+      "description": "A senior cloud infrastructure architect who turns hand-run console changes into versioned, reviewable Terraform modules with drift detection built in. Specializes in multi-account AWS and GCP landing zones that survive team growth.",
+      "version": "0.1.0",
+      "author": {
+        "name": "shipline"
+      },
+      "category": "DevOps",
+      "keywords": [
+        "terraform",
+        "infrastructure-as-code",
+        "cloud-infrastructure",
+        "provisioning"
+      ]
+    },
+    {
+      "name": "internal-change-comms-lead",
+      "source": "./plugins/internal-change-comms-lead",
+      "displayName": "Internal Change Communication Lead",
+      "description": "Leads internal communication strategy for reorgs, restructurings, and major policy shifts, translating leadership decisions into messaging employees can trust and act on.",
+      "version": "0.1.0",
+      "author": {
+        "name": "clearchannel"
+      },
+      "category": "Communication",
+      "keywords": [
+        "internal-comms",
+        "change-management",
+        "org-communication",
+        "employee-engagement"
+      ]
+    },
+    {
       "name": "literature-review-assistant",
       "source": "./plugins/literature-review-assistant",
       "displayName": "Literature Review Assistant",
@@ -291,6 +691,23 @@
         "research",
         "academic",
         "synthesis"
+      ]
+    },
+    {
+      "name": "llm-eval-prompt-engineer",
+      "source": "./plugins/llm-eval-prompt-engineer",
+      "displayName": "LLM Evaluation & Prompt Engineering Specialist",
+      "description": "Builds rigorous eval harnesses and iterates on prompts with the discipline of an experimentalist, catching regressions that ad-hoc 'looks good to me' testing misses.",
+      "version": "0.1.0",
+      "author": {
+        "name": "modelforge"
+      },
+      "category": "AI Engineering",
+      "keywords": [
+        "prompt-engineering",
+        "llm-evals",
+        "regression-testing",
+        "benchmarking"
       ]
     },
     {
@@ -339,6 +756,40 @@
         "meetings",
         "summarization",
         "action-items"
+      ]
+    },
+    {
+      "name": "ml-monitoring-drift-engineer",
+      "source": "./plugins/ml-monitoring-drift-engineer",
+      "displayName": "ML Monitoring & Drift Engineer",
+      "description": "Keeps production models honest after launch by tracking feature drift, label delay, and silent performance decay before it shows up in business metrics.",
+      "version": "0.1.0",
+      "author": {
+        "name": "signalstack"
+      },
+      "category": "Data Science",
+      "keywords": [
+        "model-monitoring",
+        "drift-detection",
+        "feature-engineering",
+        "mlops"
+      ]
+    },
+    {
+      "name": "mobile-bundle-size-audit",
+      "source": "./plugins/mobile-bundle-size-audit",
+      "displayName": "Mobile Bundle Size Auditor",
+      "description": "Analyzes an APK/AAB or IPA build artifact to break down size by module, asset type, and third-party library, then diffs against the previous release to flag regressions. Suggests concrete trims such as duplicate asset removal, unused resource stripping, and lazy-loadable modules.",
+      "version": "0.1.0",
+      "author": {
+        "name": "pocketbuild"
+      },
+      "category": "Mobile Development",
+      "keywords": [
+        "bundle-size",
+        "apk",
+        "ipa",
+        "performance"
       ]
     },
     {
@@ -470,6 +921,23 @@
       ]
     },
     {
+      "name": "prompt-regression-guard",
+      "source": "./plugins/prompt-regression-guard",
+      "displayName": "Prompt Regression Guard",
+      "description": "Runs your prompt templates against a versioned snapshot suite before every deploy, diffing model outputs field-by-field to flag silent behavior drift.",
+      "version": "0.1.0",
+      "author": {
+        "name": "modelforge"
+      },
+      "category": "AI Engineering",
+      "keywords": [
+        "prompt-testing",
+        "regression",
+        "llm-eval",
+        "ci"
+      ]
+    },
+    {
       "name": "proposal-pricing-table-generator",
       "source": "./plugins/proposal-pricing-table-generator",
       "displayName": "Proposal Pricing Table Generator",
@@ -483,6 +951,23 @@
         "pricing",
         "proposals",
         "sales"
+      ]
+    },
+    {
+      "name": "rag-pipeline-architect",
+      "source": "./plugins/rag-pipeline-architect",
+      "displayName": "RAG Pipeline Architect",
+      "description": "Designs and hardens retrieval-augmented generation pipelines, from chunking strategy through reranking, for teams that need grounded answers instead of confident-sounding guesses.",
+      "version": "0.1.0",
+      "author": {
+        "name": "modelforge"
+      },
+      "category": "AI Engineering",
+      "keywords": [
+        "rag",
+        "retrieval",
+        "embeddings",
+        "vector-search"
       ]
     },
     {
@@ -515,6 +1000,23 @@
         "regulatory",
         "monitoring",
         "impact-assessment"
+      ]
+    },
+    {
+      "name": "rendering-strategy-engineer",
+      "source": "./plugins/rendering-strategy-engineer",
+      "displayName": "Rendering Strategy Engineer",
+      "description": "Chooses and tunes the right rendering strategy—SSR, SSG, ISR, or client-only—on a per-route basis, and untangles hydration mismatches that only show up in production.",
+      "version": "0.1.0",
+      "author": {
+        "name": "pixelrun"
+      },
+      "category": "Frontend",
+      "keywords": [
+        "ssr",
+        "hydration",
+        "rendering",
+        "framework-architecture"
       ]
     },
     {
@@ -582,6 +1084,73 @@
       ]
     },
     {
+      "name": "secrets-and-cloud-security-engineer",
+      "source": "./plugins/secrets-and-cloud-security-engineer",
+      "displayName": "Secrets & Cloud Security Engineer",
+      "description": "A senior cloud security engineer who hunts down exposed credentials and over-privileged IAM before attackers do. Specializes in vaulting, key rotation, and closing the gap between granted and used permissions.",
+      "version": "0.1.0",
+      "author": {
+        "name": "vaultguard"
+      },
+      "category": "Security",
+      "keywords": [
+        "secrets-management",
+        "cloud-security",
+        "iam"
+      ]
+    },
+    {
+      "name": "secrets-in-code-scanner",
+      "source": "./plugins/secrets-in-code-scanner",
+      "displayName": "Secrets In Code Scanner",
+      "description": "Sweeps repository history and working tree for hardcoded API keys, tokens, and credentials using entropy analysis and provider-specific pattern matching, then generates revocation steps.",
+      "version": "0.1.0",
+      "author": {
+        "name": "vaultguard"
+      },
+      "category": "Security",
+      "keywords": [
+        "secrets-detection",
+        "credential-leak",
+        "git-history",
+        "sast"
+      ]
+    },
+    {
+      "name": "security-questionnaire-responder",
+      "source": "./plugins/security-questionnaire-responder",
+      "displayName": "Security Questionnaire Responder",
+      "description": "Drafts answers to vendor security questionnaires and SOC 2/ISO 27001 audit requests by pulling evidence from your existing policy docs, architecture diagrams, and control matrices.",
+      "version": "0.1.0",
+      "author": {
+        "name": "vaultguard"
+      },
+      "category": "Security",
+      "keywords": [
+        "soc2",
+        "compliance",
+        "questionnaire",
+        "audit-prep"
+      ]
+    },
+    {
+      "name": "site-reliability-engineer",
+      "source": "./plugins/site-reliability-engineer",
+      "displayName": "Site Reliability Engineer",
+      "description": "A senior SRE who builds SLO-driven alerting and on-call runbooks so incidents get caught by symptoms, not guesswork. Treats error budgets as the shared contract between reliability work and feature velocity.",
+      "version": "0.1.0",
+      "author": {
+        "name": "shipline"
+      },
+      "category": "DevOps",
+      "keywords": [
+        "observability",
+        "sre",
+        "incident-response",
+        "monitoring"
+      ]
+    },
+    {
       "name": "soc2-readiness-auditor",
       "source": "./plugins/soc2-readiness-auditor",
       "displayName": "SOC 2 Readiness Auditor",
@@ -595,6 +1164,22 @@
         "soc2",
         "audit",
         "controls"
+      ]
+    },
+    {
+      "name": "social-crop-kit",
+      "source": "./plugins/social-crop-kit",
+      "displayName": "Social Crop Kit",
+      "description": "Takes one source image and generates a full set of platform-ready crops (square, story, landscape, banner) using subject-aware framing so faces and focal points stay in frame.",
+      "version": "0.1.0",
+      "author": {
+        "name": "assetloom"
+      },
+      "category": "Media & Graphics",
+      "keywords": [
+        "image-cropping",
+        "social-media",
+        "aspect-ratio"
       ]
     },
     {
@@ -627,6 +1212,22 @@
         "spreadsheets",
         "analysis",
         "reporting"
+      ]
+    },
+    {
+      "name": "stale-branch-cleanup-planner",
+      "source": "./plugins/stale-branch-cleanup-planner",
+      "displayName": "Stale Branch Cleanup Planner",
+      "description": "Scans all local and remote branches to find ones already merged, abandoned for 60+ days, or orphaned from deleted PRs, then produces a safe-to-delete list with the evidence behind each entry. It never deletes anything itself; it only outputs the plan and the exact git commands to run.",
+      "version": "0.1.0",
+      "author": {
+        "name": "committext"
+      },
+      "category": "Git & Version Control",
+      "keywords": [
+        "branch-cleanup",
+        "git-branches",
+        "repo-hygiene"
       ]
     },
     {
@@ -694,6 +1295,23 @@
       ]
     },
     {
+      "name": "usability-heuristics-auditor",
+      "source": "./plugins/usability-heuristics-auditor",
+      "displayName": "Usability Heuristics Auditor",
+      "description": "Runs structured heuristic evaluations against established usability principles and product-specific conventions, turning vague \"this feels off\" feedback into specific, prioritized usability findings.",
+      "version": "0.1.0",
+      "author": {
+        "name": "formaui"
+      },
+      "category": "UI/UX",
+      "keywords": [
+        "usability",
+        "heuristic-evaluation",
+        "ux-research",
+        "accessibility"
+      ]
+    },
+    {
       "name": "user-research-ops-manager",
       "source": "./plugins/user-research-ops-manager",
       "displayName": "User Research Ops Manager",
@@ -707,6 +1325,23 @@
         "user-research",
         "research-ops",
         "synthesis"
+      ]
+    },
+    {
+      "name": "ux-writing-microcopy-specialist",
+      "source": "./plugins/ux-writing-microcopy-specialist",
+      "displayName": "UX Writing Microcopy Specialist",
+      "description": "Rewrites buttons, error messages, empty states, and confirmation dialogs so every word carries its weight, aligning tone and clarity across the entire product surface.",
+      "version": "0.1.0",
+      "author": {
+        "name": "formaui"
+      },
+      "category": "UI/UX",
+      "keywords": [
+        "ux-writing",
+        "microcopy",
+        "interaction-design",
+        "tone-of-voice"
       ]
     },
     {
@@ -739,6 +1374,23 @@
         "vendor-management",
         "contracts",
         "procurement"
+      ]
+    },
+    {
+      "name": "web-perf-budget-keeper",
+      "source": "./plugins/web-perf-budget-keeper",
+      "displayName": "Web Performance Budget Keeper",
+      "description": "Diagnoses and fixes real-world Core Web Vitals regressions—LCP, INP, CLS—by tracing render-blocking assets and JS execution cost back to the commits that introduced them.",
+      "version": "0.1.0",
+      "author": {
+        "name": "pixelrun"
+      },
+      "category": "Frontend",
+      "keywords": [
+        "performance",
+        "core-web-vitals",
+        "bundle-size",
+        "profiling"
       ]
     },
     {

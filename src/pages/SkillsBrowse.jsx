@@ -3,13 +3,7 @@ import { useSearchParams } from 'react-router-dom'
 import { SKILLS, SKILL_CATEGORIES } from '../data/skills.js'
 import SkillCard from '../components/SkillCard.jsx'
 import PageHeader from '../components/PageHeader.jsx'
-import FilterBar from '../components/FilterBar.jsx'
-
-const SORT_OPTIONS = [
-  { value: 'newest', label: 'Newest' },
-  { value: 'stars', label: 'Most Stars' },
-  { value: 'name', label: 'Name' },
-]
+import FilterPanel from '../components/FilterPanel.jsx'
 
 export default function SkillsBrowse() {
   const [searchParams, setSearchParams] = useSearchParams()
@@ -28,12 +22,23 @@ export default function SkillsBrowse() {
 
   const authors = useMemo(() => [...new Set(SKILLS.map((s) => s.author))].sort(), [])
 
-  const categoryFiltered = useMemo(() => {
-    let list = SKILLS.slice()
-    if (category) list = list.filter((s) => s.category === category)
-    if (author) list = list.filter((s) => s.author === author)
-    return list
-  }, [category, author])
+  const authorFiltered = useMemo(
+    () => (author ? SKILLS.filter((s) => s.author === author) : SKILLS),
+    [author]
+  )
+
+  const categoryCounts = useMemo(() => {
+    const counts = {}
+    authorFiltered.forEach((s) => {
+      counts[s.category] = (counts[s.category] || 0) + 1
+    })
+    return counts
+  }, [authorFiltered])
+
+  const categoryFiltered = useMemo(
+    () => (category ? authorFiltered.filter((s) => s.category === category) : authorFiltered),
+    [authorFiltered, category]
+  )
 
   const allTags = useMemo(
     () => [...new Set(categoryFiltered.flatMap((s) => s.tags))].sort(),
@@ -71,38 +76,55 @@ export default function SkillsBrowse() {
         stats={[`${SKILLS.length} skills`, `${SKILL_CATEGORIES.length} categories`, `${authors.length} authors`]}
       />
 
-      <FilterBar
-        query={query}
-        onQuery={setQuery}
-        searchPlaceholder="Search skills..."
-        categories={SKILL_CATEGORIES}
-        category={category}
-        onCategory={(c) => updateParam('category', c)}
-        authors={authors}
-        author={author}
-        onAuthor={(a) => updateParam('author', a)}
-        sort={sort}
-        onSort={setSort}
-        sortOptions={SORT_OPTIONS}
-        allTags={allTags}
-        activeTags={activeTags}
-        onToggleTag={toggleTag}
-      />
+      <div className="browse-layout">
+        <FilterPanel
+          categories={SKILL_CATEGORIES}
+          categoryCounts={categoryCounts}
+          totalCount={authorFiltered.length}
+          category={category}
+          onCategory={(c) => updateParam('category', c)}
+          authors={authors}
+          author={author}
+          onAuthor={(a) => updateParam('author', a)}
+          allTags={allTags}
+          activeTags={activeTags}
+          onToggleTag={toggleTag}
+        />
 
-      <div className="results-count">
-        {results.length} skill{results.length === 1 ? '' : 's'} found
-        {category ? ` in ${category}` : ''}
-        {author ? ` by ${author}` : ''}
-      </div>
-      {results.length === 0 ? (
-        <div className="empty-state">No skills match your filters.</div>
-      ) : (
-        <div className="grid">
-          {results.map((s) => (
-            <SkillCard key={s.slug} skill={s} />
-          ))}
+        <div>
+          <div className="browse-toolbar-row">
+            <div className="search-input-wrap">
+              <span className="search-icon">⌕</span>
+              <input
+                className="search-input"
+                placeholder="Search skills..."
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+              />
+            </div>
+            <select className="filter-select" value={sort} onChange={(e) => setSort(e.target.value)}>
+              <option value="newest">Newest</option>
+              <option value="stars">Most Stars</option>
+              <option value="name">Name</option>
+            </select>
+          </div>
+
+          <div className="results-count">
+            {results.length} skill{results.length === 1 ? '' : 's'} found
+            {category ? ` in ${category}` : ''}
+            {author ? ` by ${author}` : ''}
+          </div>
+          {results.length === 0 ? (
+            <div className="empty-state">No skills match your filters.</div>
+          ) : (
+            <div className="grid">
+              {results.map((s) => (
+                <SkillCard key={s.slug} skill={s} />
+              ))}
+            </div>
+          )}
         </div>
-      )}
+      </div>
     </div>
   )
 }
