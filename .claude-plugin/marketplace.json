@@ -1,0 +1,793 @@
+{
+  "name": "claude-skills-and-agents",
+  "owner": {
+    "name": "Cognivexa"
+  },
+  "description": "Original Claude Code agents, skills, and plugins spanning engineering, product, marketing, research, compliance, C-level advisory, business operations, and commercial & finance.",
+  "version": "0.1.0",
+  "plugins": [
+    {
+      "name": "api-integration-engineer",
+      "source": "./plugins/api-integration-engineer",
+      "displayName": "API Integration Engineer",
+      "description": "Senior integration engineer specializing in REST/GraphQL APIs, webhook systems, and third-party SDK wiring across polyglot backends.",
+      "version": "0.1.0",
+      "author": {
+        "name": "pixelforge"
+      },
+      "category": "Development",
+      "keywords": [
+        "api",
+        "integrations",
+        "webhooks"
+      ]
+    },
+    {
+      "name": "audit-evidence-collector",
+      "source": "./plugins/audit-evidence-collector",
+      "displayName": "Audit Evidence Collector",
+      "description": "Organize evidence artifacts against a control list so audit prep isn't a last-minute scramble.",
+      "version": "0.1.0",
+      "author": {
+        "name": "compliancecore"
+      },
+      "category": "Compliance",
+      "keywords": [
+        "audit",
+        "evidence",
+        "controls"
+      ]
+    },
+    {
+      "name": "blog-content-editor",
+      "source": "./plugins/blog-content-editor",
+      "displayName": "Blog Content Editor",
+      "description": "Senior content editor who tightens structure, voice, and clarity across long-form blog drafts before publish.",
+      "version": "0.1.0",
+      "author": {
+        "name": "inkwell-co"
+      },
+      "category": "Content Editor",
+      "keywords": [
+        "editing",
+        "blog",
+        "style"
+      ]
+    },
+    {
+      "name": "board-deck-builder",
+      "source": "./plugins/board-deck-builder",
+      "displayName": "Board Deck Builder",
+      "description": "Structure a board meeting deck around decisions needed, with metrics and narrative in a consistent order.",
+      "version": "0.1.0",
+      "author": {
+        "name": "boardroom-labs"
+      },
+      "category": "C-Level Advisory",
+      "keywords": [
+        "board-deck",
+        "executive",
+        "reporting"
+      ]
+    },
+    {
+      "name": "chief-of-staff-advisor",
+      "source": "./plugins/chief-of-staff-advisor",
+      "displayName": "Chief of Staff Advisor",
+      "description": "Chief of staff advisor triaging executive priorities, preparing board materials, and keeping cross-functional work aligned.",
+      "version": "0.1.0",
+      "author": {
+        "name": "boardroom-labs"
+      },
+      "category": "C-Level Advisory",
+      "keywords": [
+        "executive",
+        "chief-of-staff",
+        "alignment"
+      ]
+    },
+    {
+      "name": "data-pipeline-analyst",
+      "source": "./plugins/data-pipeline-analyst",
+      "displayName": "Data Pipeline Analyst",
+      "description": "Analytics engineer building reliable ETL pipelines, dashboards, and data quality checks on top of warehouse data.",
+      "version": "0.1.0",
+      "author": {
+        "name": "datawrangler"
+      },
+      "category": "Data Analysis",
+      "keywords": [
+        "etl",
+        "sql",
+        "dashboards"
+      ]
+    },
+    {
+      "name": "data-privacy-compliance-officer",
+      "source": "./plugins/data-privacy-compliance-officer",
+      "displayName": "Data Privacy Compliance Officer",
+      "description": "Privacy compliance officer reviewing data flows against GDPR/CCPA-style obligations and flagging gaps before they become incidents.",
+      "version": "0.1.0",
+      "author": {
+        "name": "compliancecore"
+      },
+      "category": "Compliance",
+      "keywords": [
+        "privacy",
+        "gdpr",
+        "compliance"
+      ]
+    },
+    {
+      "name": "dataset-cleaner",
+      "source": "./plugins/dataset-cleaner",
+      "displayName": "Dataset Cleaner",
+      "description": "Clean a messy dataset: standardize types, handle missing values deliberately, and log every transformation applied.",
+      "version": "0.1.0",
+      "author": {
+        "name": "tidydata"
+      },
+      "category": "Data & Analysis",
+      "keywords": [
+        "data-cleaning",
+        "etl",
+        "quality"
+      ]
+    },
+    {
+      "name": "deal-desk-checklist",
+      "source": "./plugins/deal-desk-checklist",
+      "displayName": "Deal Desk Checklist",
+      "description": "Review a proposed deal against discount and approval policy before it goes to signature.",
+      "version": "0.1.0",
+      "author": {
+        "name": "ledgerworks"
+      },
+      "category": "Commercial & Finance",
+      "keywords": [
+        "deal-desk",
+        "sales-ops",
+        "approvals"
+      ]
+    },
+    {
+      "name": "design-systems-specialist",
+      "source": "./plugins/design-systems-specialist",
+      "displayName": "Design Systems Specialist",
+      "description": "Product designer building and maintaining component libraries, tokens, and accessibility standards at scale.",
+      "version": "0.1.0",
+      "author": {
+        "name": "pixelforge"
+      },
+      "category": "Design",
+      "keywords": [
+        "design-systems",
+        "accessibility",
+        "tokens"
+      ]
+    },
+    {
+      "name": "executive-briefing-digest",
+      "source": "./plugins/executive-briefing-digest",
+      "displayName": "Executive Briefing Digest",
+      "description": "Condense a long report or thread into a one-page executive brief with the decision and risk stated upfront.",
+      "version": "0.1.0",
+      "author": {
+        "name": "boardroom-labs"
+      },
+      "category": "C-Level Advisory",
+      "keywords": [
+        "executive-brief",
+        "summarization"
+      ]
+    },
+    {
+      "name": "feature-flag-rollout-planner",
+      "source": "./plugins/feature-flag-rollout-planner",
+      "displayName": "Feature Flag Rollout Planner",
+      "description": "Plan a staged feature flag rollout with explicit rollback criteria and monitoring checkpoints per stage.",
+      "version": "0.1.0",
+      "author": {
+        "name": "productlane"
+      },
+      "category": "Product",
+      "keywords": [
+        "feature-flags",
+        "rollout",
+        "release"
+      ]
+    },
+    {
+      "name": "file-organizer-pro",
+      "source": "./plugins/file-organizer-pro",
+      "displayName": "File Organizer Pro",
+      "description": "Organize files and folders by understanding context and content, suggesting a clearer structure and flagging duplicates.",
+      "version": "0.1.0",
+      "author": {
+        "name": "shelfware"
+      },
+      "category": "Utility",
+      "keywords": [
+        "file-management",
+        "organization",
+        "dedupe"
+      ]
+    },
+    {
+      "name": "flaky-test-hunter",
+      "source": "./plugins/flaky-test-hunter",
+      "displayName": "Flaky Test Hunter",
+      "description": "Identify flaky tests from CI history, isolate the non-determinism, and propose a fix instead of a blanket retry.",
+      "version": "0.1.0",
+      "author": {
+        "name": "testwatch"
+      },
+      "category": "Debug & Test",
+      "keywords": [
+        "testing",
+        "ci",
+        "flakiness"
+      ]
+    },
+    {
+      "name": "fpa-modeling-specialist",
+      "source": "./plugins/fpa-modeling-specialist",
+      "displayName": "FP&A Modeling Specialist",
+      "description": "FP&A specialist building budget-vs-actual models, scenario plans, and board-ready financial packages.",
+      "version": "0.1.0",
+      "author": {
+        "name": "ledgerworks"
+      },
+      "category": "Commercial & Finance",
+      "keywords": [
+        "fpa",
+        "budgeting",
+        "scenario-modeling"
+      ]
+    },
+    {
+      "name": "fractional-cfo-advisor",
+      "source": "./plugins/fractional-cfo-advisor",
+      "displayName": "Fractional CFO Advisor",
+      "description": "Fractional CFO advisor building financial models, runway analysis, and board-ready reporting for growing companies.",
+      "version": "0.1.0",
+      "author": {
+        "name": "boardroom-labs"
+      },
+      "category": "C-Level Advisory",
+      "keywords": [
+        "finance",
+        "cfo",
+        "board-reporting"
+      ]
+    },
+    {
+      "name": "growth-marketing-strategist",
+      "source": "./plugins/growth-marketing-strategist",
+      "displayName": "Growth Marketing Strategist",
+      "description": "Growth strategist designing acquisition experiments, lifecycle funnels, and channel mix across paid and organic.",
+      "version": "0.1.0",
+      "author": {
+        "name": "northstar-labs"
+      },
+      "category": "Marketing",
+      "keywords": [
+        "growth",
+        "funnels",
+        "experiments"
+      ]
+    },
+    {
+      "name": "literature-review-assistant",
+      "source": "./plugins/literature-review-assistant",
+      "displayName": "Literature Review Assistant",
+      "description": "Guide for structuring a literature review: source triage, claim mapping, and gap identification across academic and industry sources.",
+      "version": "0.1.0",
+      "author": {
+        "name": "openmind"
+      },
+      "category": "Research & Learning",
+      "keywords": [
+        "research",
+        "academic",
+        "synthesis"
+      ]
+    },
+    {
+      "name": "long-form-copywriter",
+      "source": "./plugins/long-form-copywriter",
+      "displayName": "Long-form Copywriter",
+      "description": "Direct-response copywriter crafting landing pages, email sequences, and case studies that convert without hype.",
+      "version": "0.1.0",
+      "author": {
+        "name": "inkwell-co"
+      },
+      "category": "Writing",
+      "keywords": [
+        "copywriting",
+        "landing-pages",
+        "case-studies"
+      ]
+    },
+    {
+      "name": "market-research-analyst",
+      "source": "./plugins/market-research-analyst",
+      "displayName": "Market Research Analyst",
+      "description": "Research analyst synthesizing competitive landscapes, customer interviews, and market sizing into decision-ready briefs.",
+      "version": "0.1.0",
+      "author": {
+        "name": "northstar-labs"
+      },
+      "category": "Research",
+      "keywords": [
+        "research",
+        "competitive-analysis",
+        "market-sizing"
+      ]
+    },
+    {
+      "name": "meeting-notes-digest",
+      "source": "./plugins/meeting-notes-digest",
+      "displayName": "Meeting Notes Digest",
+      "description": "Turn raw meeting notes or transcripts into decisions, action items with owners, and open questions.",
+      "version": "0.1.0",
+      "author": {
+        "name": "openmind"
+      },
+      "category": "Knowledge Management",
+      "keywords": [
+        "meetings",
+        "summarization",
+        "action-items"
+      ]
+    },
+    {
+      "name": "onboarding-kit",
+      "source": "./plugins/onboarding-kit",
+      "displayName": "Onboarding Kit",
+      "description": "A bundled collection of skills for new-hire onboarding: repo tour, glossary builder, and first-week task planner.",
+      "version": "0.1.0",
+      "author": {
+        "name": "docsmith"
+      },
+      "category": "Collections",
+      "keywords": [
+        "onboarding",
+        "collection",
+        "bundle"
+      ]
+    },
+    {
+      "name": "people-operations-coordinator",
+      "source": "./plugins/people-operations-coordinator",
+      "displayName": "People Operations Coordinator",
+      "description": "People operations coordinator building onboarding workflows, policy documentation, and clean org-change processes.",
+      "version": "0.1.0",
+      "author": {
+        "name": "opsgrid"
+      },
+      "category": "Business Operations",
+      "keywords": [
+        "people-ops",
+        "onboarding",
+        "hr"
+      ]
+    },
+    {
+      "name": "personal-productivity-coach",
+      "source": "./plugins/personal-productivity-coach",
+      "displayName": "Personal Productivity Coach",
+      "description": "Productivity coach turning scattered task lists into prioritized, time-boxed plans that actually get finished.",
+      "version": "0.1.0",
+      "author": {
+        "name": "flowbot"
+      },
+      "category": "Productivity",
+      "keywords": [
+        "planning",
+        "time-management",
+        "prioritization"
+      ]
+    },
+    {
+      "name": "policy-gap-analyzer",
+      "source": "./plugins/policy-gap-analyzer",
+      "displayName": "Policy Gap Analyzer",
+      "description": "Compare an internal policy document against a named framework or checklist and report specific gaps.",
+      "version": "0.1.0",
+      "author": {
+        "name": "compliancecore"
+      },
+      "category": "Compliance",
+      "keywords": [
+        "compliance",
+        "policy",
+        "gap-analysis"
+      ]
+    },
+    {
+      "name": "prd-template-builder",
+      "source": "./plugins/prd-template-builder",
+      "displayName": "PRD Template Builder",
+      "description": "Draft a structured PRD from a rough feature request: problem statement, scope, success metrics, and open questions.",
+      "version": "0.1.0",
+      "author": {
+        "name": "productlane"
+      },
+      "category": "Product",
+      "keywords": [
+        "product",
+        "prd",
+        "requirements"
+      ]
+    },
+    {
+      "name": "process-improvement-analyst",
+      "source": "./plugins/process-improvement-analyst",
+      "displayName": "Process Improvement Analyst",
+      "description": "Operations analyst mapping workflows, finding the real bottleneck, and designing SOPs people actually follow.",
+      "version": "0.1.0",
+      "author": {
+        "name": "opsgrid"
+      },
+      "category": "Business Operations",
+      "keywords": [
+        "process-improvement",
+        "sop",
+        "operations"
+      ]
+    },
+    {
+      "name": "product-requirements-strategist",
+      "source": "./plugins/product-requirements-strategist",
+      "displayName": "Product Requirements Strategist",
+      "description": "Senior product manager turning fuzzy feature requests into PRDs with explicit success metrics and scope boundaries.",
+      "version": "0.1.0",
+      "author": {
+        "name": "productlane"
+      },
+      "category": "Product",
+      "keywords": [
+        "product",
+        "prd",
+        "requirements"
+      ]
+    },
+    {
+      "name": "prompt-chain-builder",
+      "source": "./plugins/prompt-chain-builder",
+      "displayName": "Prompt Chain Builder",
+      "description": "Design multi-step prompt chains with explicit inputs/outputs per step, so failures are traceable to one stage.",
+      "version": "0.1.0",
+      "author": {
+        "name": "chainworks"
+      },
+      "category": "Code & Dev",
+      "keywords": [
+        "prompting",
+        "llm",
+        "pipelines"
+      ]
+    },
+    {
+      "name": "proposal-pricing-table-generator",
+      "source": "./plugins/proposal-pricing-table-generator",
+      "displayName": "Proposal Pricing Table Generator",
+      "description": "Build a pricing or tiering table for a sales proposal from a rate card and the deal's specific terms.",
+      "version": "0.1.0",
+      "author": {
+        "name": "ledgerworks"
+      },
+      "category": "Commercial & Finance",
+      "keywords": [
+        "pricing",
+        "proposals",
+        "sales"
+      ]
+    },
+    {
+      "name": "regression-triage",
+      "source": "./plugins/regression-triage",
+      "displayName": "Regression Triage",
+      "description": "Triage a reported regression: bisect the likely commit range, reproduce locally, and hand off with a minimal repro.",
+      "version": "0.1.0",
+      "author": {
+        "name": "testwatch"
+      },
+      "category": "Debug & Test",
+      "keywords": [
+        "debugging",
+        "regression",
+        "bisect"
+      ]
+    },
+    {
+      "name": "regulatory-change-monitor",
+      "source": "./plugins/regulatory-change-monitor",
+      "displayName": "Regulatory Change Monitor",
+      "description": "Compliance analyst tracking relevant regulatory changes and translating them into concrete impact assessments.",
+      "version": "0.1.0",
+      "author": {
+        "name": "compliancecore"
+      },
+      "category": "Compliance",
+      "keywords": [
+        "regulatory",
+        "monitoring",
+        "impact-assessment"
+      ]
+    },
+    {
+      "name": "rest-api-scaffolder",
+      "source": "./plugins/rest-api-scaffolder",
+      "displayName": "REST API Scaffolder",
+      "description": "Scaffold a REST resource end to end: route, handler, validation schema, and tests, following the project's existing conventions.",
+      "version": "0.1.0",
+      "author": {
+        "name": "devkit"
+      },
+      "category": "Code & Dev",
+      "keywords": [
+        "scaffolding",
+        "rest",
+        "codegen"
+      ]
+    },
+    {
+      "name": "revenue-operations-analyst",
+      "source": "./plugins/revenue-operations-analyst",
+      "displayName": "Revenue Operations Analyst",
+      "description": "RevOps analyst keeping pipeline data clean and forecasts honest instead of aspirational.",
+      "version": "0.1.0",
+      "author": {
+        "name": "ledgerworks"
+      },
+      "category": "Commercial & Finance",
+      "keywords": [
+        "revops",
+        "forecasting",
+        "pipeline"
+      ]
+    },
+    {
+      "name": "roadmap-prioritization-lead",
+      "source": "./plugins/roadmap-prioritization-lead",
+      "displayName": "Roadmap Prioritization Lead",
+      "description": "Product operations lead running a defensible, ICE/RICE-scored backlog instead of a roadmap driven by whoever asked last.",
+      "version": "0.1.0",
+      "author": {
+        "name": "productlane"
+      },
+      "category": "Product",
+      "keywords": [
+        "roadmap",
+        "prioritization",
+        "backlog"
+      ]
+    },
+    {
+      "name": "sales-proposal-engineer",
+      "source": "./plugins/sales-proposal-engineer",
+      "displayName": "Sales Proposal Engineer",
+      "description": "Sales engineer drafting RFP responses and proposals that answer the actual evaluation criteria instead of generic marketing copy.",
+      "version": "0.1.0",
+      "author": {
+        "name": "ledgerworks"
+      },
+      "category": "Commercial & Finance",
+      "keywords": [
+        "rfp",
+        "proposals",
+        "sales-engineering"
+      ]
+    },
+    {
+      "name": "soc2-readiness-auditor",
+      "source": "./plugins/soc2-readiness-auditor",
+      "displayName": "SOC 2 Readiness Auditor",
+      "description": "Compliance auditor mapping security controls to SOC 2 trust criteria and organizing evidence before the real audit starts.",
+      "version": "0.1.0",
+      "author": {
+        "name": "compliancecore"
+      },
+      "category": "Compliance",
+      "keywords": [
+        "soc2",
+        "audit",
+        "controls"
+      ]
+    },
+    {
+      "name": "sop-writer",
+      "source": "./plugins/sop-writer",
+      "displayName": "SOP Writer",
+      "description": "Turn a described process into a numbered standard operating procedure with clear ownership at each step.",
+      "version": "0.1.0",
+      "author": {
+        "name": "opsgrid"
+      },
+      "category": "Business Operations",
+      "keywords": [
+        "sop",
+        "operations",
+        "documentation"
+      ]
+    },
+    {
+      "name": "spreadsheet-insights",
+      "source": "./plugins/spreadsheet-insights",
+      "displayName": "Spreadsheet Insights",
+      "description": "Turn a raw spreadsheet into a short set of defensible insights, with the underlying calculation shown for each claim.",
+      "version": "0.1.0",
+      "author": {
+        "name": "tidydata"
+      },
+      "category": "Data & Analysis",
+      "keywords": [
+        "spreadsheets",
+        "analysis",
+        "reporting"
+      ]
+    },
+    {
+      "name": "strategic-narrative-coach",
+      "source": "./plugins/strategic-narrative-coach",
+      "displayName": "Strategic Narrative Coach",
+      "description": "Executive communications coach shaping all-hands messaging and investor narrative around a consistent strategic story.",
+      "version": "0.1.0",
+      "author": {
+        "name": "boardroom-labs"
+      },
+      "category": "C-Level Advisory",
+      "keywords": [
+        "executive-communications",
+        "narrative",
+        "investor-relations"
+      ]
+    },
+    {
+      "name": "style-guide-enforcer",
+      "source": "./plugins/style-guide-enforcer",
+      "displayName": "Style Guide Enforcer",
+      "description": "Check prose against a project or brand style guide: terminology, tone, formatting, and voice consistency.",
+      "version": "0.1.0",
+      "author": {
+        "name": "docsmith"
+      },
+      "category": "Writing & Docs",
+      "keywords": [
+        "style-guide",
+        "consistency",
+        "editing"
+      ]
+    },
+    {
+      "name": "technical-docs-writer",
+      "source": "./plugins/technical-docs-writer",
+      "displayName": "Technical Docs Writer",
+      "description": "Produce API references, how-to guides, and conceptual docs that follow a consistent structure and stay honest about edge cases.",
+      "version": "0.1.0",
+      "author": {
+        "name": "docsmith"
+      },
+      "category": "Writing & Docs",
+      "keywords": [
+        "documentation",
+        "api-reference",
+        "style"
+      ]
+    },
+    {
+      "name": "technical-seo-auditor",
+      "source": "./plugins/technical-seo-auditor",
+      "displayName": "Technical SEO Auditor",
+      "description": "Elite technical SEO specialist auditing crawlability, Core Web Vitals, and structured data to recover organic visibility.",
+      "version": "0.1.0",
+      "author": {
+        "name": "seosignal"
+      },
+      "category": "SEO",
+      "keywords": [
+        "seo",
+        "core-web-vitals",
+        "structured-data"
+      ]
+    },
+    {
+      "name": "user-research-ops-manager",
+      "source": "./plugins/user-research-ops-manager",
+      "displayName": "User Research Ops Manager",
+      "description": "Research operations manager running the recruiting, session logistics, and synthesis pipeline behind user research.",
+      "version": "0.1.0",
+      "author": {
+        "name": "productlane"
+      },
+      "category": "Product",
+      "keywords": [
+        "user-research",
+        "research-ops",
+        "synthesis"
+      ]
+    },
+    {
+      "name": "vendor-contract-tracker",
+      "source": "./plugins/vendor-contract-tracker",
+      "displayName": "Vendor Contract Tracker",
+      "description": "Extract renewal dates, notice periods, and auto-renewal terms from contract text into a tracked summary.",
+      "version": "0.1.0",
+      "author": {
+        "name": "opsgrid"
+      },
+      "category": "Business Operations",
+      "keywords": [
+        "contracts",
+        "vendor-management",
+        "procurement"
+      ]
+    },
+    {
+      "name": "vendor-management-specialist",
+      "source": "./plugins/vendor-management-specialist",
+      "displayName": "Vendor Management Specialist",
+      "description": "Vendor management specialist tracking contracts, renewal dates, and spend so nothing auto-renews unnoticed.",
+      "version": "0.1.0",
+      "author": {
+        "name": "opsgrid"
+      },
+      "category": "Business Operations",
+      "keywords": [
+        "vendor-management",
+        "contracts",
+        "procurement"
+      ]
+    },
+    {
+      "name": "workflow-automation-builder",
+      "source": "./plugins/workflow-automation-builder",
+      "displayName": "Workflow Automation Builder",
+      "description": "Automation engineer wiring scripts, cron jobs, and no-code triggers into dependable, observable workflows.",
+      "version": "0.1.0",
+      "author": {
+        "name": "flowbot"
+      },
+      "category": "Automation",
+      "keywords": [
+        "automation",
+        "cron",
+        "scripting"
+      ]
+    },
+    {
+      "name": "youtube-script-planner",
+      "source": "./plugins/youtube-script-planner",
+      "displayName": "YouTube Script Planner",
+      "description": "Plan a YouTube script with a retention-focused hook, timestamped beats, and a CTA placed where drop-off is lowest.",
+      "version": "0.1.0",
+      "author": {
+        "name": "clipcraft"
+      },
+      "category": "Media & YouTube",
+      "keywords": [
+        "youtube",
+        "scriptwriting",
+        "retention"
+      ]
+    },
+    {
+      "name": "zettelkasten-notes",
+      "source": "./plugins/zettelkasten-notes",
+      "displayName": "Zettelkasten Notes",
+      "description": "Capture atomic notes and link them into a Zettelkasten-style knowledge graph instead of a flat, unsearchable notes dump.",
+      "version": "0.1.0",
+      "author": {
+        "name": "openmind"
+      },
+      "category": "Knowledge Management",
+      "keywords": [
+        "notes",
+        "zettelkasten",
+        "knowledge-graph"
+      ]
+    }
+  ]
+}
