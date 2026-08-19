@@ -106,6 +106,22 @@
       ]
     },
     {
+      "name": "article-extractor",
+      "source": "./plugins/article-extractor",
+      "displayName": "Article Extractor",
+      "description": "Extracts clean article content from a URL such as a blog post, news article, or tutorial, stripping ads, navigation, and other boilerplate. It saves the resulting readable text for downstream use such as summarizing or archiving.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Research & Learning",
+      "keywords": [
+        "content-extraction",
+        "web-scraping",
+        "readability"
+      ]
+    },
+    {
       "name": "asset-namer",
       "source": "./plugins/asset-namer",
       "displayName": "Asset Namer",
@@ -167,6 +183,38 @@
         "board-deck",
         "executive",
         "reporting"
+      ]
+    },
+    {
+      "name": "brainstorming",
+      "source": "./plugins/brainstorming",
+      "displayName": "Brainstorming",
+      "description": "Runs a structured ideation pass before any code is written for a new feature, design, or architecture decision. It surfaces multiple distinct approaches, weighs their tradeoffs against the stated constraints, and requires explicit sign-off on a direction before implementation starts.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Utility",
+      "keywords": [
+        "ideation",
+        "tradeoff-analysis",
+        "pre-implementation"
+      ]
+    },
+    {
+      "name": "career-skills",
+      "source": "./plugins/career-skills",
+      "displayName": "Career Skills",
+      "description": "Builds a personalized career development plan by comparing a person's current skills against the requirements of a target role, then produces a phased learning roadmap and interview talking points.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Utility",
+      "keywords": [
+        "career-planning",
+        "skill-gap-analysis",
+        "interview-prep"
       ]
     },
     {
@@ -269,6 +317,38 @@
       ]
     },
     {
+      "name": "code-review",
+      "source": "./plugins/code-review",
+      "displayName": "Code Review and Quality",
+      "description": "Multi-dimensional code review with quality gates covering correctness, readability, architecture, security, and performance. Use before merging any change, after completing a feature, or when evaluating code produced by another agent or model.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Development",
+      "keywords": [
+        "code-review",
+        "quality-gates",
+        "five-axis"
+      ]
+    },
+    {
+      "name": "code-review",
+      "source": "./plugins/code-review",
+      "displayName": "Code Review and Quality",
+      "description": "Multi-dimensional code review with quality gates covering correctness, readability, architecture, security, and performance. Use before merging any change, after completing a feature, or when evaluating code produced by another agent or model.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Code & Dev",
+      "keywords": [
+        "code-review",
+        "quality-gates",
+        "five-axis"
+      ]
+    },
+    {
       "name": "commit-message-linter",
       "source": "./plugins/commit-message-linter",
       "displayName": "Commit Message Quality Checker",
@@ -302,6 +382,38 @@
       ]
     },
     {
+      "name": "condition-based-waiting",
+      "source": "./plugins/condition-based-waiting",
+      "displayName": "Condition-Based Waiting",
+      "description": "Replaces fixed sleep or delay calls with polling against a real readiness condition, such as a process starting, a file appearing, or an endpoint responding. This avoids both premature failures and wasted idle time.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Code & Dev",
+      "keywords": [
+        "polling",
+        "test-reliability",
+        "async-sync"
+      ]
+    },
+    {
+      "name": "content-research-writer",
+      "source": "./plugins/content-research-writer",
+      "displayName": "Content Research Writer",
+      "description": "Assists in producing high-quality long-form content by researching the topic, adding supporting citations, sharpening the opening hook, and tightening formatting and titles. It works on an existing draft or outline rather than generating content from nothing.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Writing & Docs",
+      "keywords": [
+        "long-form-writing",
+        "content-editing",
+        "citation-research"
+      ]
+    },
+    {
       "name": "crash-report-triage",
       "source": "./plugins/crash-report-triage",
       "displayName": "Mobile Crash Report Triage",
@@ -316,6 +428,102 @@
         "crashlytics",
         "ios",
         "android"
+      ]
+    },
+    {
+      "name": "create-agent-skills",
+      "source": "./plugins/create-agent-skills",
+      "displayName": "Create Agent Skills",
+      "description": "Provides rigorous guidance for structuring and refining Claude Agent Skills, covering SKILL.md authoring, writing accurate when-to-trigger descriptions, and keeping a skill's scope narrow.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Writing & Docs",
+      "keywords": [
+        "agent-skills",
+        "skill-authoring",
+        "documentation"
+      ]
+    },
+    {
+      "name": "create-claude-commands",
+      "source": "./plugins/create-claude-commands",
+      "displayName": "Create Claude Commands",
+      "description": "Guides the authoring of a project's CLAUDE.md configuration file, covering what belongs in it, how to keep it concise, and how to phrase instructions so they are not ignored.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Writing & Docs",
+      "keywords": [
+        "claude-md",
+        "project-config",
+        "documentation"
+      ]
+    },
+    {
+      "name": "create-hooks",
+      "source": "./plugins/create-hooks",
+      "displayName": "Create Hooks",
+      "description": "Provides expert guidance for authoring Claude Code hooks, covering event selection, matcher configuration, and writing hook scripts that run fast and fail safely.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Code & Dev",
+      "keywords": [
+        "claude-code",
+        "hooks",
+        "automation"
+      ]
+    },
+    {
+      "name": "create-plans",
+      "source": "./plugins/create-plans",
+      "displayName": "Create Plans",
+      "description": "Builds a hierarchical project plan of epics, tasks, and subtasks structured so a single agent can execute it sequentially without losing track of prior context.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Code & Dev",
+      "keywords": [
+        "project-planning",
+        "task-breakdown",
+        "agent-workflow"
+      ]
+    },
+    {
+      "name": "create-slash-commands",
+      "source": "./plugins/create-slash-commands",
+      "displayName": "Create Slash Commands",
+      "description": "Provides expert guidance for authoring Claude Code slash commands, covering front-matter fields, argument-hint conventions, ARGUMENTS usage, and keeping each command focused on a single job.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Code & Dev",
+      "keywords": [
+        "claude-code",
+        "slash-commands",
+        "cli-design"
+      ]
+    },
+    {
+      "name": "create-subagents",
+      "source": "./plugins/create-subagents",
+      "displayName": "Create Subagents",
+      "description": "Provides expert guidance for designing Claude Code subagents, covering tool-access scoping, system-prompt writing, and deciding when a task should be delegated rather than handled inline.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Code & Dev",
+      "keywords": [
+        "subagents",
+        "agent-design",
+        "delegation"
       ]
     },
     {
@@ -417,6 +625,38 @@
       ]
     },
     {
+      "name": "debug-like-an-expert",
+      "source": "./plugins/debug-like-an-expert",
+      "displayName": "Debug Like An Expert",
+      "description": "Guides systematic root-cause investigation for difficult bugs by requiring full context gathering, multiple competing hypotheses, and isolated testing of each one before any fix is attempted.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Debug & Test",
+      "keywords": [
+        "root-cause-analysis",
+        "hypothesis-testing",
+        "debugging"
+      ]
+    },
+    {
+      "name": "deep-research",
+      "source": "./plugins/deep-research",
+      "displayName": "Deep Research",
+      "description": "Performs autonomous multi-step research on a given topic by decomposing the question into sub-questions, gathering sources for each, and synthesizing the results into a cited report. It is suited to open-ended questions that require pulling together information from multiple independent sources.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Research & Learning",
+      "keywords": [
+        "autonomous-research",
+        "source-synthesis",
+        "cited-report"
+      ]
+    },
+    {
       "name": "dependency-vuln-triage",
       "source": "./plugins/dependency-vuln-triage",
       "displayName": "Dependency Vulnerability Triage",
@@ -447,6 +687,86 @@
         "design-systems",
         "accessibility",
         "tokens"
+      ]
+    },
+    {
+      "name": "dispatching-parallel-agents",
+      "source": "./plugins/dispatching-parallel-agents",
+      "displayName": "Dispatching Parallel Agents",
+      "description": "Splits a batch of independent tasks with no shared dependencies across multiple subagents dispatched at once, then reconciles their results into a single output.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Utility",
+      "keywords": [
+        "parallel-dispatch",
+        "subagent-coordination",
+        "result-merging"
+      ]
+    },
+    {
+      "name": "django-pro",
+      "source": "./plugins/django-pro",
+      "displayName": "Django Pro",
+      "description": "Expert Django developer specializing in the ORM, Django REST Framework, and framework-idiomatic architecture over custom plumbing. Use when building Django features, models/migrations, DRF serializers, or Celery tasks.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Development",
+      "keywords": [
+        "django",
+        "drf",
+        "python"
+      ]
+    },
+    {
+      "name": "django-pro",
+      "source": "./plugins/django-pro",
+      "displayName": "Django Pro",
+      "description": "Expert Django developer specializing in the ORM, Django REST Framework, and framework-idiomatic architecture over custom plumbing.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Code & Dev",
+      "keywords": [
+        "django",
+        "drf",
+        "python"
+      ]
+    },
+    {
+      "name": "docker-kubernetes-pro",
+      "source": "./plugins/docker-kubernetes-pro",
+      "displayName": "Docker & Kubernetes Pro",
+      "description": "Expert in containerizing and deploying applications: minimal multi-stage Docker images and secure, resource-aware Kubernetes manifests. Use when writing Dockerfiles, Kubernetes manifests, or CI/CD pipelines for containers.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "DevOps",
+      "keywords": [
+        "docker",
+        "kubernetes",
+        "devops"
+      ]
+    },
+    {
+      "name": "docker-kubernetes-pro",
+      "source": "./plugins/docker-kubernetes-pro",
+      "displayName": "Docker & Kubernetes Pro",
+      "description": "Expert in containerizing and deploying applications: minimal multi-stage Docker images and secure, resource-aware Kubernetes manifests.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "DevOps",
+      "keywords": [
+        "docker",
+        "kubernetes",
+        "devops"
       ]
     },
     {
@@ -483,6 +803,22 @@
       ]
     },
     {
+      "name": "executing-plans",
+      "source": "./plugins/executing-plans",
+      "displayName": "Executing Plans",
+      "description": "Tracks execution of a previously written multi-step development plan by checkpointing progress after each step and resuming cleanly if the session is interrupted.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Code & Dev",
+      "keywords": [
+        "plan-execution",
+        "progress-tracking",
+        "checkpointing"
+      ]
+    },
+    {
       "name": "executive-briefing-digest",
       "source": "./plugins/executive-briefing-digest",
       "displayName": "Executive Briefing Digest",
@@ -514,6 +850,22 @@
       ]
     },
     {
+      "name": "file-organizer",
+      "source": "./plugins/file-organizer",
+      "displayName": "File Organizer",
+      "description": "Organizes files and folders by reading their actual content rather than trusting filenames or extensions alone. It flags duplicate and near-duplicate files and proposes a cleaner folder structure grouped by topic and purpose.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Knowledge Management",
+      "keywords": [
+        "file-management",
+        "deduplication",
+        "auto-sort"
+      ]
+    },
+    {
       "name": "file-organizer-pro",
       "source": "./plugins/file-organizer-pro",
       "displayName": "File Organizer Pro",
@@ -527,6 +879,22 @@
         "file-management",
         "organization",
         "dedupe"
+      ]
+    },
+    {
+      "name": "finishing-a-development-branch",
+      "source": "./plugins/finishing-a-development-branch",
+      "displayName": "Finishing A Development Branch",
+      "description": "Runs a completion checklist covering lint, build, tests, documentation, and leftover TODOs before a development branch is considered ready to merge.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Git & Version Control",
+      "keywords": [
+        "merge-readiness",
+        "completion-checklist",
+        "branch-hygiene"
       ]
     },
     {
@@ -578,6 +946,54 @@
       ]
     },
     {
+      "name": "fullstack-guardian",
+      "source": "./plugins/fullstack-guardian",
+      "displayName": "Fullstack Guardian",
+      "description": "Cross-stack reviewer that traces a change across the database, API, and frontend to catch contract drift, unsafe migrations, and rolling-deploy breakage before merge. Use before merging any change that touches both a backend and its frontend consumers.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Development",
+      "keywords": [
+        "fullstack",
+        "api-contracts",
+        "code-review"
+      ]
+    },
+    {
+      "name": "fullstack-guardian",
+      "source": "./plugins/fullstack-guardian",
+      "displayName": "Fullstack Guardian",
+      "description": "Cross-stack reviewer that traces a change across the database, API, and frontend to catch contract drift, unsafe migrations, and rolling-deploy breakage before merge.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Code & Dev",
+      "keywords": [
+        "fullstack",
+        "api-contracts",
+        "code-review"
+      ]
+    },
+    {
+      "name": "git-pushing",
+      "source": "./plugins/git-pushing",
+      "displayName": "Git Pushing",
+      "description": "Stages, commits, and pushes changes using well-formed conventional commit messages. It checks first for unrelated uncommitted work in the tree so it does not get swept into the same commit by accident.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Git & Version Control",
+      "keywords": [
+        "conventional-commits",
+        "git-workflow",
+        "safe-push"
+      ]
+    },
+    {
       "name": "growth-marketing-strategist",
       "source": "./plugins/growth-marketing-strategist",
       "displayName": "Growth Marketing Strategist",
@@ -591,6 +1007,22 @@
         "growth",
         "funnels",
         "experiments"
+      ]
+    },
+    {
+      "name": "image-enhancer",
+      "source": "./plugins/image-enhancer",
+      "displayName": "Image Enhancer",
+      "description": "Improves the visual quality of images, especially screenshots, by upscaling resolution, sharpening blurred detail, and reducing compression artifacts such as banding and blockiness.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Media & Graphics",
+      "keywords": [
+        "upscaling",
+        "sharpening",
+        "artifact-removal"
       ]
     },
     {
@@ -678,6 +1110,54 @@
       ]
     },
     {
+      "name": "laravel-specialist",
+      "source": "./plugins/laravel-specialist",
+      "displayName": "Laravel Specialist",
+      "description": "Expert Laravel developer specializing in Eloquent, queues, authorization, and framework-idiomatic architecture over custom plumbing. Use when building Laravel features, Eloquent models and migrations, Form Requests, policies, queued jobs, or Feature/Unit tests.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Development",
+      "keywords": [
+        "laravel",
+        "eloquent",
+        "php"
+      ]
+    },
+    {
+      "name": "laravel-specialist",
+      "source": "./plugins/laravel-specialist",
+      "displayName": "Laravel Specialist",
+      "description": "Expert Laravel developer specializing in Eloquent, queues, authorization, and framework-idiomatic architecture over custom plumbing.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Code & Dev",
+      "keywords": [
+        "laravel",
+        "eloquent",
+        "php"
+      ]
+    },
+    {
+      "name": "learn-fast-framework",
+      "source": "./plugins/learn-fast-framework",
+      "displayName": "Learn Fast Framework",
+      "description": "Transforms long-form content such as YouTube transcripts, articles, or tutorials into an actionable implementation plan, skipping straight past passive consumption. It applies a learn-by-doing framework that extracts concrete steps rather than summarizing the material for later re-reading.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Research & Learning",
+      "keywords": [
+        "active-learning",
+        "implementation-plan",
+        "content-to-action"
+      ]
+    },
+    {
       "name": "literature-review-assistant",
       "source": "./plugins/literature-review-assistant",
       "displayName": "Literature Review Assistant",
@@ -740,6 +1220,22 @@
         "research",
         "competitive-analysis",
         "market-sizing"
+      ]
+    },
+    {
+      "name": "mcp-builder",
+      "source": "./plugins/mcp-builder",
+      "displayName": "MCP Builder",
+      "description": "Guides the design of a Model Context Protocol server by scoping each tool tightly, writing precise descriptions and schemas, and structuring error handling so agents can call it reliably.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Code & Dev",
+      "keywords": [
+        "mcp",
+        "tool-design",
+        "server-architecture"
       ]
     },
     {
@@ -841,6 +1337,38 @@
       ]
     },
     {
+      "name": "php-pro",
+      "source": "./plugins/php-pro",
+      "displayName": "PHP Pro",
+      "description": "Expert PHP developer specializing in strictly-typed, modern PHP: PSR standards, dependency injection, static analysis, and secure, tested implementations. Use when writing or reviewing framework-agnostic PHP, adding strict types and static analysis, designing classes and interfaces, or auditing PHP for performance and security issues.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Development",
+      "keywords": [
+        "php",
+        "phpunit",
+        "composer"
+      ]
+    },
+    {
+      "name": "php-pro",
+      "source": "./plugins/php-pro",
+      "displayName": "PHP Pro",
+      "description": "Expert PHP developer specializing in strictly-typed, modern PHP: PSR standards, dependency injection, static analysis, and secure, tested implementations.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Code & Dev",
+      "keywords": [
+        "php",
+        "phpunit",
+        "composer"
+      ]
+    },
+    {
       "name": "policy-gap-analyzer",
       "source": "./plugins/policy-gap-analyzer",
       "displayName": "Policy Gap Analyzer",
@@ -854,6 +1382,38 @@
         "compliance",
         "policy",
         "gap-analysis"
+      ]
+    },
+    {
+      "name": "postgres",
+      "source": "./plugins/postgres",
+      "displayName": "Postgres",
+      "description": "Provides recommendation-only guidance for working against a PostgreSQL database, covering query design, indexing strategy, and reading EXPLAIN output. It never runs destructive statements without explicit confirmation from the user.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Data & Analysis",
+      "keywords": [
+        "sql-tuning",
+        "query-planning",
+        "indexing"
+      ]
+    },
+    {
+      "name": "prd",
+      "source": "./plugins/prd",
+      "displayName": "PRD",
+      "description": "Generates a Product Requirements Document for a proposed feature, covering the problem statement, goals and non-goals, user stories, and success metrics. It structures ambiguous feature ideas into a document a team can review and sign off on.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Writing & Docs",
+      "keywords": [
+        "product-requirements",
+        "documentation",
+        "feature-planning"
       ]
     },
     {
@@ -954,6 +1514,38 @@
       ]
     },
     {
+      "name": "python-pro",
+      "source": "./plugins/python-pro",
+      "displayName": "Python Pro",
+      "description": "Expert Python developer specializing in fully type-hinted, tested Python: dataclasses/Pydantic, async I/O, and secure, well-packaged code. Use when writing or reviewing Python, adding type hints and static analysis, or auditing for performance and security issues.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Development",
+      "keywords": [
+        "python",
+        "pytest",
+        "typing"
+      ]
+    },
+    {
+      "name": "python-pro",
+      "source": "./plugins/python-pro",
+      "displayName": "Python Pro",
+      "description": "Expert Python developer specializing in fully type-hinted, tested Python: dataclasses/Pydantic, async I/O, and secure, well-packaged code.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Code & Dev",
+      "keywords": [
+        "python",
+        "pytest",
+        "typing"
+      ]
+    },
+    {
       "name": "rag-pipeline-architect",
       "source": "./plugins/rag-pipeline-architect",
       "displayName": "RAG Pipeline Architect",
@@ -968,6 +1560,54 @@
         "retrieval",
         "embeddings",
         "vector-search"
+      ]
+    },
+    {
+      "name": "ralph",
+      "source": "./plugins/ralph",
+      "displayName": "Ralph",
+      "description": "Runs the same fixed prompt repeatedly against a task backlog until it is empty, relying on statelessness and idempotent checks rather than long-running memory between iterations. Named after the well-known autonomous-loop coding technique.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Utility",
+      "keywords": [
+        "autonomous-loop",
+        "task-queue",
+        "idempotent-runs"
+      ]
+    },
+    {
+      "name": "react-best-practices",
+      "source": "./plugins/react-best-practices",
+      "displayName": "React Best Practices",
+      "description": "Expert React developer specializing in component architecture, hooks, and performance: eliminates prop drilling, unnecessary re-renders, and unsafe effects. Use when building or reviewing React components, or optimizing re-renders.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Frontend",
+      "keywords": [
+        "react",
+        "hooks",
+        "performance"
+      ]
+    },
+    {
+      "name": "react-best-practices",
+      "source": "./plugins/react-best-practices",
+      "displayName": "React Best Practices",
+      "description": "Expert React developer specializing in component architecture, hooks, and performance: eliminates prop drilling, unnecessary re-renders, and unsafe effects.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Code & Dev",
+      "keywords": [
+        "react",
+        "hooks",
+        "performance"
       ]
     },
     {
@@ -1017,6 +1657,38 @@
         "hydration",
         "rendering",
         "framework-architecture"
+      ]
+    },
+    {
+      "name": "requesting-code-review",
+      "source": "./plugins/requesting-code-review",
+      "displayName": "Requesting Code Review",
+      "description": "Packages a finished change into a reviewable request by summarizing what changed, why, and which parts deserve the closest scrutiny, rather than submitting a bare diff link.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Code & Dev",
+      "keywords": [
+        "code-review",
+        "pr-description",
+        "review-context"
+      ]
+    },
+    {
+      "name": "resolving-code-review",
+      "source": "./plugins/resolving-code-review",
+      "displayName": "Resolving Code Review",
+      "description": "Triages incoming review feedback into must-fix, nice-to-have, and disagree categories, and drafts respectful pushback on comments that seem ambiguous or overreaching.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Code & Dev",
+      "keywords": [
+        "review-triage",
+        "feedback-handling",
+        "pushback"
       ]
     },
     {
@@ -1131,6 +1803,38 @@
         "compliance",
         "questionnaire",
         "audit-prep"
+      ]
+    },
+    {
+      "name": "security-reviewer",
+      "source": "./plugins/security-reviewer",
+      "displayName": "Security Reviewer",
+      "description": "Application security reviewer that traces untrusted input through a change and reports OWASP-class vulnerabilities ranked by severity with concrete fixes. Use for a security review of new or changed code, authentication/authorization logic, or user input handling.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Security",
+      "keywords": [
+        "security",
+        "owasp",
+        "code-review"
+      ]
+    },
+    {
+      "name": "security-reviewer",
+      "source": "./plugins/security-reviewer",
+      "displayName": "Security Reviewer",
+      "description": "Application security reviewer that traces untrusted input through a change and reports OWASP-class vulnerabilities ranked by severity with concrete fixes.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Code & Dev",
+      "keywords": [
+        "security",
+        "owasp",
+        "code-review"
       ]
     },
     {
@@ -1263,6 +1967,54 @@
       ]
     },
     {
+      "name": "subagent-driven-development",
+      "source": "./plugins/subagent-driven-development",
+      "displayName": "Subagent-Driven Development",
+      "description": "Coordinates implementation of a multi-task plan by identifying which tasks are independent enough to run in parallel subagents and which require sequential handoffs.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Code & Dev",
+      "keywords": [
+        "subagent-coordination",
+        "parallel-execution",
+        "task-dependencies"
+      ]
+    },
+    {
+      "name": "systematic-debugging",
+      "source": "./plugins/systematic-debugging",
+      "displayName": "Systematic Debugging",
+      "description": "Applies a disciplined debugging process to any bug, failing test, or unexpected behavior before a fix is proposed. It reproduces the issue reliably, narrows the root cause through bisection-style isolation, and confirms the fix resolves the actual cause rather than a symptom.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Debug & Test",
+      "keywords": [
+        "root-cause-analysis",
+        "bisection",
+        "regression-testing"
+      ]
+    },
+    {
+      "name": "tapestry",
+      "source": "./plugins/tapestry",
+      "displayName": "Tapestry",
+      "description": "Weaves scattered notes, articles, and links on a single topic into one coherent action plan. It consolidates overlapping and conflicting material gathered during research into a single next-steps document rather than leaving it as separate fragments.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Research & Learning",
+      "keywords": [
+        "knowledge-synthesis",
+        "action-planning",
+        "note-consolidation"
+      ]
+    },
+    {
       "name": "technical-docs-writer",
       "source": "./plugins/technical-docs-writer",
       "displayName": "Technical Docs Writer",
@@ -1292,6 +2044,54 @@
         "seo",
         "core-web-vitals",
         "structured-data"
+      ]
+    },
+    {
+      "name": "test-driven-development",
+      "source": "./plugins/test-driven-development",
+      "displayName": "Test-Driven Development",
+      "description": "Enforces a strict red-green-refactor cycle by requiring a failing test before any implementation code, then only the minimum code needed to pass it, followed by refactoring.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Debug & Test",
+      "keywords": [
+        "red-green-refactor",
+        "unit-testing",
+        "tdd"
+      ]
+    },
+    {
+      "name": "typescript-pro",
+      "source": "./plugins/typescript-pro",
+      "displayName": "TypeScript Pro",
+      "description": "Expert TypeScript developer specializing in strict-mode type safety: discriminated unions, generics, and runtime-validated boundaries. Use when writing or reviewing TypeScript, designing domain types, or validating external data.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Development",
+      "keywords": [
+        "typescript",
+        "type-safety",
+        "generics"
+      ]
+    },
+    {
+      "name": "typescript-pro",
+      "source": "./plugins/typescript-pro",
+      "displayName": "TypeScript Pro",
+      "description": "Expert TypeScript developer specializing in strict-mode type safety: discriminated unions, generics, and runtime-validated boundaries.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Code & Dev",
+      "keywords": [
+        "typescript",
+        "type-safety",
+        "generics"
       ]
     },
     {
@@ -1325,6 +2125,38 @@
         "user-research",
         "research-ops",
         "synthesis"
+      ]
+    },
+    {
+      "name": "using-git-worktrees",
+      "source": "./plugins/using-git-worktrees",
+      "displayName": "Using Git Worktrees",
+      "description": "Sets up a git worktree-based workspace when starting feature work that needs isolation from the main checkout. It keeps parallel branches of work from colliding over the same working directory.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Git & Version Control",
+      "keywords": [
+        "git-worktree",
+        "parallel-branches",
+        "workspace-isolation"
+      ]
+    },
+    {
+      "name": "using-superpowers",
+      "source": "./plugins/using-superpowers",
+      "displayName": "Using Superpowers",
+      "description": "Acts as the entry point for coding, testing, or refactoring work by surveying which workflow skills apply to the task and sequencing them before any implementation begins.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Utility",
+      "keywords": [
+        "workflow-orchestration",
+        "skill-routing",
+        "task-planning"
       ]
     },
     {
@@ -1377,6 +2209,54 @@
       ]
     },
     {
+      "name": "verification-before-completion",
+      "source": "./plugins/verification-before-completion",
+      "displayName": "Verification Before Completion",
+      "description": "Blocks premature claims of a task being done, fixed, or passing by requiring the relevant tests, build, or lint to actually be run and their output cited as evidence.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Debug & Test",
+      "keywords": [
+        "test-verification",
+        "build-checks",
+        "evidence-based"
+      ]
+    },
+    {
+      "name": "web-artifacts-builder",
+      "source": "./plugins/web-artifacts-builder",
+      "displayName": "Web Artifacts Builder",
+      "description": "Supplies a set of patterns for building self-contained web artifacts, such as dashboards, small tools, and multi-component apps, that run entirely from a single HTML file with no build step or external dependencies.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Code & Dev",
+      "keywords": [
+        "single-file-app",
+        "no-build-step",
+        "ui-patterns"
+      ]
+    },
+    {
+      "name": "web-design-guidelines",
+      "source": "./plugins/web-design-guidelines",
+      "displayName": "Web Design Guidelines",
+      "description": "Audits a web interface or design mockup against a curated set of modern UI heuristics covering spacing, typography, contrast, hierarchy, and responsive behavior, then reports concrete fixes.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Code & Dev",
+      "keywords": [
+        "ui-review",
+        "accessibility",
+        "design-heuristics"
+      ]
+    },
+    {
       "name": "web-perf-budget-keeper",
       "source": "./plugins/web-perf-budget-keeper",
       "displayName": "Web Performance Budget Keeper",
@@ -1391,6 +2271,38 @@
         "core-web-vitals",
         "bundle-size",
         "profiling"
+      ]
+    },
+    {
+      "name": "wordpress-pro",
+      "source": "./plugins/wordpress-pro",
+      "displayName": "WordPress Pro",
+      "description": "Expert WordPress developer specializing in custom themes, plugins, Gutenberg blocks, WooCommerce, and WordPress performance optimization. Use when building WordPress themes, writing plugins, customizing Gutenberg blocks, extending WooCommerce, working with ACF, using the WordPress REST API, applying hooks and filters, or improving WordPress performance and security.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Development",
+      "keywords": [
+        "wordpress",
+        "woocommerce",
+        "gutenberg"
+      ]
+    },
+    {
+      "name": "wordpress-pro",
+      "source": "./plugins/wordpress-pro",
+      "displayName": "WordPress Pro",
+      "description": "Expert WordPress developer specializing in custom themes, plugins, Gutenberg blocks, WooCommerce, and WordPress performance and security optimization.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Code & Dev",
+      "keywords": [
+        "wordpress",
+        "woocommerce",
+        "gutenberg"
       ]
     },
     {
@@ -1410,6 +2322,54 @@
       ]
     },
     {
+      "name": "writing-plans",
+      "source": "./plugins/writing-plans",
+      "displayName": "Writing Plans",
+      "description": "Invoked before implementation work begins on any multi-step coding task, this skill converts a spec or requirement into an ordered, checkable plan with explicit in-scope and out-of-scope boundaries. It forces scope discipline up front so execution does not drift once code changes start.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Code & Dev",
+      "keywords": [
+        "implementation-planning",
+        "scope-control",
+        "task-breakdown"
+      ]
+    },
+    {
+      "name": "writing-skills",
+      "source": "./plugins/writing-skills",
+      "displayName": "Writing Skills",
+      "description": "Invoked when authoring a new Claude skill, editing an existing one, or auditing one before deployment, this skill checks the SKILL.md front matter, trigger description, and scope boundaries against common authoring mistakes. It flags vague triggers, missing metadata, and scope creep before the skill ships.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Writing & Docs",
+      "keywords": [
+        "skill-authoring",
+        "quality-check",
+        "skill-md"
+      ]
+    },
+    {
+      "name": "youtube-downloader",
+      "source": "./plugins/youtube-downloader",
+      "displayName": "YouTube Downloader",
+      "description": "Downloads YouTube videos and their subtitles with configurable resolution, format, and audio-only options, handling both single videos and full playlists. It manages format selection and output naming so batches of downloads stay organized.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Media & YouTube",
+      "keywords": [
+        "video-download",
+        "youtube",
+        "media-fetch"
+      ]
+    },
+    {
       "name": "youtube-script-planner",
       "source": "./plugins/youtube-script-planner",
       "displayName": "YouTube Script Planner",
@@ -1423,6 +2383,22 @@
         "youtube",
         "scriptwriting",
         "retention"
+      ]
+    },
+    {
+      "name": "youtube-transcript",
+      "source": "./plugins/youtube-transcript",
+      "displayName": "YouTube Transcript",
+      "description": "Given a YouTube URL, fetches the video's subtitle track and reformats it into clean, readable text while preserving timestamps at natural paragraph breaks. It removes caption artifacts like repeated filler and auto-caption noise.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Media & YouTube",
+      "keywords": [
+        "transcript-extraction",
+        "youtube",
+        "subtitles"
       ]
     },
     {

@@ -674,6 +674,29 @@ button {
   font-size: 15px;
   font-weight: 700;
   margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.install-tabs-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.tool-badge {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-faint);
+  background: var(--bg-raised);
+  border: 1px solid var(--border-soft);
+  border-radius: 20px;
+  padding: 2px 10px;
+  text-transform: none;
 }
 
 .install-intro {
@@ -923,6 +946,27 @@ button {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
+}
+
+.ref-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 12px 0 20px;
+  font-size: 13px;
+}
+
+.ref-table th,
+.ref-table td {
+  text-align: left;
+  padding: 8px 12px;
+  border: 1px solid var(--border-soft);
+  color: var(--text-dim);
+}
+
+.ref-table th {
+  color: var(--text-faint);
+  font-weight: 600;
+  background: var(--bg-raised);
 }
 
 .phase-col-label {

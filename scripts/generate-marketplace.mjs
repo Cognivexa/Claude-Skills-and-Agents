@@ -10,6 +10,8 @@ import { MARKETPLACE_NAME } from '../src/data/marketplace.js'
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, '..')
 const PLUGINS_DIR = join(ROOT, 'plugins')
+const SKILLS_DIR = join(ROOT, 'skills')
+const AGENTS_DIR = join(ROOT, 'agents')
 const MANIFEST_DIR = join(ROOT, '.claude-plugin')
 
 function writeFile(path, content) {
@@ -19,12 +21,20 @@ function writeFile(path, content) {
 
 // Start clean so removed/renamed entries don't leave stale plugin dirs behind.
 if (existsSync(PLUGINS_DIR)) rmSync(PLUGINS_DIR, { recursive: true, force: true })
+// Flat top-level skills/ and agents/ dirs: drop-in compatible with .claude/skills/,
+// .claude/agents/, and the `npx skills add <owner>/<repo> --skill <name>` CLI, which
+// discovers skills from a top-level skills/<name>/SKILL.md layout, not the nested
+// plugins/<name>/skills/<name>/SKILL.md layout the plugin marketplace above uses.
+if (existsSync(SKILLS_DIR)) rmSync(SKILLS_DIR, { recursive: true, force: true })
+if (existsSync(AGENTS_DIR)) rmSync(AGENTS_DIR, { recursive: true, force: true })
 
 const pluginEntries = []
 
 for (const agent of AGENTS) {
   const pluginDir = join(PLUGINS_DIR, agent.slug)
-  writeFile(join(pluginDir, 'agents', `${agent.slug}.md`), renderAgentMarkdown(agent))
+  const agentMarkdown = renderAgentMarkdown(agent)
+  writeFile(join(pluginDir, 'agents', `${agent.slug}.md`), agentMarkdown)
+  writeFile(join(AGENTS_DIR, `${agent.slug}.md`), agentMarkdown)
 
   pluginEntries.push({
     name: agent.slug,
@@ -40,7 +50,14 @@ for (const agent of AGENTS) {
 
 for (const skill of SKILLS) {
   const pluginDir = join(PLUGINS_DIR, skill.slug)
-  writeFile(join(pluginDir, 'skills', skill.slug, 'SKILL.md'), renderSkillMarkdown(skill))
+  const skillMarkdown = renderSkillMarkdown(skill)
+  writeFile(join(pluginDir, 'skills', skill.slug, 'SKILL.md'), skillMarkdown)
+  writeFile(join(SKILLS_DIR, skill.slug, 'SKILL.md'), skillMarkdown)
+
+  for (const [relativePath, content] of Object.entries(skill.referenceFiles || {})) {
+    writeFile(join(pluginDir, 'skills', skill.slug, relativePath), content)
+    writeFile(join(SKILLS_DIR, skill.slug, relativePath), content)
+  }
 
   pluginEntries.push({
     name: skill.slug,

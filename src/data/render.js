@@ -1,4 +1,7 @@
 export function renderAgentMarkdown(agent) {
+  if (agent.bodyMarkdown) return renderFreeformAgentMarkdown(agent)
+  if (agent.pro) return renderProAgentMarkdown(agent)
+
   const lines = []
   lines.push('---')
   lines.push(`name: ${agent.slug}`)
@@ -38,7 +41,77 @@ export function renderAgentMarkdown(agent) {
   return lines.join('\n')
 }
 
+function renderFreeformAgentMarkdown(agent) {
+  const lines = []
+  lines.push('---')
+  lines.push(`name: ${agent.slug}`)
+  lines.push(`description: ${agent.shortDescription}`)
+  lines.push(`tools: ${agent.tools.join(', ')}`)
+  lines.push(`model: ${agent.model || 'inherit'}`)
+  lines.push('---')
+  lines.push('')
+  lines.push(agent.bodyMarkdown)
+  return lines.join('\n')
+}
+
+function renderProAgentMarkdown(agent) {
+  const lines = []
+  lines.push('---')
+  lines.push(`name: ${agent.slug}`)
+  lines.push(`description: ${agent.shortDescription}`)
+  lines.push(`tools: ${agent.tools.join(', ')}`)
+  lines.push(`model: ${agent.model || 'inherit'}`)
+  if (agent.relatedSkills?.length) {
+    lines.push('metadata:')
+    lines.push(`  domain: ${agent.domain}`)
+    lines.push(`  platform: ${agent.platform}`)
+    lines.push(`  role: ${agent.role}`)
+    lines.push(`  scope: ${agent.scope}`)
+    lines.push(`  output: ${agent.output}`)
+    lines.push(`  relatedSkills: ${agent.relatedSkills.join(', ')}`)
+  }
+  lines.push('---')
+  lines.push('')
+  lines.push(agent.intro)
+  lines.push('')
+  lines.push('## Core Workflow')
+  lines.push('')
+  agent.coreWorkflow.forEach((step, i) => lines.push(`${i + 1}. **${step.title}** — ${step.detail}`))
+  lines.push('')
+  lines.push('## Key Implementation Patterns')
+  lines.push('')
+  agent.codePatterns.forEach((p) => {
+    lines.push(`### ${p.title}`)
+    lines.push('```' + p.language)
+    lines.push(p.code)
+    lines.push('```')
+    lines.push('')
+  })
+  lines.push('## Constraints')
+  lines.push('')
+  lines.push('**MUST DO**')
+  agent.mustDo.forEach((m) => lines.push(`- ${m}`))
+  lines.push('')
+  lines.push('**MUST NOT DO**')
+  agent.mustNot.forEach((m) => lines.push(`- ${m}`))
+  lines.push('')
+  lines.push('## Output Format')
+  lines.push('')
+  lines.push(agent.outputFormat)
+  lines.push('')
+  lines.push('## Knowledge Reference')
+  lines.push('')
+  lines.push(agent.knowledgeReference)
+  lines.push('')
+  lines.push('Integration with other agents:')
+  agent.integrations.forEach((i) => lines.push(`- ${i}`))
+  return lines.join('\n')
+}
+
 export function renderSkillMarkdown(skill) {
+  if (skill.bodyMarkdown) return renderFreeformSkillMarkdown(skill)
+  if (skill.pro) return renderProSkillMarkdown(skill)
+
   const lines = []
   lines.push('---')
   lines.push(`name: ${skill.slug}`)
@@ -57,5 +130,76 @@ export function renderSkillMarkdown(skill) {
   lines.push('## How It Works')
   lines.push('')
   skill.howItWorks.forEach((step, i) => lines.push(`${i + 1}. ${step}`))
+  return lines.join('\n')
+}
+
+function renderFreeformSkillMarkdown(skill) {
+  const lines = []
+  lines.push('---')
+  lines.push(`name: ${skill.slug}`)
+  lines.push(`description: ${skill.description}`)
+  lines.push('---')
+  lines.push('')
+  lines.push(skill.bodyMarkdown)
+  return lines.join('\n')
+}
+
+function renderProSkillMarkdown(skill) {
+  const lines = []
+  lines.push('---')
+  lines.push(`name: ${skill.slug}`)
+  lines.push(`description: ${skill.description}`)
+  if (skill.whenToUse) lines.push(`when_to_use: ${skill.whenToUse}`)
+  lines.push('metadata:')
+  lines.push(`  domain: ${skill.domain}`)
+  lines.push(`  platform: ${skill.platform}`)
+  lines.push(`  role: ${skill.role}`)
+  lines.push(`  scope: ${skill.scope}`)
+  lines.push(`  output: ${skill.output}`)
+  if (skill.relatedSkills?.length) lines.push(`  relatedSkills: ${skill.relatedSkills.join(', ')}`)
+  lines.push('---')
+  lines.push('')
+  lines.push(`# ${skill.name}`)
+  lines.push('')
+  lines.push(skill.intro)
+  lines.push('')
+  lines.push('## Core Workflow')
+  lines.push('')
+  skill.coreWorkflow.forEach((step, i) => lines.push(`${i + 1}. **${step.title}** — ${step.detail}`))
+  lines.push('')
+  lines.push('## Reference Guide')
+  lines.push('')
+  lines.push('Load detailed guidance based on context:')
+  lines.push('')
+  lines.push('| Topic | Reference | Load When |')
+  lines.push('|---|---|---|')
+  skill.referenceGuide.forEach((r) => lines.push(`| ${r.topic} | ${r.file} | ${r.loadWhen} |`))
+  lines.push('')
+  lines.push('## Key Implementation Patterns')
+  lines.push('')
+  skill.codePatterns.forEach((p) => {
+    lines.push(`### ${p.title}`)
+    lines.push('```' + p.language)
+    lines.push(p.code)
+    lines.push('```')
+    lines.push('')
+  })
+  lines.push('## Constraints')
+  lines.push('')
+  lines.push('**MUST DO**')
+  skill.mustDo.forEach((m) => lines.push(`- ${m}`))
+  lines.push('')
+  lines.push('**MUST NOT DO**')
+  skill.mustNot.forEach((m) => lines.push(`- ${m}`))
+  lines.push('')
+  lines.push('## Output Templates')
+  lines.push('')
+  lines.push('When implementing, provide:')
+  lines.push('')
+  skill.outputTemplate.forEach((o, i) => lines.push(`${i + 1}. ${o}`))
+  lines.push('')
+  lines.push('## Knowledge Reference')
+  lines.push('')
+  lines.push(skill.knowledgeReference)
   return lines.join('\n')
 }

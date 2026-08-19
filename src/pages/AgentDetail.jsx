@@ -1,10 +1,13 @@
 import { useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { AGENTS, getAgent } from '../data/agents.js'
+import { SKILLS, getSkill } from '../data/skills.js'
 import { renderAgentMarkdown } from '../data/render.js'
 import { MARKETPLACE_REPO, MARKETPLACE_NAME, OTHER_COMPATIBLE_TOOLS } from '../data/marketplace.js'
 import AgentCard from '../components/AgentCard.jsx'
 import CopyCommand from '../components/CopyCommand.jsx'
+import AgentInstallTabs from '../components/AgentInstallTabs.jsx'
+import MarkdownLite from '../components/MarkdownLite.jsx'
 
 export default function AgentDetail() {
   const { slug } = useParams()
@@ -45,7 +48,10 @@ export default function AgentDetail() {
       </div>
 
       <div className="install-block">
-        <div className="install-heading">Install with Claude Code</div>
+        <div className="install-heading">
+          Install as a plugin
+          <span className="tool-badge">Claude Code only</span>
+        </div>
         <p className="install-intro">
           Open a Claude Code chat session — the terminal, or the chat panel of the VS Code / JetBrains extension —
           and run these <strong>one at a time</strong>, waiting for each to finish before the next:
@@ -54,9 +60,9 @@ export default function AgentDetail() {
         <CopyCommand label="1. Add this repo as a marketplace — run once, ever" command={`/plugin marketplace add ${MARKETPLACE_REPO}`} />
         <div className="install-warning">
           Type this exactly as shown — just the repo, nothing appended. This step installs <strong>nothing</strong>{' '}
-          — it only tells Claude Code where to find plugins in this repo. None of the 88 plugins are downloaded
-          until you run step 2 for the specific one you want. You only run this once per machine, no matter how
-          many agents or skills from this repo you plan to install afterward.
+          — it only tells Claude Code where to find plugins in this repo. None of the {SKILLS.length + AGENTS.length}{' '}
+          plugins are downloaded until you run step 2 for the specific one you want. You only run this once per
+          machine, no matter how many agents or skills from this repo you plan to install afterward.
         </div>
 
         <CopyCommand label="2. Install only this agent — nothing else" command={`/plugin install ${agent.slug}@${MARKETPLACE_NAME}`} />
@@ -67,10 +73,17 @@ export default function AgentDetail() {
         />
 
         <div className="tools-note">
-          Also usable with {OTHER_COMPATIBLE_TOOLS.join(', ')} — these tools don't share Claude Code's plugin
-          format, but each supports its own custom instructions/rules mechanism this Markdown file can be adapted
-          to.
+          Subagents (the Task tool) are a Claude Code concept — this install path only works there. See below if
+          you want this capability available in Codex too.
         </div>
+      </div>
+
+      <AgentInstallTabs slug={agent.slug} hasMatchingSkill={!!getSkill(agent.slug)} />
+
+      <div className="tools-note" style={{ marginBottom: 24 }}>
+        Beyond Claude Code, this Markdown file is also usable as reference material with{' '}
+        {OTHER_COMPATIBLE_TOOLS.join(', ')} — none of those share Claude Code's subagent format, but each supports
+        its own custom instructions/rules mechanism this file can be adapted to by hand.
       </div>
 
       <div className="panel">
@@ -110,9 +123,63 @@ export default function AgentDetail() {
 
           {mode === 'raw' ? (
             <pre className="raw-view">{renderAgentMarkdown(agent)}</pre>
+          ) : agent.bodyMarkdown ? (
+            <div className="prose">
+              {agent.relatedSkills && (
+                <p>
+                  <strong>Related Skills:</strong> {agent.relatedSkills.join(' · ')}
+                </p>
+              )}
+              <MarkdownLite text={agent.bodyMarkdown} />
+            </div>
           ) : (
             <div className="prose">
               <p>{agent.intro}</p>
+
+              {agent.pro && (
+                <>
+                  <p>
+                    <strong>Related Skills:</strong> {agent.relatedSkills.join(' · ')}
+                  </p>
+
+                  <h3>Core Workflow</h3>
+                  <ol>
+                    {agent.coreWorkflow.map((step, i) => (
+                      <li key={i}>
+                        <strong>{step.title}</strong> — {step.detail}
+                      </li>
+                    ))}
+                  </ol>
+
+                  <h3>Key Implementation Patterns</h3>
+                  {agent.codePatterns.map((p) => (
+                    <div key={p.title}>
+                      <div className="phase-col-label">{p.title}</div>
+                      <pre className="code-block">{p.code}</pre>
+                    </div>
+                  ))}
+
+                  <h3>Constraints</h3>
+                  <div className="phase-cols">
+                    <div>
+                      <div className="phase-col-label">MUST DO</div>
+                      <ul>
+                        {agent.mustDo.map((m, i) => (
+                          <li key={i}>{m}</li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div>
+                      <div className="phase-col-label">MUST NOT DO</div>
+                      <ul>
+                        {agent.mustNot.map((m, i) => (
+                          <li key={i}>{m}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </>
+              )}
 
               <h3>When invoked:</h3>
               <ol>
@@ -158,6 +225,13 @@ export default function AgentDetail() {
 
               <h3>Output Format</h3>
               <p>{agent.outputFormat}</p>
+
+              {agent.pro && (
+                <>
+                  <h3>Knowledge Reference</h3>
+                  <p>{agent.knowledgeReference}</p>
+                </>
+              )}
 
               <h3>Communication Protocol</h3>
               <p>Initialize by querying the context manager for the current engagement's requirements.</p>
