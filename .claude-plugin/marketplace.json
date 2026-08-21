@@ -333,22 +333,6 @@
       ]
     },
     {
-      "name": "code-review",
-      "source": "./plugins/code-review",
-      "displayName": "Code Review and Quality",
-      "description": "Multi-dimensional code review with quality gates covering correctness, readability, architecture, security, and performance. Use before merging any change, after completing a feature, or when evaluating code produced by another agent or model.",
-      "version": "0.1.0",
-      "author": {
-        "name": "Cognivexa"
-      },
-      "category": "Code & Dev",
-      "keywords": [
-        "code-review",
-        "quality-gates",
-        "five-axis"
-      ]
-    },
-    {
       "name": "commit-message-linter",
       "source": "./plugins/commit-message-linter",
       "displayName": "Commit Message Quality Checker",
@@ -722,42 +706,10 @@
       ]
     },
     {
-      "name": "django-pro",
-      "source": "./plugins/django-pro",
-      "displayName": "Django Pro",
-      "description": "Expert Django developer specializing in the ORM, Django REST Framework, and framework-idiomatic architecture over custom plumbing.",
-      "version": "0.1.0",
-      "author": {
-        "name": "Cognivexa"
-      },
-      "category": "Code & Dev",
-      "keywords": [
-        "django",
-        "drf",
-        "python"
-      ]
-    },
-    {
       "name": "docker-kubernetes-pro",
       "source": "./plugins/docker-kubernetes-pro",
       "displayName": "Docker & Kubernetes Pro",
       "description": "Expert in containerizing and deploying applications: minimal multi-stage Docker images and secure, resource-aware Kubernetes manifests. Use when writing Dockerfiles, Kubernetes manifests, or CI/CD pipelines for containers.",
-      "version": "0.1.0",
-      "author": {
-        "name": "Cognivexa"
-      },
-      "category": "DevOps",
-      "keywords": [
-        "docker",
-        "kubernetes",
-        "devops"
-      ]
-    },
-    {
-      "name": "docker-kubernetes-pro",
-      "source": "./plugins/docker-kubernetes-pro",
-      "displayName": "Docker & Kubernetes Pro",
-      "description": "Expert in containerizing and deploying applications: minimal multi-stage Docker images and secure, resource-aware Kubernetes manifests.",
       "version": "0.1.0",
       "author": {
         "name": "Cognivexa"
@@ -962,22 +914,6 @@
       ]
     },
     {
-      "name": "fullstack-guardian",
-      "source": "./plugins/fullstack-guardian",
-      "displayName": "Fullstack Guardian",
-      "description": "Cross-stack reviewer that traces a change across the database, API, and frontend to catch contract drift, unsafe migrations, and rolling-deploy breakage before merge.",
-      "version": "0.1.0",
-      "author": {
-        "name": "Cognivexa"
-      },
-      "category": "Code & Dev",
-      "keywords": [
-        "fullstack",
-        "api-contracts",
-        "code-review"
-      ]
-    },
-    {
       "name": "git-pushing",
       "source": "./plugins/git-pushing",
       "displayName": "Git Pushing",
@@ -1119,22 +1055,6 @@
         "name": "Cognivexa"
       },
       "category": "Development",
-      "keywords": [
-        "laravel",
-        "eloquent",
-        "php"
-      ]
-    },
-    {
-      "name": "laravel-specialist",
-      "source": "./plugins/laravel-specialist",
-      "displayName": "Laravel Specialist",
-      "description": "Expert Laravel developer specializing in Eloquent, queues, authorization, and framework-idiomatic architecture over custom plumbing.",
-      "version": "0.1.0",
-      "author": {
-        "name": "Cognivexa"
-      },
-      "category": "Code & Dev",
       "keywords": [
         "laravel",
         "eloquent",
@@ -1353,22 +1273,6 @@
       ]
     },
     {
-      "name": "php-pro",
-      "source": "./plugins/php-pro",
-      "displayName": "PHP Pro",
-      "description": "Expert PHP developer specializing in strictly-typed, modern PHP: PSR standards, dependency injection, static analysis, and secure, tested implementations.",
-      "version": "0.1.0",
-      "author": {
-        "name": "Cognivexa"
-      },
-      "category": "Code & Dev",
-      "keywords": [
-        "php",
-        "phpunit",
-        "composer"
-      ]
-    },
-    {
       "name": "policy-gap-analyzer",
       "source": "./plugins/policy-gap-analyzer",
       "displayName": "Policy Gap Analyzer",
@@ -1530,22 +1434,6 @@
       ]
     },
     {
-      "name": "python-pro",
-      "source": "./plugins/python-pro",
-      "displayName": "Python Pro",
-      "description": "Expert Python developer specializing in fully type-hinted, tested Python: dataclasses/Pydantic, async I/O, and secure, well-packaged code.",
-      "version": "0.1.0",
-      "author": {
-        "name": "Cognivexa"
-      },
-      "category": "Code & Dev",
-      "keywords": [
-        "python",
-        "pytest",
-        "typing"
-      ]
-    },
-    {
       "name": "rag-pipeline-architect",
       "source": "./plugins/rag-pipeline-architect",
       "displayName": "RAG Pipeline Architect",
@@ -1588,22 +1476,6 @@
         "name": "Cognivexa"
       },
       "category": "Frontend",
-      "keywords": [
-        "react",
-        "hooks",
-        "performance"
-      ]
-    },
-    {
-      "name": "react-best-practices",
-      "source": "./plugins/react-best-practices",
-      "displayName": "React Best Practices",
-      "description": "Expert React developer specializing in component architecture, hooks, and performance: eliminates prop drilling, unnecessary re-renders, and unsafe effects.",
-      "version": "0.1.0",
-      "author": {
-        "name": "Cognivexa"
-      },
-      "category": "Code & Dev",
       "keywords": [
         "react",
         "hooks",
@@ -1815,22 +1687,6 @@
         "name": "Cognivexa"
       },
       "category": "Security",
-      "keywords": [
-        "security",
-        "owasp",
-        "code-review"
-      ]
-    },
-    {
-      "name": "security-reviewer",
-      "source": "./plugins/security-reviewer",
-      "displayName": "Security Reviewer",
-      "description": "Application security reviewer that traces untrusted input through a change and reports OWASP-class vulnerabilities ranked by severity with concrete fixes.",
-      "version": "0.1.0",
-      "author": {
-        "name": "Cognivexa"
-      },
-      "category": "Code & Dev",
       "keywords": [
         "security",
         "owasp",
@@ -2079,22 +1935,6 @@
       ]
     },
     {
-      "name": "typescript-pro",
-      "source": "./plugins/typescript-pro",
-      "displayName": "TypeScript Pro",
-      "description": "Expert TypeScript developer specializing in strict-mode type safety: discriminated unions, generics, and runtime-validated boundaries.",
-      "version": "0.1.0",
-      "author": {
-        "name": "Cognivexa"
-      },
-      "category": "Code & Dev",
-      "keywords": [
-        "typescript",
-        "type-safety",
-        "generics"
-      ]
-    },
-    {
       "name": "usability-heuristics-auditor",
       "source": "./plugins/usability-heuristics-auditor",
       "displayName": "Usability Heuristics Auditor",
@@ -2283,22 +2123,6 @@
         "name": "Cognivexa"
       },
       "category": "Development",
-      "keywords": [
-        "wordpress",
-        "woocommerce",
-        "gutenberg"
-      ]
-    },
-    {
-      "name": "wordpress-pro",
-      "source": "./plugins/wordpress-pro",
-      "displayName": "WordPress Pro",
-      "description": "Expert WordPress developer specializing in custom themes, plugins, Gutenberg blocks, WooCommerce, and WordPress performance and security optimization.",
-      "version": "0.1.0",
-      "author": {
-        "name": "Cognivexa"
-      },
-      "category": "Code & Dev",
       "keywords": [
         "wordpress",
         "woocommerce",

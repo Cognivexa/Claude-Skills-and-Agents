@@ -28,7 +28,23 @@ if (existsSync(PLUGINS_DIR)) rmSync(PLUGINS_DIR, { recursive: true, force: true 
 if (existsSync(SKILLS_DIR)) rmSync(SKILLS_DIR, { recursive: true, force: true })
 if (existsSync(AGENTS_DIR)) rmSync(AGENTS_DIR, { recursive: true, force: true })
 
-const pluginEntries = []
+// Keyed by slug so a "flagship" entry that ships as both an agent and a skill
+// (e.g. code-review, python-pro) collapses into one marketplace plugin instead
+// of two entries sharing the same name, which plugin marketplaces treat as
+// duplicates and only one of them ends up installable/visible.
+const pluginEntriesBySlug = new Map()
+
+function upsertEntry(slug, entry) {
+  const existing = pluginEntriesBySlug.get(slug)
+  if (!existing) {
+    pluginEntriesBySlug.set(slug, entry)
+    return
+  }
+  // Prefer whichever description is longer/richer; merge keywords as a union.
+  existing.description =
+    entry.description.length > existing.description.length ? entry.description : existing.description
+  existing.keywords = [...new Set([...existing.keywords, ...entry.keywords])]
+}
 
 for (const agent of AGENTS) {
   const pluginDir = join(PLUGINS_DIR, agent.slug)
@@ -36,7 +52,7 @@ for (const agent of AGENTS) {
   writeFile(join(pluginDir, 'agents', `${agent.slug}.md`), agentMarkdown)
   writeFile(join(AGENTS_DIR, `${agent.slug}.md`), agentMarkdown)
 
-  pluginEntries.push({
+  upsertEntry(agent.slug, {
     name: agent.slug,
     source: `./plugins/${agent.slug}`,
     displayName: agent.name,
@@ -59,7 +75,7 @@ for (const skill of SKILLS) {
     writeFile(join(SKILLS_DIR, skill.slug, relativePath), content)
   }
 
-  pluginEntries.push({
+  upsertEntry(skill.slug, {
     name: skill.slug,
     source: `./plugins/${skill.slug}`,
     displayName: skill.name,
@@ -71,7 +87,7 @@ for (const skill of SKILLS) {
   })
 }
 
-pluginEntries.sort((a, b) => a.name.localeCompare(b.name))
+const pluginEntries = [...pluginEntriesBySlug.values()].sort((a, b) => a.name.localeCompare(b.name))
 
 const marketplace = {
   name: MARKETPLACE_NAME,
