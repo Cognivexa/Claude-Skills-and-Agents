@@ -81,7 +81,7 @@ export default function SkillDetail() {
         </div>
       </div>
 
-      <SkillInstallTabs slug={skill.slug} repo={MARKETPLACE_REPO} />
+      <SkillInstallTabs slug={skill.slug} />
 
       <div className="tools-note" style={{ marginBottom: 24 }}>
         Beyond Claude Code and Codex, this Markdown file is also usable with {OTHER_COMPATIBLE_TOOLS.join(', ')} —

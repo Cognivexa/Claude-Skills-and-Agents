@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import CopyCommand from './CopyCommand.jsx'
+import { GITHUB_REPO } from '../data/marketplace.js'
 
 const TOOLS = [
   { key: 'claude-code', label: 'Claude Code' },
@@ -11,8 +12,7 @@ const SCOPES = [
   { key: 'global', label: 'Global' },
 ]
 
-// Directories each tool actually scans for skills, per each tool's own docs —
-// used for the manual copy-by-hand fallback shown under the install command.
+// Directories each tool actually scans for skills, per each tool's own docs.
 const DEST_DIR = {
   'claude-code': { project: '.claude/skills/', global: '~/.claude/skills/' },
   codex: { project: '.agents/skills/', global: '~/.agents/skills/' },
@@ -33,18 +33,20 @@ const USE_NOTE = {
   ),
 }
 
-export default function SkillInstallTabs({ slug, repo }) {
+export default function SkillInstallTabs({ slug }) {
   const [tool, setTool] = useState('claude-code')
   const [scope, setScope] = useState('project')
 
-  const command = `npx skills add ${repo} --skill ${slug} --agent ${tool}${scope === 'global' ? ' --global' : ''}`
+  const command = `npx github:${GITHUB_REPO} install skill ${slug}${tool === 'codex' ? ' --codex' : ''}${
+    scope === 'global' ? ' --global' : ''
+  }`
   const dest = DEST_DIR[tool][scope]
 
   return (
     <div className="install-block">
       <div className="install-tabs-header">
         <div className="install-heading" style={{ marginBottom: 0 }}>
-          Or install it as a standalone skill
+          Or install it directly from GitHub
         </div>
         <div className="toggle-group">
           {SCOPES.map((s) => (
@@ -60,8 +62,8 @@ export default function SkillInstallTabs({ slug, repo }) {
       </div>
 
       <p className="install-intro">
-        This skill also ships as a plain <code>skills/{slug}/SKILL.md</code> folder at the repo root, following the
-        open Agent Skills layout both tools below read directly. Pick which one you're installing it for:
+        Runs straight from this repo's <code>skills/{slug}/</code> folder — no marketplace, no manual clone, no
+        plugin install step. Pick which tool you're installing it for:
       </p>
 
       <div className="toggle-group" style={{ marginBottom: 14 }}>
@@ -76,17 +78,16 @@ export default function SkillInstallTabs({ slug, repo }) {
         ))}
       </div>
 
-      <CopyCommand label={`Run in a terminal, from anywhere`} command={command} />
+      <CopyCommand label="Run in a terminal, from anywhere" command={command} />
       <div className="tools-note">
         Installs into <code>{dest}</code> {scope === 'project' ? 'of the current project' : 'for every project'}.{' '}
-        {USE_NOTE[tool](slug)}
+        {USE_NOTE[tool](slug)} The first run takes a few extra seconds while npx checks out this repo.
       </div>
 
-      <div className="install-warning" style={{ marginTop: 10 }}>
-        <code>npx skills</code> is a community installer (vercel-labs/skills), not something either Anthropic or
-        OpenAI ships. If it ever doesn't recognize <code>--agent {tool}</code> on your version, copy the{' '}
-        <code>skills/{slug}/</code> folder from this repo by hand into <code>{dest}</code> instead — that's the
-        location {tool === 'codex' ? 'Codex' : 'Claude Code'} is documented to scan.
+      <div className="tools-note" style={{ marginTop: 6 }}>
+        Prefer not to run a script? Copy the <code>skills/{slug}/</code> folder from this repo by hand into{' '}
+        <code>{dest}</code> instead — that's the location {tool === 'codex' ? 'Codex' : 'Claude Code'} is documented
+        to scan.
       </div>
     </div>
   )

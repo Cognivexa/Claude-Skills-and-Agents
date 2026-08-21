@@ -1,9 +1,10 @@
 #!/usr/bin/env node
-// Installs a skill or agent from this repo straight into a Claude Code project
-// or home directory, with no marketplace and no manual `git clone` step.
+// Installs a skill or agent from this repo straight into a Claude Code (or,
+// for skills, Codex) project or home directory, with no marketplace and no
+// manual `git clone` step.
 //
 // Usage:
-//   npx github:Cognivexa/Claude-Skills-and-Agents install skill <slug> [--global] [--dir <path>]
+//   npx github:Cognivexa/Claude-Skills-and-Agents install skill <slug> [--global] [--codex] [--dir <path>]
 //   npx github:Cognivexa/Claude-Skills-and-Agents install agent <slug> [--global] [--dir <path>]
 //   npx github:Cognivexa/Claude-Skills-and-Agents list
 //
@@ -43,7 +44,7 @@ function usage() {
 Install a skill or agent from ${cyan(PKG_NAME)} directly — no marketplace, no manual clone.
 
 ${bold('Usage')}
-  ${RUN} install skill <slug>  ${dim('[--global] [--dir <path>]')}
+  ${RUN} install skill <slug>  ${dim('[--global] [--codex] [--dir <path>]')}
   ${RUN} install agent <slug>  ${dim('[--global] [--dir <path>]')}
   ${RUN} list
 
@@ -51,8 +52,13 @@ ${bold('Scope')}
   ${dim('(default)')}   installs into ${cyan('./.claude/')}   — this project only
   ${cyan('--global')}   installs into ${cyan('~/.claude/')}   — every project on this machine
 
+${bold('Tool')} ${dim('(skills only — agents are a Claude Code concept, no Codex equivalent)')}
+  ${dim('(default)')}   Claude Code — ${cyan('.claude/skills/')}
+  ${cyan('--codex')}    Codex — ${cyan('.agents/skills/')}
+
 ${bold('Examples')}
   ${dim('$')} ${RUN} install skill code-review
+  ${dim('$')} ${RUN} install skill code-review --codex
   ${dim('$')} ${RUN} install agent code-review --global
   ${dim('$')} ${RUN} list
 `)
@@ -75,19 +81,19 @@ function listAvailable() {
   console.log(`\n${dim(`Install one with: ${RUN} install skill <slug>   or   install agent <slug>`)}`)
 }
 
-function resolveRoot(args) {
+function resolveRoot(args, toolDirName) {
   const dirFlagIndex = args.indexOf('--dir')
   if (dirFlagIndex !== -1 && args[dirFlagIndex + 1]) {
     return { root: args[dirFlagIndex + 1], global: args.includes('--global') }
   }
   const global = args.includes('--global')
-  return { root: global ? join(homedir(), '.claude') : join(process.cwd(), '.claude'), global }
+  return { root: global ? join(homedir(), toolDirName) : join(process.cwd(), toolDirName), global }
 }
 
 // Prints both the project and global command side by side, with the one the
 // user actually just ran marked, so it's obvious how to get the other scope too.
-function scopeReference(kind, slug, usedGlobal) {
-  const projectCmd = `${RUN} install ${kind} ${slug}`
+function scopeReference(kind, slug, usedGlobal, extraFlag = '') {
+  const projectCmd = `${RUN} install ${kind} ${slug}${extraFlag}`
   const globalCmd = `${projectCmd} --global`
   const mark = (isThisOne) => (isThisOne ? green('→') : ' ')
   console.log(heading('Scope reference'))
@@ -102,29 +108,46 @@ function installSkill(slug, args) {
     process.exitCode = 1
     return
   }
-  const { root, global } = resolveRoot(args)
+  const codex = args.includes('--codex')
+  const toolDirName = codex ? '.agents' : '.claude'
+  const { root, global } = resolveRoot(args, toolDirName)
   const dest = join(root, 'skills', slug)
   mkdirSync(dirname(dest), { recursive: true })
   cpSync(src, dest, { recursive: true })
 
   console.log(ok(`Skill installed: ${bold(slug)}`))
   console.log(`  ${dim('└─')} ${dest}`)
-  scopeReference('skill', slug, global)
-  console.log(heading('Use it in Claude Code'))
-  console.log(`  1. Run ${cyan('/skills')} to confirm "${slug}" is listed.`)
-  console.log(`     ${dim(`(First run only: restart claude if .claude/skills/ didn't already exist here.)`)}`)
-  console.log(`  2. Run ${cyan(`/${slug} <your request>`)}`)
-  console.log(`     ${dim('— or just describe the task naturally; Claude uses it automatically when it matches.')}\n`)
+  scopeReference('skill', slug, global, codex ? ' --codex' : '')
+
+  if (codex) {
+    console.log(heading('Use it in Codex'))
+    console.log(`  1. Run ${cyan('/skills')} to confirm "${slug}" is listed.`)
+    console.log(`     ${dim(`(First run only: restart Codex if .agents/skills/ didn't already exist here.)`)}`)
+    console.log(`  2. Mention ${cyan(`$${slug}`)} in a prompt`)
+    console.log(`     ${dim('— or just describe the task naturally; Codex loads it automatically when it matches.')}\n`)
+  } else {
+    console.log(heading('Use it in Claude Code'))
+    console.log(`  1. Run ${cyan('/skills')} to confirm "${slug}" is listed.`)
+    console.log(`     ${dim(`(First run only: restart claude if .claude/skills/ didn't already exist here.)`)}`)
+    console.log(`  2. Run ${cyan(`/${slug} <your request>`)}`)
+    console.log(`     ${dim('— or just describe the task naturally; Claude uses it automatically when it matches.')}\n`)
+  }
 }
 
 function installAgent(slug, args) {
+  if (args.includes('--codex')) {
+    console.error(fail('Codex has no subagent concept, so --codex does not apply to "install agent".'))
+    console.error(dim(`If this capability exists as a skill too, install that instead: ${RUN} install skill ${slug} --codex`))
+    process.exitCode = 1
+    return
+  }
   const src = join(AGENTS_SRC, `${slug}.md`)
   if (!existsSync(src)) {
     console.error(fail(`No agent named "${slug}" in this repo. Run "${RUN} list" to see available slugs.`))
     process.exitCode = 1
     return
   }
-  const { root, global } = resolveRoot(args)
+  const { root, global } = resolveRoot(args, '.claude')
   const dest = join(root, 'agents', `${slug}.md`)
   mkdirSync(dirname(dest), { recursive: true })
   copyFileSync(src, dest)
