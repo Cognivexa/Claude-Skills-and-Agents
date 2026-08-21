@@ -18,6 +18,17 @@ A browsable catalog of everything in this repo is included as a small React
 app under [`src/`](src/) — run `npm install && npm run dev` to explore it
 locally.
 
+## Interface
+
+Browse agents and skills, filter by category or tag, and copy the exact
+install command for each — no digging through folders to find what's
+available.
+
+| | |
+|---|---|
+| ![Agents catalog](images/agents-browse.png) | ![Skills catalog](images/skills-browse.png) |
+| ![Skill detail page with install commands](images/skill-detail.png) | ![Agent detail page with install commands](images/agent-detail.png) |
+
 ## Two ways to install a skill or agent
 
 Every skill and agent in this repo is a plain Markdown file. There are two
