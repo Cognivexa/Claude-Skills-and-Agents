@@ -3231,6 +3231,7 @@ ALTER TABLE orders ADD COLUMN total_cents INTEGER NULL;
       { title: 'Trace untrusted input', detail: "Follow every external input from entry to where it's used." },
       { title: 'Check authentication & authorization', detail: 'Verify every sensitive action is gated correctly.' },
       { title: 'Verify secrets & dependencies', detail: 'Confirm no hardcoded secrets and no known-vulnerable dependencies.' },
+      { title: 'Compliance sweep', detail: 'Check for HIPAA/GDPR/FERPA/SOC 2/etc.-scoped data handled without the access, audit, or consent controls that framework requires.' },
       { title: 'Report with severity', detail: 'Rank findings by exploitability and impact, with a concrete fix for each.' },
     ],
     codePatterns: [
@@ -3261,6 +3262,8 @@ if (!invoice || invoice.ownerId !== currentUser.id) {
       'Encode output based on the context it is rendered into',
       'Store secrets in environment variables or a secrets manager',
       'Rate-limit authentication and password-reset endpoints',
+      'Flag any PHI, PII, or other regulated data (HIPAA, FERPA, GDPR, HITRUST, HITECH, PHIPA, 42 CFR Part 2, SOC 2, OSHA-covered records) handled without the access, encryption, or audit controls that framework requires',
+      'Report every hardcoded password, API key, token, or real email/phone number found as a finding, even outside the specific file requested',
     ],
     mustNot: [
       'Build SQL/shell/LDAP commands by string-concatenating user input',
@@ -3269,45 +3272,52 @@ if (!invoice || invoice.ownerId !== currentUser.id) {
       'Log sensitive data in plaintext',
       'Return verbose stack traces or internal errors to end users',
       'Ship a fix without a regression test that proves the vulnerability is closed',
+      'Modify code to fix a finding without asking first, or install/invoke another skill or agent the user has not explicitly approved',
     ],
     knowledgeReference:
-      'OWASP Top 10, CWE/CVE, injection classes, authentication/session security, XSS, CSRF, IDOR/broken access control, SSRF, secrets management, dependency/SCA scanning, secure headers',
+      'OWASP Top 10, CWE/CVE, injection classes, authentication/session security, XSS, CSRF, IDOR/broken access control, SSRF, secrets management, dependency/SCA scanning, secure headers, HIPAA/HITECH/HITRUST, 42 CFR Part 2, PHIPA, FERPA, GDPR, SOC 2, OSHA recordkeeping',
     whenInvoked: [
       'Scope the review to the trust boundaries and entry points the change touches.',
       'Trace every piece of untrusted input from entry to where it is used.',
       'Verify authentication and authorization are enforced on every sensitive action.',
-      'Check for hardcoded secrets and known-vulnerable dependencies.',
-      'Report findings ranked by severity with a concrete fix and a regression test for each.',
+      'Check for hardcoded secrets, passwords, emails, and known-vulnerable dependencies.',
+      'Sweep for regulated data (HIPAA, FERPA, GDPR, HITRUST, HITECH, PHIPA, 42 CFR Part 2, SOC 2, OSHA) handled without the controls that framework requires.',
+      'Report findings ranked by severity with a concrete fix and a regression test for each, printing a ✔/✘ line per check category as it completes.',
+      'Write a findings report file, even when 0 issues are found.',
+      'If issues were found, ask before fixing anything, then ask again before installing/invoking any other skill or agent to make the fix.',
     ],
     checklist: [
       'All entry points identified and traced',
       'No string-concatenated queries/commands',
       'Passwords hashed with argon2id/bcrypt',
       'Object-level authorization checked on every ID-based lookup',
-      'No hardcoded secrets found',
+      'No hardcoded secrets, passwords, or real emails found',
       'Dependencies checked against known CVEs',
+      'Regulated data (HIPAA/FERPA/GDPR/SOC 2/OSHA/etc.) checked against required controls',
       'Each finding has a concrete fix and a regression test',
+      'A ✔/✘ line was printed per check category and a findings report file was written',
+      'User approval obtained before any auto-fix or before installing/invoking another skill or agent',
     ],
     outputFormat:
-      'Provide: (1) a findings list ranked by severity with exploit scenario, (2) exact file:line of the vulnerable code, (3) a concrete fix as a diff or snippet, (4) a regression test that would have caught it, and (5) any related instances of the same pattern elsewhere.',
+      'Provide: (1) a findings list ranked by severity with exploit scenario, (2) exact file:line of the vulnerable code, (3) a concrete fix as a diff or snippet, (4) a regression test that would have caught it, (5) any related instances of the same pattern elsewhere, (6) a terminal progress line per check category (secrets, auth, injection, each compliance framework touched) ending in a single ✔/✘ result line — "0 issues found — code is 100% clear" when everything passes, (7) a written findings report file (e.g. security-review-report.md) even when 0 issues are found, and (8) if issues were found, an explicit ask before any auto-fix, then the specific skill or agent in this repo suited to make that fix, installed via `npx github:Cognivexa/Claude-Skills-and-Agents install skill|agent <slug>` only after the user approves that specific handoff.',
     phases: [
       phase(
         'Scoping & Threat Modeling',
         'Identify what is actually at risk before searching for specific bugs.',
         ['Entry points enumerated', 'Trust boundaries identified', 'Sensitive data flagged', 'Attacker goals hypothesized'],
-        ['List every external input source touched by the change', 'Mark where trusted and untrusted data meet', 'Identify PII, credentials, or financial data in scope', 'Consider what an attacker would want from this surface']
+        ['List every external input source touched by the change', 'Mark where trusted and untrusted data meet', 'Identify PII, PHI, credentials, or financial data in scope', 'Consider what an attacker would want from this surface']
       ),
       phase(
-        'Vulnerability Tracing',
-        'Follow untrusted input from entry to sink for each class of vulnerability.',
-        ['Injection points checked', 'Output encoding checked', 'Access control checked', 'Secrets/dependencies checked'],
-        ['Trace input into queries, commands, and file paths', 'Trace output into HTML, attribute, URL, and JS contexts', 'Check ownership verification on every ID-based lookup', 'Grep for hardcoded credentials and check dependency versions']
+        'Vulnerability & Compliance Tracing',
+        'Follow untrusted input from entry to sink for each class of vulnerability, and each regulated data field to its handling.',
+        ['Injection points checked', 'Output encoding checked', 'Access control checked', 'Secrets/dependencies checked', 'Regulated data (HIPAA/FERPA/GDPR/SOC 2/OSHA/etc.) checked against required controls'],
+        ['Trace input into queries, commands, and file paths', 'Trace output into HTML, attribute, URL, and JS contexts', 'Check ownership verification on every ID-based lookup', 'Grep for hardcoded credentials, emails, and check dependency versions', 'Grep for regulated-data field names and confirm encryption/audit/consent controls exist']
       ),
       phase(
-        'Reporting',
-        'Turn findings into something the author can act on immediately.',
-        ['Findings ranked by severity', 'Exact locations cited', 'Fix provided for each', 'Regression test proposed for each'],
-        ['Assign critical/high/medium/low per finding', 'Cite file:line for every finding', 'Write the fix as a diff or snippet', 'Propose a test that fails before the fix and passes after']
+        'Reporting & Remediation Handoff',
+        'Turn findings into something the author can act on immediately — and act on it themselves if asked.',
+        ['Findings ranked by severity', 'Exact locations cited', 'Fix provided for each', 'Regression test proposed for each', 'Report file written even when clear', 'User asked before any auto-fix or handoff'],
+        ['Assign critical/high/medium/low per finding', 'Cite file:line for every finding', 'Write the fix as a diff or snippet', 'Propose a test that fails before the fix and passes after', 'Print a ✔/✘ line per check category and write the findings report file', 'Ask permission before fixing; if approved, name and install the right skill/agent for the fix via the npx installer']
       ),
     ],
     integrations: [

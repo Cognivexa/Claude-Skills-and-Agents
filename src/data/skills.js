@@ -3658,6 +3658,7 @@ Reserve e2e tests for the handful of critical paths (checkout, sign-up, payment)
       { title: 'Trace untrusted input', detail: "Follow every external input from entry to where it's used (query, command, output, file path)." },
       { title: 'Check authentication & authorization', detail: 'Verify every sensitive action is gated correctly, not just the obvious ones.' },
       { title: 'Verify secrets & dependencies', detail: 'Confirm no hardcoded secrets and no known-vulnerable dependency versions.' },
+      { title: 'Compliance sweep', detail: 'Check for HIPAA/GDPR/FERPA/SOC 2/etc.-scoped data handled without the access, audit, or consent controls that framework requires.' },
       { title: 'Report with severity', detail: 'Rank findings by exploitability and impact, and provide a concrete fix for each.' },
     ],
     referenceGuide: [
@@ -3666,6 +3667,7 @@ Reserve e2e tests for the handful of critical paths (checkout, sign-up, payment)
       { topic: 'XSS & Output Encoding', file: 'references/xss-output-encoding.md', loadWhen: 'Reflected/stored/DOM XSS, context-aware encoding' },
       { topic: 'Access Control', file: 'references/access-control.md', loadWhen: 'IDOR, privilege escalation, missing function-level checks' },
       { topic: 'Secrets & Dependency Hygiene', file: 'references/secrets-dependencies.md', loadWhen: 'Secret scanning, SCA, supply chain risks' },
+      { topic: 'Regulatory Compliance & Data Protection', file: 'references/compliance-and-data-protection.md', loadWhen: 'HIPAA/FERPA/GDPR/SOC 2/HITRUST/HITECH/PHIPA/42 CFR Part 2/OSHA-scoped data handling' },
     ],
     codePatterns: [
       {
@@ -3720,6 +3722,8 @@ if (!apiKey) throw new Error('PAYMENT_API_KEY is not configured')`,
       'Validate file uploads by content, not just extension or client-supplied MIME type',
       'Keep dependencies patched and scan for known CVEs before shipping',
       'Rate-limit authentication and password-reset endpoints',
+      'Flag any PHI, PII, or other regulated data (HIPAA, FERPA, GDPR, HITRUST, HITECH, PHIPA, 42 CFR Part 2, SOC 2, OSHA-covered records) handled without the access, encryption, or audit controls that framework requires',
+      'Report every hardcoded password, API key, token, or real email/phone number found as a finding, even outside the specific file requested',
     ],
     mustNot: [
       'Build SQL/shell/LDAP commands by string-concatenating user input',
@@ -3739,9 +3743,12 @@ if (!apiKey) throw new Error('PAYMENT_API_KEY is not configured')`,
       'Concrete fix, as a diff or code snippet',
       'A regression test that would have caught it',
       'Any related instances of the same pattern elsewhere in the codebase',
+      'A terminal progress line per check category (secrets, auth, injection, each compliance framework touched) ending in a single ✔/✘ result line — "0 issues found — code is 100% clear" when everything passes',
+      'A written findings report file (e.g. security-review-report.md), even when 0 issues are found, so there is a record the scan ran',
+      'If issues were found: an explicit ask before any auto-fix, then the specific skill or agent in this repo suited to make that fix, installed via `npx github:Cognivexa/Claude-Skills-and-Agents install skill|agent <slug>` only after the user approves that specific handoff',
     ],
     knowledgeReference:
-      'OWASP Top 10, CWE/CVE, injection classes (SQL/NoSQL/command/LDAP), authentication/session security, XSS (reflected/stored/DOM), CSRF, IDOR/broken access control, SSRF, secrets management, dependency/SCA scanning, secure headers (CSP, HSTS)',
+      'OWASP Top 10, CWE/CVE, injection classes (SQL/NoSQL/command/LDAP), authentication/session security, XSS (reflected/stored/DOM), CSRF, IDOR/broken access control, SSRF, secrets management, dependency/SCA scanning, secure headers (CSP, HSTS), HIPAA/HITECH/HITRUST, 42 CFR Part 2, PHIPA, FERPA, GDPR, SOC 2, OSHA recordkeeping',
     howItWorks: [
       'Scope the review to the trust boundaries and entry points the change touches.',
       'Trace every piece of untrusted input from entry to where it is used.',
@@ -3893,6 +3900,35 @@ Run dependency vulnerability scanning (\`npm audit\`, \`composer audit\`, Depend
 
 Pin dependency versions and review new dependencies before adding them, especially small packages with a single maintainer — a compromised maintainer account or a typosquatted package name are both real, recurring attack vectors. Prefer well-maintained, widely-used packages over marginally more convenient ones with a tiny user base.
 `,
+      'references/compliance-and-data-protection.md': `# Regulatory Compliance & Data Protection
+
+This scan flags code that handles data covered by a regulatory framework without the controls that framework expects — it flags candidates for legal/compliance review, it does not make a legal determination.
+
+## Frameworks to check for
+
+| Framework | What it covers | What to look for in code |
+|---|---|---|
+| **HIPAA** | Protected Health Information (PHI) | PHI fields (diagnosis, treatment, health plan) stored or logged without encryption or access controls |
+| **HITECH** | HIPAA breach-notification & security extensions | Missing audit logging on PHI access or modification |
+| **HITRUST** | Security control framework built on HIPAA/ISO | No documented access controls around health-data code paths |
+| **42 CFR Part 2** | Substance use disorder treatment records | Missing extra-strict consent/re-disclosure handling on SUD-related records |
+| **PHIPA** | Ontario personal health information | Same PHI patterns as HIPAA, scoped to Ontario data subjects |
+| **FERPA** | Student education records | Grades, discipline, or enrollment data exposed without the access checks FERPA requires |
+| **GDPR** | EU personal data | No consent tracking, no data-deletion path, personal data sent to third parties with no documented legal basis |
+| **SOC 2** | Service-organization trust controls | Missing audit trails, access logging, or change-control evidence a control would require |
+| **OSHA** | Workplace injury/illness recordkeeping | Injury/incident records handled without the same access restrictions as other regulated PII |
+
+## What to actually grep for
+
+- Field/column/variable names suggesting regulated data: \`diagnosis\`, \`ssn\`, \`dob\`, \`health_plan\`, \`treatment\`, \`grade\`, \`disciplinary\`, \`injury_report\`
+- That data flowing into a logger, an analytics event, or a third-party API call without redaction
+- Database columns or file storage for the above with no encryption-at-rest configuration nearby
+- Endpoints returning the above fields with no visible authorization check on the requester's relationship to the data subject
+
+## Reporting
+
+Report each match as a finding: file:line, the framework it relates to, and what control appears to be missing — worded as an observation ("this PHI field is logged in plaintext at auth.ts:42"), not a compliance verdict. Route anything ambiguous to a human for an actual legal/compliance judgment.
+`,
     },
     files: [
       'skills/security-reviewer/SKILL.md',
@@ -3901,6 +3937,7 @@ Pin dependency versions and review new dependencies before adding them, especial
       'skills/security-reviewer/references/xss-output-encoding.md',
       'skills/security-reviewer/references/access-control.md',
       'skills/security-reviewer/references/secrets-dependencies.md',
+      'skills/security-reviewer/references/compliance-and-data-protection.md',
     ],
   },
   {
@@ -5480,6 +5517,92 @@ For triaging \`npm audit\` findings and supply-chain risk (typosquatting, compro
 - A bulk "bump dependencies" PR with no changelog review and no per-package isolation
 - A lockfile change that's hand-edited, uncommitted, or merged without reviewing its diff
 
+## Compliance & Sensitive Data Scan (Advanced)
+
+Beyond the five axes, run an advanced sweep for sensitive-data exposure and regulatory scope — code that is otherwise correct can still create legal and compliance risk.
+
+**Leaked secrets & credentials**
+
+- Hardcoded passwords, API keys, tokens, or connection strings in source, config, or test fixtures
+- Credentials logged in plaintext, echoed in error messages, or committed to git history
+- Real email addresses, phone numbers, or other direct identifiers hardcoded as test data instead of synthetic values
+
+**Authentication & API exposure**
+
+- Endpoints missing an authentication check, or checking authentication but not authorization
+- API responses that leak internal fields (stack traces, database errors, other users' records)
+- Missing rate limiting on authentication, password-reset, or data-export endpoints
+
+**Regulatory data-handling scope** — flag when the change touches data covered by any of these, even though the legal determination itself is out of scope for a code review:
+
+| Framework | What it covers | What to look for in code |
+|---|---|---|
+| HIPAA | Protected Health Information (PHI) | PHI fields stored/logged without encryption or access controls |
+| HITECH | HIPAA breach-notification & security extensions | Missing audit logging on PHI access/modification |
+| HITRUST | Security control framework built on HIPAA/ISO | No documented access controls around health-data code paths |
+| 42 CFR Part 2 | Substance use disorder treatment records | Missing extra-strict consent/re-disclosure handling on SUD-related records |
+| PHIPA | Ontario personal health information | Same PHI patterns as HIPAA, scoped to Ontario data subjects |
+| FERPA | Student education records | Grades, discipline, or enrollment data exposed without FERPA-required access checks |
+| GDPR | EU personal data | No consent tracking, no data-deletion path, personal data sent to third parties with no documented basis |
+| SOC 2 | Service-organization trust controls | Missing audit trails, access logging, or change-control evidence a control would require |
+| OSHA | Workplace injury/illness recordkeeping | Injury/incident records handled without the same access restrictions as other regulated PII |
+
+Report matches as findings with file:line and the framework they relate to — this scan flags candidates for legal/compliance review, it does not make a legal determination.
+
+## Terminal Progress Output
+
+Report each check category as it completes, not just in one final block at the end:
+
+\`\`\`
+✔ Correctness — clear
+✔ Readability & simplicity — clear
+✔ Architecture — clear
+✔ Secrets, passwords & API keys — clear
+✔ Authentication & API exposure — clear
+✔ Email/PII hardcoding — clear
+✘ HIPAA (PHI handling) — 1 issue found
+✔ GDPR — clear
+✔ Performance — clear
+
+──────────────────────────────
+Result: 1 issue found. See code-review-report.md for details.
+\`\`\`
+
+If every category is clear, the final line reads exactly: \`Result: 0 issues found — code is 100% clear.\`
+
+## Findings Report File
+
+At the end of a run that finds anything, write the results to a Markdown report (e.g. \`code-review-report.md\`) instead of only printing to the terminal, since terminal output scrolls away. Structure:
+
+\`\`\`markdown
+# Review Report — <file or PR name>
+
+## Summary
+- N issues found across M categories
+- Categories affected: <list>
+
+## Findings
+
+### 1. [Category] Short title
+- **File:** path/to/file.ts:42
+- **Severity:** Critical | Required | Nit
+- **Issue:** what is wrong
+- **Fix:** the concrete change needed
+- **Framework (if regulatory):** HIPAA / GDPR / ...
+\`\`\`
+
+If nothing is found, still write the file with just the Summary stating \`0 issues found — code is 100% clear\`, so there's a record the scan ran.
+
+## Automated Remediation Handoff
+
+Never modify code to fix a finding without asking first.
+
+1. After the report is written, ask once, covering everything found: "Found N issue(s) — want me to fix them?" If no, stop; the report file is the deliverable.
+2. If yes, for each finding (or group of related findings) identify which skill or agent in this repo is actually suited to make that fix — for example, hardcoded secrets to \`secrets-in-code-scanner\`, a vulnerable dependency to \`dependency-vuln-triage\`, an auth/access-control bug to the \`security-reviewer\` agent, a framework-specific fix to \`python-pro\`/\`django-pro\`/\`laravel-specialist\`/etc. If nothing more specific fits, offer to make the fix directly yourself.
+3. Name the specific skill/agent and ask again before acting: "I can use the \`<slug>\` skill/agent from this repo to fix this — install and run it?"
+4. Only on an explicit yes, install it with \`npx github:Cognivexa/Claude-Skills-and-Agents install skill <slug>\` (or \`install agent <slug>\`) and then invoke it to make the fix.
+5. Never install or invoke anything the user did not just approve, and never bundle unrelated fixes into one approval.
+
 ## Verification
 
 After review is complete:
@@ -5490,6 +5613,9 @@ After review is complete:
 - [ ] Build succeeds
 - [ ] The verification story is documented (what changed, how it was verified)
 - [ ] Dependency upgrades were reviewed against their changelog, isolated per package, and verified by a green suite with the lockfile diff reviewed
+- [ ] Compliance & sensitive-data scan run — 0 findings, or every finding reported with file:line and framework
+- [ ] A findings report file was written, even when 0 issues were found
+- [ ] If issues were found, the user was asked before any auto-fix, and before installing/invoking any other skill or agent to perform it
 
 **Presumptive blockers:** surface and propose the simpler design for each of these; escalate to Required only when the change actively makes structure worse: a refactor that relocates complexity instead of reducing it; a change that pushes a file past the size boundary with no decomposition; feature logic added to a shared module; a near-duplicate of an existing canonical helper; a silent fallback that hides an unclear invariant.`,
   },

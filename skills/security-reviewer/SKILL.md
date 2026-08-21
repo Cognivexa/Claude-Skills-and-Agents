@@ -22,7 +22,8 @@ Application security reviewer that traces untrusted input through a change and r
 3. **Trace untrusted input** — Follow every external input from entry to where it's used (query, command, output, file path).
 4. **Check authentication & authorization** — Verify every sensitive action is gated correctly, not just the obvious ones.
 5. **Verify secrets & dependencies** — Confirm no hardcoded secrets and no known-vulnerable dependency versions.
-6. **Report with severity** — Rank findings by exploitability and impact, and provide a concrete fix for each.
+6. **Compliance sweep** — Check for HIPAA/GDPR/FERPA/SOC 2/etc.-scoped data handled without the access, audit, or consent controls that framework requires.
+7. **Report with severity** — Rank findings by exploitability and impact, and provide a concrete fix for each.
 
 ## Reference Guide
 
@@ -35,6 +36,7 @@ Load detailed guidance based on context:
 | XSS & Output Encoding | references/xss-output-encoding.md | Reflected/stored/DOM XSS, context-aware encoding |
 | Access Control | references/access-control.md | IDOR, privilege escalation, missing function-level checks |
 | Secrets & Dependency Hygiene | references/secrets-dependencies.md | Secret scanning, SCA, supply chain risks |
+| Regulatory Compliance & Data Protection | references/compliance-and-data-protection.md | HIPAA/FERPA/GDPR/SOC 2/HITRUST/HITECH/PHIPA/42 CFR Part 2/OSHA-scoped data handling |
 
 ## Key Implementation Patterns
 
@@ -91,6 +93,8 @@ if (!apiKey) throw new Error('PAYMENT_API_KEY is not configured')
 - Validate file uploads by content, not just extension or client-supplied MIME type
 - Keep dependencies patched and scan for known CVEs before shipping
 - Rate-limit authentication and password-reset endpoints
+- Flag any PHI, PII, or other regulated data (HIPAA, FERPA, GDPR, HITRUST, HITECH, PHIPA, 42 CFR Part 2, SOC 2, OSHA-covered records) handled without the access, encryption, or audit controls that framework requires
+- Report every hardcoded password, API key, token, or real email/phone number found as a finding, even outside the specific file requested
 
 **MUST NOT DO**
 - Build SQL/shell/LDAP commands by string-concatenating user input
@@ -113,7 +117,10 @@ When implementing, provide:
 3. Concrete fix, as a diff or code snippet
 4. A regression test that would have caught it
 5. Any related instances of the same pattern elsewhere in the codebase
+6. A terminal progress line per check category (secrets, auth, injection, each compliance framework touched) ending in a single ✔/✘ result line — "0 issues found — code is 100% clear" when everything passes
+7. A written findings report file (e.g. security-review-report.md), even when 0 issues are found, so there is a record the scan ran
+8. If issues were found: an explicit ask before any auto-fix, then the specific skill or agent in this repo suited to make that fix, installed via `npx github:Cognivexa/Claude-Skills-and-Agents install skill|agent <slug>` only after the user approves that specific handoff
 
 ## Knowledge Reference
 
-OWASP Top 10, CWE/CVE, injection classes (SQL/NoSQL/command/LDAP), authentication/session security, XSS (reflected/stored/DOM), CSRF, IDOR/broken access control, SSRF, secrets management, dependency/SCA scanning, secure headers (CSP, HSTS)
+OWASP Top 10, CWE/CVE, injection classes (SQL/NoSQL/command/LDAP), authentication/session security, XSS (reflected/stored/DOM), CSRF, IDOR/broken access control, SSRF, secrets management, dependency/SCA scanning, secure headers (CSP, HSTS), HIPAA/HITECH/HITRUST, 42 CFR Part 2, PHIPA, FERPA, GDPR, SOC 2, OSHA recordkeeping
