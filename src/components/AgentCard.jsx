@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
 
-export default function AgentCard({ agent }) {
+export default function AgentCard({ agent, index = 0 }) {
   return (
-    <Link to={`/agents/${agent.slug}`} className="card">
+    <Link to={`/agents/${agent.slug}`} className="card" style={{ '--i': Math.min(index, 11) }}>
       <div className="card-head">
         <div className="card-icon">{agent.icon}</div>
         <div>

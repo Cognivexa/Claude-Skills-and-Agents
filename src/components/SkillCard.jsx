@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
 
-export default function SkillCard({ skill }) {
+export default function SkillCard({ skill, index = 0 }) {
   return (
-    <Link to={`/skills/${skill.slug}`} className="card">
+    <Link to={`/skills/${skill.slug}`} className="card" style={{ '--i': Math.min(index, 11) }}>
       <div className="card-head">
         <div className="card-icon">{skill.icon}</div>
         <div>

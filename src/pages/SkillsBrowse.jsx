@@ -106,8 +106,8 @@ export default function SkillsBrowse() {
             <div className="empty-state">No skills match your filters.</div>
           ) : (
             <div className="grid">
-              {results.map((s) => (
-                <SkillCard key={s.slug} skill={s} />
+              {results.map((s, i) => (
+                <SkillCard key={s.slug} skill={s} index={i} />
               ))}
             </div>
           )}

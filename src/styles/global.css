@@ -42,11 +42,18 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   margin: 0;
   padding: 0;
-  background: var(--bg);
+  background:
+    radial-gradient(1100px 560px at 15% -12%, rgba(97, 170, 242, 0.07), transparent 60%),
+    radial-gradient(900px 500px at 100% 0%, rgba(204, 120, 92, 0.05), transparent 55%),
+    var(--bg);
   color: var(--text);
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -60,12 +67,73 @@ a {
 button {
   font-family: inherit;
   cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease, transform 0.12s ease,
+    box-shadow 0.15s ease;
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+a,
+input,
+select {
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
 }
 
 .app-root {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0.85);
+  }
+  60% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 /* ---------- Navbar ---------- */
@@ -109,6 +177,12 @@ button {
   font-weight: 700;
   color: var(--black);
   flex-shrink: 0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nav-brand:hover .nav-brand-mark {
+  transform: translateY(-1px) scale(1.05);
+  box-shadow: 0 4px 14px rgba(204, 120, 92, 0.35);
 }
 
 .nav-brand-name {
@@ -124,11 +198,26 @@ button {
 }
 
 .nav-link {
+  position: relative;
   padding: 7px 14px;
   border-radius: 7px;
   font-size: 13.5px;
   font-weight: 600;
   color: var(--text-faint);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 3px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--focus);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.2s ease;
 }
 
 .nav-link:hover {
@@ -138,6 +227,10 @@ button {
 .nav-link.active {
   color: var(--focus);
   background: var(--accent-soft);
+}
+
+.nav-link.active::after {
+  transform: scaleX(1);
 }
 
 .nav-actions {
@@ -174,6 +267,9 @@ button {
 
 .submit-btn:hover {
   background: var(--bg-hover);
+  border-color: var(--cloud-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
 /* ---------- Footer ---------- */
@@ -226,6 +322,7 @@ button {
   padding: 28px 28px 60px;
   max-width: var(--content-w);
   margin: 0 auto;
+  animation: fadeIn 0.3s ease both;
 }
 
 /* ---------- Page header ---------- */
@@ -280,6 +377,7 @@ button {
   border: 1px solid var(--border-soft);
   border-radius: var(--radius);
   background: var(--bg-card);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
 }
 
 .filter-panel-section {
@@ -370,6 +468,7 @@ button {
 
 .tag-filter {
   margin-top: 8px;
+  animation: fadeInUp 0.18s ease both;
 }
 
 .tag-list {
@@ -426,6 +525,7 @@ button {
 .chip:hover {
   color: var(--text);
   border-color: var(--cloud-dark);
+  transform: translateY(-1px);
 }
 
 .chip.tag.active {
@@ -460,6 +560,13 @@ button {
 
 .search-input::placeholder {
   color: var(--text-faint);
+}
+
+.search-input:focus,
+.filter-select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+  outline: none;
 }
 
 .search-icon {
@@ -506,12 +613,21 @@ button {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  transition: border-color 0.12s, transform 0.12s;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
+  transition: border-color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
+  animation: fadeInUp 0.4s ease both;
+  animation-delay: calc(var(--i, 0) * 35ms);
 }
 
 .card:hover {
   border-color: var(--border);
   background: var(--bg-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
+}
+
+.card:hover .card-icon {
+  transform: scale(1.08);
 }
 
 .card-head {
@@ -530,6 +646,7 @@ button {
   justify-content: center;
   font-size: 16px;
   flex-shrink: 0;
+  transition: transform 0.18s ease;
 }
 
 .card-title {
@@ -747,6 +864,12 @@ button {
   border-color: var(--accent);
 }
 
+.copy-btn.copied {
+  color: var(--focus);
+  border-color: var(--focus);
+  animation: popIn 0.25s ease;
+}
+
 /* ---------- Section panel ---------- */
 
 .panel {
@@ -754,6 +877,7 @@ button {
   border-radius: var(--radius);
   background: var(--bg-card);
   margin-bottom: 26px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
 }
 
 .panel-header {

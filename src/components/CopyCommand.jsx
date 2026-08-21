@@ -21,8 +21,8 @@ export default function CopyCommand({ command, label }) {
           <span className="prompt">&gt;_</span>
           {command}
         </span>
-        <button className="copy-btn" onClick={handleCopy}>
-          {copied ? 'Copied' : 'Copy'}
+        <button className={'copy-btn' + (copied ? ' copied' : '')} onClick={handleCopy}>
+          {copied ? '✓ Copied' : 'Copy'}
         </button>
       </div>
     </div>

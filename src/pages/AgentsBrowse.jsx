@@ -104,8 +104,8 @@ export default function AgentsBrowse() {
             <div className="empty-state">No agents match your filters.</div>
           ) : (
             <div className="grid">
-              {results.map((a) => (
-                <AgentCard key={a.slug} agent={a} />
+              {results.map((a, i) => (
+                <AgentCard key={a.slug} agent={a} index={i} />
               ))}
             </div>
           )}
