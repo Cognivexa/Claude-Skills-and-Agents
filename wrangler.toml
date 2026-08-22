@@ -1,0 +1,13 @@
+name = "claude-skills-and-agents"
+compatibility_date = "2025-04-01"
+
+# This is a static Vite build with no Worker script — `[assets]` alone is enough
+# for Cloudflare Pages to serve `dist/` and, per `not_found_handling`, fall back to
+# `index.html` with a 200 for any path react-router-dom handles client-side
+# (e.g. /skills/code-review). The Netlify-style `_redirects` rule this replaced
+# (`/* /index.html 200`) is rejected by Cloudflare Pages as a false-positive
+# "infinite loop" — see https://github.com/cloudflare/workers-sdk/issues/11824 —
+# so this `[assets]` config is the correct mechanism here, not a `_redirects` file.
+[assets]
+directory = "./dist"
+not_found_handling = "single-page-application"

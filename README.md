@@ -278,11 +278,14 @@ Other.
 
 The `src/` app is a plain static Vite build with no backend, no database,
 and no server-side environment variables — so any static host works. This
-repo is configured for **Cloudflare Pages**, chosen for its free-tier limits
-as of 2026 (unlimited requests and bandwidth for static assets, unlimited
-sites, unlimited collaborators) and its direct GitHub integration.
+repo is deployed on **Cloudflare Pages** at
+**[claude-skills-and-agents.pages.dev](https://claude-skills-and-agents.pages.dev)**
+(also linked as this repo's website, in the GitHub About section), chosen
+for its free-tier limits as of 2026 (unlimited requests and bandwidth for
+static assets, unlimited sites, unlimited collaborators) and its direct
+GitHub integration.
 
-**One-time setup (Cloudflare dashboard):**
+**One-time setup (Cloudflare dashboard), if setting this up again elsewhere:**
 
 1. Go to **Workers & Pages → Create → Pages → Connect to Git**, and select
    this repository.
@@ -300,20 +303,25 @@ deploy, and the public `*.pages.dev` URL always serves the latest
 successful build. A custom domain can be attached later from the same
 project's **Custom domains** tab at no extra cost.
 
-[`public/_redirects`](public/_redirects) contains the SPA fallback rule
-(`/* /index.html 200`) this app needs — since it's a client-side-routed
-React Router app, every path must resolve to `index.html` and let the
-router take over, or a direct link to e.g. `/skills/code-review` would 404
-on a plain static host. Cloudflare Pages, Netlify, and most static hosts
-read this same `_redirects` format natively.
+**SPA fallback:** [`wrangler.toml`](wrangler.toml) sets
+`assets.not_found_handling = "single-page-application"`, which is what
+makes a direct link to e.g. `/skills/code-review` serve `index.html` (with
+a 200) instead of 404ing, so `react-router-dom` can take over client-side.
+This app used to ship a Netlify-style `public/_redirects` rule
+(`/* /index.html 200`) for the same purpose, but Cloudflare Pages rejects
+that exact rule as a false-positive "infinite loop" and silently ignores it
+([cloudflare/workers-sdk#11824](https://github.com/cloudflare/workers-sdk/issues/11824))
+— `wrangler.toml`'s `[assets]` block is the correct, currently-working
+mechanism on Cloudflare specifically.
 
 **Alternative hosts** (also free-tier, also support GitHub auto-deploy, if
 you'd rather use one of these): Vercel and Netlify both work with the same
-build command/output directory above — Netlify reads the same
-`_redirects` file; Vercel needs an equivalent rewrite rule in `vercel.json`
-instead. GitHub Pages works too but needs the router switched to
-`HashRouter` or a base-path adjustment, since it has no native SPA-fallback
-mechanism.
+build command/output directory above. Netlify's own `_redirects` format
+(a `public/_redirects` file with `/* /index.html 200`) works fine there —
+the infinite-loop rejection above is Cloudflare-specific. Vercel needs an
+equivalent rewrite rule in `vercel.json` instead. GitHub Pages works too but
+needs the router switched to `HashRouter` or a base-path adjustment, since
+it has no native SPA-fallback mechanism.
 
 ## License
 
