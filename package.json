@@ -13,6 +13,7 @@
     "generate:marketplace": "node scripts/generate-marketplace.mjs"
   },
   "dependencies": {
+    "cloudflare": "^7.1.0",
     "fflate": "^0.8.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
