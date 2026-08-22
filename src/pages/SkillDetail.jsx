@@ -10,6 +10,7 @@ import CopyCommand from '../components/CopyCommand.jsx'
 import SkillInstallTabs from '../components/SkillInstallTabs.jsx'
 import InstallButton from '../components/InstallButton.jsx'
 import CompatibilityBadges from '../components/CompatibilityBadges.jsx'
+import ConnectionScope from '../components/ConnectionScope.jsx'
 import MarkdownLite from '../components/MarkdownLite.jsx'
 
 export default function SkillDetail() {
@@ -57,6 +58,7 @@ export default function SkillDetail() {
         <InstallButton type="skill" item={skill} />
       </div>
       <CompatibilityBadges type="skill" />
+      <ConnectionScope item={skill} />
 
       {skill.exampleAsk && (
         <div className="panel" style={{ marginBottom: 20 }}>

@@ -1,13 +1,20 @@
 # Claude Skills and Agents
 
-A library of **92 skills** and **57 agents** built by **Cognivexa** — for Claude
-Code and Codex — spanning engineering, product, marketing, research,
-compliance, C-level advisory, business operations, and commercial & finance.
-A handful of flagship "Pro" entries (WordPress, PHP, Laravel, Python, Django,
-TypeScript, Docker & Kubernetes, React, Fullstack Guardian, Security
-Reviewer, Code Review and Quality) ship with real code patterns, MUST-DO /
-MUST-NOT constraints, and progressive-disclosure reference docs, not just a
-short description.
+A library of **104 skills**, **75 agents**, and **23 connectors** built by
+**Cognivexa** — for Claude Code and Codex — spanning engineering, product,
+marketing, SEO, cloud/DevOps, data, and more. A handful of flagship "Pro"
+entries (WordPress, PHP, Laravel, Python, Django, TypeScript, Docker &
+Kubernetes, React, Fullstack Guardian, Security Reviewer, Code Review and
+Quality) ship with real code patterns, MUST-DO / MUST-NOT constraints, and
+progressive-disclosure reference docs, not just a short description.
+
+Every skill and agent is designed **offline-first**: it should be fully
+useful from a description alone, with no external account ever required
+just to get value out of it. A handful reference an optional connector (see
+[Connectors](#connectors) below) for when a task genuinely needs live access
+to a real account — and even then, the agent asks before assuming that
+connector is configured, rather than gating its own advice behind a login
+screen.
 
 This is an independent, community project. It is **not affiliated with,
 endorsed by, or officially connected to Anthropic or OpenAI**. "Claude",
@@ -205,6 +212,30 @@ equivalent — if you need that capability in Codex, check whether the same
 capability also exists as a skill in this repo (most of the flagship "Pro"
 agents do, under the same slug) and install that instead.
 
+## Connectors
+
+Connectors are a different kind of thing from a skill or agent: they're real,
+third-party **MCP (Model Context Protocol) servers** — running software
+Claude talks to — not markdown prompts. Every connector in
+[`src/data/connectors.js`](src/data/connectors.js) is a genuine, publicly
+documented server operated by its actual vendor (GitHub, Notion, Slack,
+Atlassian, Figma, Ahrefs, AWS, Hugging Face, and 15 others) — Cognivexa did
+not build any of them and is never credited as their author. What this repo
+adds is packaging each as a `.claude-plugin/plugin.json` + `.mcp.json` pair,
+so `/plugin install <slug>@claude-skills-and-agents` genuinely registers the
+real server — the same install flow as any skill or agent here.
+
+Each connector's page documents three ways to add it: as a plugin from this
+repo, directly via `claude mcp add`, or via a `claude_desktop_config.json`
+snippet for Claude Desktop — plus the exact credential (API key, token, or
+OAuth) it needs, since none of them come pre-authenticated.
+
+**No skill or agent in this catalog requires a connector to be useful.**
+Where one is mentioned in an agent's own instructions (e.g. Database
+Architect can defer to `postgres-mcp-connector` for a live query), it's
+always presented as optional and the agent asks before assuming it's
+configured — see the "Optional connection" badge on that agent/skill's page.
+
 ## Repository layout
 
 ```
@@ -242,6 +273,47 @@ Automation, Research, Writing, Design, Productivity, Product, Compliance,
 C-Level Advisory, Business Operations, Commercial & Finance, DevOps,
 Security, Frontend, UI/UX, AI Engineering, Data Science, Communication,
 Other.
+
+## Deploying the catalog site
+
+The `src/` app is a plain static Vite build with no backend, no database,
+and no server-side environment variables — so any static host works. This
+repo is configured for **Cloudflare Pages**, chosen for its free-tier limits
+as of 2026 (unlimited requests and bandwidth for static assets, unlimited
+sites, unlimited collaborators) and its direct GitHub integration.
+
+**One-time setup (Cloudflare dashboard):**
+
+1. Go to **Workers & Pages → Create → Pages → Connect to Git**, and select
+   this repository.
+2. Set the build configuration:
+   - **Build command:** `npm run build`
+   - **Build output directory:** `dist`
+   - **Root directory:** `/` (leave default)
+3. No environment variables are required — this is a static build with no
+   API keys or secrets baked in.
+4. Click **Save and Deploy**.
+
+From then on, every push to the branch you selected (typically `main`)
+triggers an automatic build and deploy — Cloudflare shows build logs per
+deploy, and the public `*.pages.dev` URL always serves the latest
+successful build. A custom domain can be attached later from the same
+project's **Custom domains** tab at no extra cost.
+
+[`public/_redirects`](public/_redirects) contains the SPA fallback rule
+(`/* /index.html 200`) this app needs — since it's a client-side-routed
+React Router app, every path must resolve to `index.html` and let the
+router take over, or a direct link to e.g. `/skills/code-review` would 404
+on a plain static host. Cloudflare Pages, Netlify, and most static hosts
+read this same `_redirects` format natively.
+
+**Alternative hosts** (also free-tier, also support GitHub auto-deploy, if
+you'd rather use one of these): Vercel and Netlify both work with the same
+build command/output directory above — Netlify reads the same
+`_redirects` file; Vercel needs an equivalent rewrite rule in `vercel.json`
+instead. GitHub Pages works too but needs the router switched to
+`HashRouter` or a base-path adjustment, since it has no native SPA-fallback
+mechanism.
 
 ## License
 

@@ -10,6 +10,7 @@ import CopyCommand from '../components/CopyCommand.jsx'
 import AgentInstallTabs from '../components/AgentInstallTabs.jsx'
 import InstallButton from '../components/InstallButton.jsx'
 import CompatibilityBadges from '../components/CompatibilityBadges.jsx'
+import ConnectionScope from '../components/ConnectionScope.jsx'
 import MarkdownLite from '../components/MarkdownLite.jsx'
 
 export default function AgentDetail() {
@@ -51,6 +52,7 @@ export default function AgentDetail() {
         <InstallButton type="agent" item={agent} hasMatchingSkill={!!getSkill(agent.slug)} />
       </div>
       <CompatibilityBadges type="agent" hasMatchingSkill={!!getSkill(agent.slug)} />
+      <ConnectionScope item={agent} />
 
       {agent.exampleAsk && (
         <div className="panel" style={{ marginBottom: 20 }}>
