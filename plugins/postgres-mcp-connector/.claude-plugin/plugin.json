@@ -1,0 +1,8 @@
+{
+  "name": "postgres-mcp-connector",
+  "description": "Query a PostgreSQL database directly from Claude Code — schema lookups, ad hoc analysis, or data checks — through DBHub, Bytebase's open-source database MCP server.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Bytebase"
+  }
+}

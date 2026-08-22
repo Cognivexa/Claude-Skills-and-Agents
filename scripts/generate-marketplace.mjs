@@ -4,7 +4,14 @@ import { fileURLToPath } from 'node:url'
 
 import { AGENTS } from '../src/data/agents.js'
 import { SKILLS } from '../src/data/skills.js'
-import { renderAgentMarkdown, renderSkillMarkdown } from '../src/data/render.js'
+import { CONNECTORS } from '../src/data/connectors.js'
+import {
+  renderAgentMarkdown,
+  renderSkillMarkdown,
+  renderConnectorPluginJson,
+  renderConnectorMcpJson,
+  renderCatalogIndex,
+} from '../src/data/render.js'
 import { MARKETPLACE_NAME } from '../src/data/marketplace.js'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
@@ -87,6 +94,29 @@ for (const skill of SKILLS) {
   })
 }
 
+for (const connector of CONNECTORS) {
+  const pluginDir = join(PLUGINS_DIR, connector.slug)
+  writeFile(join(pluginDir, '.claude-plugin', 'plugin.json'), renderConnectorPluginJson(connector))
+  writeFile(join(pluginDir, '.mcp.json'), renderConnectorMcpJson(connector))
+
+  upsertEntry(connector.slug, {
+    name: connector.slug,
+    source: `./plugins/${connector.slug}`,
+    displayName: `${connector.name} (Connector)`,
+    description: connector.description,
+    version: '0.1.0',
+    author: { name: connector.vendor },
+    category: connector.category,
+    keywords: [...connector.tags, 'mcp-connector'],
+  })
+}
+
+// Overwrite the static placeholder committed in skills.js with the real, always-current
+// index — generated last so it reflects every agent/skill/connector processed above.
+const catalogIndex = renderCatalogIndex(AGENTS, SKILLS, CONNECTORS)
+writeFile(join(PLUGINS_DIR, 'capability-concierge', 'skills', 'capability-concierge', 'reference', 'catalog-index.md'), catalogIndex)
+writeFile(join(SKILLS_DIR, 'capability-concierge', 'reference', 'catalog-index.md'), catalogIndex)
+
 const pluginEntries = [...pluginEntriesBySlug.values()].sort((a, b) => a.name.localeCompare(b.name))
 
 const marketplace = {
@@ -100,5 +130,7 @@ const marketplace = {
 
 writeFile(join(MANIFEST_DIR, 'marketplace.json'), JSON.stringify(marketplace, null, 2) + '\n')
 
-console.log(`Generated ${pluginEntries.length} plugins (${AGENTS.length} agents + ${SKILLS.length} skills).`)
+console.log(
+  `Generated ${pluginEntries.length} plugins (${AGENTS.length} agents + ${SKILLS.length} skills + ${CONNECTORS.length} connectors).`
+)
 console.log(`Marketplace manifest: ${join(MANIFEST_DIR, 'marketplace.json')}`)

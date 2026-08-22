@@ -1,0 +1,8 @@
+{
+  "name": "ahrefs-mcp-connector",
+  "description": "Pull rank tracking, keyword research, backlink, and competitor data straight from Ahrefs into Claude Code instead of exporting CSVs from the dashboard.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Ahrefs"
+  }
+}

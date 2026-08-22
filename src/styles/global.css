@@ -755,6 +755,98 @@ select {
   margin-bottom: 16px;
 }
 
+/* ---------- Install picker ---------- */
+
+.detail-actions-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 16px;
+  max-width: 640px;
+}
+
+.detail-actions-row .category-pill {
+  margin-bottom: 0;
+}
+
+.install-picker {
+  position: relative;
+}
+
+.install-picker-btn {
+  background: var(--accent-soft);
+  border: 1px solid var(--accent);
+  color: var(--focus);
+  font-size: 13px;
+  font-weight: 700;
+  padding: 7px 14px;
+  border-radius: 8px;
+}
+
+.install-picker-btn:hover {
+  background: var(--accent);
+  color: var(--slate-dark, #16181c);
+}
+
+.install-picker-panel {
+  margin-top: 12px;
+  padding: 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  max-width: 640px;
+}
+
+.install-picker-prompt {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-faint);
+  margin-bottom: 10px;
+}
+
+.install-download-btn {
+  padding: 7px 14px;
+}
+
+.compat-badges {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.compat-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 20px;
+  border: 1px solid var(--border-soft);
+  cursor: help;
+}
+
+.compat-badge.ok {
+  color: var(--focus);
+  background: var(--accent-soft);
+  border-color: var(--accent);
+}
+
+.compat-badge.via {
+  color: var(--warm);
+  background: var(--warm-soft);
+  border-color: rgba(204, 120, 92, 0.4);
+}
+
+.compat-badge.no {
+  color: var(--text-faint);
+  background: var(--bg-raised);
+  opacity: 0.7;
+}
+
 /* ---------- Install command ---------- */
 
 .install-cmd-label {

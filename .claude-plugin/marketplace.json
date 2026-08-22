@@ -41,6 +41,41 @@
       ]
     },
     {
+      "name": "ahrefs-mcp-connector",
+      "source": "./plugins/ahrefs-mcp-connector",
+      "displayName": "Ahrefs (Connector)",
+      "description": "Pull rank tracking, keyword research, backlink, and competitor data straight from Ahrefs into Claude Code instead of exporting CSVs from the dashboard.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Ahrefs"
+      },
+      "category": "SEO",
+      "keywords": [
+        "ahrefs",
+        "seo",
+        "backlinks",
+        "keyword-research",
+        "mcp-connector"
+      ]
+    },
+    {
+      "name": "airtable-mcp-connector",
+      "source": "./plugins/airtable-mcp-connector",
+      "displayName": "Airtable (Connector)",
+      "description": "Read and write Airtable bases from Claude Code — pull records for analysis, or create/update rows — without exporting the base first.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Airtable"
+      },
+      "category": "Productivity",
+      "keywords": [
+        "airtable",
+        "spreadsheets",
+        "no-code",
+        "mcp-connector"
+      ]
+    },
+    {
       "name": "alt-text-composer",
       "source": "./plugins/alt-text-composer",
       "displayName": "Alt Text Composer",
@@ -122,6 +157,23 @@
       ]
     },
     {
+      "name": "asana-mcp-connector",
+      "source": "./plugins/asana-mcp-connector",
+      "displayName": "Asana (Connector)",
+      "description": "Read and update Asana tasks and projects from Claude Code — check status, create follow-up tasks, or summarize a project's open work.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Asana"
+      },
+      "category": "Productivity",
+      "keywords": [
+        "asana",
+        "tasks",
+        "project-management",
+        "mcp-connector"
+      ]
+    },
+    {
       "name": "asset-namer",
       "source": "./plugins/asset-namer",
       "displayName": "Asset Namer",
@@ -138,6 +190,24 @@
       ]
     },
     {
+      "name": "atlassian-mcp-connector",
+      "source": "./plugins/atlassian-mcp-connector",
+      "displayName": "Atlassian (Jira & Confluence) (Connector)",
+      "description": "Search and update Jira, Confluence, Jira Service Management, and Bitbucket from Claude Code — turn a spec or meeting note straight into tickets.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Atlassian"
+      },
+      "category": "Development",
+      "keywords": [
+        "jira",
+        "confluence",
+        "atlassian",
+        "issue-tracking",
+        "mcp-connector"
+      ]
+    },
+    {
       "name": "audit-evidence-collector",
       "source": "./plugins/audit-evidence-collector",
       "displayName": "Audit Evidence Collector",
@@ -151,6 +221,71 @@
         "audit",
         "evidence",
         "controls"
+      ]
+    },
+    {
+      "name": "aws-cloud-architect",
+      "source": "./plugins/aws-cloud-architect",
+      "displayName": "AWS Cloud Architect",
+      "description": "AWS cloud architect designing workloads against the Well-Architected Framework's six pillars, matching compute and database choice to actual traffic and access patterns. Use PROACTIVELY before a new AWS workload launches, or during a Well-Architected review.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "DevOps",
+      "keywords": [
+        "aws",
+        "well-architected",
+        "cloud-architecture"
+      ]
+    },
+    {
+      "name": "aws-documentation-mcp-connector",
+      "source": "./plugins/aws-documentation-mcp-connector",
+      "displayName": "AWS Documentation (Connector)",
+      "description": "Search and fetch official AWS documentation, converted to markdown, directly into Claude Code — answers grounded in the actual current docs, not a training-data guess about a service that may have changed.",
+      "version": "0.1.0",
+      "author": {
+        "name": "AWS Labs (Amazon)"
+      },
+      "category": "DevOps",
+      "keywords": [
+        "aws",
+        "documentation",
+        "cloud",
+        "mcp-connector"
+      ]
+    },
+    {
+      "name": "aws-service-selection-advisor",
+      "source": "./plugins/aws-service-selection-advisor",
+      "displayName": "AWS Service Selection Advisor",
+      "description": "AWS advisory specialist recommending the right compute, database, and storage services for a workload's traffic and data-access pattern, with a real cost comparison. Use PROACTIVELY when choosing between AWS services for a new workload, or when a service choice was made by default rather than by comparison.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "DevOps",
+      "keywords": [
+        "aws",
+        "service-selection",
+        "cost-optimization"
+      ]
+    },
+    {
+      "name": "azure-cloud-architect",
+      "source": "./plugins/azure-cloud-architect",
+      "displayName": "Azure Cloud Architect",
+      "description": "Azure cloud architect standing up landing zones and applying the Well-Architected Framework's five pillars before workloads land on them. Use PROACTIVELY before onboarding a new subscription or workload to Azure, or during a cost-optimization review.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "DevOps",
+      "keywords": [
+        "azure",
+        "landing-zone",
+        "well-architected"
       ]
     },
     {
@@ -186,6 +321,23 @@
       ]
     },
     {
+      "name": "box-mcp-connector",
+      "source": "./plugins/box-mcp-connector",
+      "displayName": "Box (Connector)",
+      "description": "Search, read, and reason over files and folders in Box from Claude Code, with your existing Box permissions enforced on every request.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Box"
+      },
+      "category": "Productivity",
+      "keywords": [
+        "box",
+        "file-storage",
+        "enterprise-content",
+        "mcp-connector"
+      ]
+    },
+    {
       "name": "brainstorming",
       "source": "./plugins/brainstorming",
       "displayName": "Brainstorming",
@@ -199,6 +351,39 @@
         "ideation",
         "tradeoff-analysis",
         "pre-implementation"
+      ]
+    },
+    {
+      "name": "canva-mcp-connector",
+      "source": "./plugins/canva-mcp-connector",
+      "displayName": "Canva (Connector)",
+      "description": "Create, autofill, search, and export Canva designs from Claude Code — generate a social graphic or resize a template from a plain-English request.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Canva"
+      },
+      "category": "Design",
+      "keywords": [
+        "canva",
+        "design",
+        "templates",
+        "mcp-connector"
+      ]
+    },
+    {
+      "name": "capability-concierge",
+      "source": "./plugins/capability-concierge",
+      "displayName": "Capability Concierge",
+      "description": "Finds the right skill, agent, or connector in this catalog for a task — or notices mid-task that one is needed but not installed — explains the match, and asks for explicit confirmation before installing anything. Use when unsure which capability fits a task, or when a task in progress needs a skill, agent, or connector that is not yet installed.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Utility",
+      "keywords": [
+        "catalog",
+        "discovery",
+        "auto-install"
       ]
     },
     {
@@ -577,6 +762,54 @@
       ]
     },
     {
+      "name": "data-visualization-analyst",
+      "source": "./plugins/data-visualization-analyst",
+      "displayName": "Data Visualization Analyst",
+      "description": "Data visualization analyst matching chart type to the actual business question and building dashboards around the one thing they need to answer in five seconds. Use PROACTIVELY before building a dashboard, or when a chart is technically correct but nobody can read it at a glance.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Data Analysis",
+      "keywords": [
+        "data-visualization",
+        "dashboards",
+        "chart-design"
+      ]
+    },
+    {
+      "name": "data-warehouse-architect",
+      "source": "./plugins/data-warehouse-architect",
+      "displayName": "Data Warehouse Architect",
+      "description": "Data warehouse architect designing a Kimball star-schema consumption layer on a medallion lakehouse, with ELT managed as version-controlled dbt models. Use PROACTIVELY when standing up a new analytics warehouse, or when a reporting layer has become an unmaintainable tangle of ad hoc SQL.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Data Science",
+      "keywords": [
+        "data-warehouse",
+        "dimensional-modeling",
+        "dbt"
+      ]
+    },
+    {
+      "name": "database-architect",
+      "source": "./plugins/database-architect",
+      "displayName": "Database Architect",
+      "description": "Database architect designing relational schemas from real query patterns — normalization, indexing, constraints, naming — instead of guessing at structure upfront. Use PROACTIVELY before a new schema ships, or when query performance degrades as data grows.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Development",
+      "keywords": [
+        "database-design",
+        "indexing",
+        "normalization"
+      ]
+    },
+    {
       "name": "dataset-cleaner",
       "source": "./plugins/dataset-cleaner",
       "displayName": "Dataset Cleaner",
@@ -802,6 +1035,23 @@
       ]
     },
     {
+      "name": "figma-mcp-connector",
+      "source": "./plugins/figma-mcp-connector",
+      "displayName": "Figma (Connector)",
+      "description": "Pull real design context — frames, components, variables, screenshots — from Figma into Claude Code so generated UI code matches the actual design, not a guess.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Figma"
+      },
+      "category": "Design",
+      "keywords": [
+        "figma",
+        "design",
+        "design-to-code",
+        "mcp-connector"
+      ]
+    },
+    {
       "name": "file-organizer",
       "source": "./plugins/file-organizer",
       "displayName": "File Organizer",
@@ -831,6 +1081,22 @@
         "file-management",
         "organization",
         "dedupe"
+      ]
+    },
+    {
+      "name": "filesystem-mcp-connector",
+      "source": "./plugins/filesystem-mcp-connector",
+      "displayName": "Filesystem (Connector)",
+      "description": "Give Claude direct read/write access to a specific local directory outside your current project — useful for scripts, notes, or files a chat session wouldn't otherwise reach.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Anthropic (MCP reference server)"
+      },
+      "category": "Automation",
+      "keywords": [
+        "filesystem",
+        "local-files",
+        "mcp-connector"
       ]
     },
     {
@@ -866,6 +1132,23 @@
       ]
     },
     {
+      "name": "flowchart-diagram-architect",
+      "source": "./plugins/flowchart-diagram-architect",
+      "displayName": "Flowchart & Diagram Architect",
+      "description": "Diagram architect turning process, system, or workflow descriptions into the right diagram — flowchart, sequence, or C4 architecture — in Mermaid. Use PROACTIVELY before an architecture review, system onboarding doc, or whenever a process description is getting hard to follow in prose.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Design",
+      "keywords": [
+        "diagrams",
+        "flowcharts",
+        "mermaid",
+        "c4-model"
+      ]
+    },
+    {
       "name": "fpa-modeling-specialist",
       "source": "./plugins/fpa-modeling-specialist",
       "displayName": "FP&A Modeling Specialist",
@@ -895,6 +1178,22 @@
         "finance",
         "cfo",
         "board-reporting"
+      ]
+    },
+    {
+      "name": "full-stack-developer",
+      "source": "./plugins/full-stack-developer",
+      "displayName": "Full Stack Developer",
+      "description": "Full-stack engineer shipping a feature end-to-end — data model, API contract, UI, auth, and tests — as one coherent change instead of disconnected frontend/backend work. Use PROACTIVELY when a feature spans the database, an API, and a UI in the same change.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Development",
+      "keywords": [
+        "full-stack",
+        "api-design",
+        "twelve-factor"
       ]
     },
     {
@@ -930,6 +1229,74 @@
       ]
     },
     {
+      "name": "github-mcp-connector",
+      "source": "./plugins/github-mcp-connector",
+      "displayName": "GitHub (Connector)",
+      "description": "Read and act on GitHub directly from Claude Code: review PRs, create issues, and list PRs assigned to you, instead of pasting diffs and issue text into chat.",
+      "version": "0.1.0",
+      "author": {
+        "name": "GitHub"
+      },
+      "category": "Development",
+      "keywords": [
+        "github",
+        "pull-requests",
+        "issues",
+        "mcp-connector"
+      ]
+    },
+    {
+      "name": "google-ads-strategist",
+      "source": "./plugins/google-ads-strategist",
+      "displayName": "Google Ads Strategist",
+      "description": "Google Ads strategist structuring Search, Performance Max, and Demand Gen campaigns around clean conversion signals and asset quality rather than guesswork. Use PROACTIVELY before launching a new campaign, when CPA drifts upward, or before reallocating budget across campaign types.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Marketing",
+      "keywords": [
+        "google-ads",
+        "ppc",
+        "performance-max",
+        "sem"
+      ]
+    },
+    {
+      "name": "google-calendar-mcp-connector",
+      "source": "./plugins/google-calendar-mcp-connector",
+      "displayName": "Google Calendar (Connector)",
+      "description": "Read and manage Google Calendar events from Claude — check availability, summarize a day's schedule, or schedule a meeting — through Google's own remote MCP server.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Google"
+      },
+      "category": "Productivity",
+      "keywords": [
+        "google-calendar",
+        "scheduling",
+        "google-workspace",
+        "mcp-connector"
+      ]
+    },
+    {
+      "name": "google-search-console-specialist",
+      "source": "./plugins/google-search-console-specialist",
+      "displayName": "Google Search Console Specialist",
+      "description": "Search Console specialist diagnosing indexation failures, query-level performance swings, and Core Web Vitals regressions straight from GSC data. Use PROACTIVELY after a ranking or traffic drop, before submitting a reconsideration request, or when validating a migration's index health.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "SEO",
+      "keywords": [
+        "seo",
+        "google-search-console",
+        "indexation",
+        "performance-reports"
+      ]
+    },
+    {
       "name": "growth-marketing-strategist",
       "source": "./plugins/growth-marketing-strategist",
       "displayName": "Growth Marketing Strategist",
@@ -943,6 +1310,41 @@
         "growth",
         "funnels",
         "experiments"
+      ]
+    },
+    {
+      "name": "hubspot-mcp-connector",
+      "source": "./plugins/hubspot-mcp-connector",
+      "displayName": "HubSpot (Connector)",
+      "description": "Pull contact, deal, and pipeline data from HubSpot into Claude Code for revenue analysis or account research without exporting a CSV first.",
+      "version": "0.1.0",
+      "author": {
+        "name": "HubSpot"
+      },
+      "category": "Marketing",
+      "keywords": [
+        "hubspot",
+        "crm",
+        "sales",
+        "mcp-connector"
+      ]
+    },
+    {
+      "name": "huggingface-mcp-connector",
+      "source": "./plugins/huggingface-mcp-connector",
+      "displayName": "Hugging Face (Connector)",
+      "description": "Search models, datasets, and Spaces on the Hugging Face Hub from Claude Code — ground a model or dataset recommendation in what actually exists today.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Hugging Face"
+      },
+      "category": "AI Engineering",
+      "keywords": [
+        "huggingface",
+        "models",
+        "datasets",
+        "ml",
+        "mcp-connector"
       ]
     },
     {
@@ -1029,6 +1431,23 @@
       ]
     },
     {
+      "name": "intercom-mcp-connector",
+      "source": "./plugins/intercom-mcp-connector",
+      "displayName": "Intercom (Connector)",
+      "description": "Query conversations, contacts, and companies, and read or update Help Center articles from Claude Code — draft support content grounded in real tickets.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Intercom"
+      },
+      "category": "Communication",
+      "keywords": [
+        "intercom",
+        "customer-support",
+        "help-center",
+        "mcp-connector"
+      ]
+    },
+    {
       "name": "internal-change-comms-lead",
       "source": "./plugins/internal-change-comms-lead",
       "displayName": "Internal Change Communication Lead",
@@ -1075,6 +1494,23 @@
         "active-learning",
         "implementation-plan",
         "content-to-action"
+      ]
+    },
+    {
+      "name": "linear-mcp-connector",
+      "source": "./plugins/linear-mcp-connector",
+      "displayName": "Linear (Connector)",
+      "description": "Find, create, and update Linear issues, projects, and comments from Claude Code without leaving the terminal to open the Linear app.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Linear"
+      },
+      "category": "Development",
+      "keywords": [
+        "linear",
+        "issue-tracking",
+        "project-management",
+        "mcp-connector"
       ]
     },
     {
@@ -1175,6 +1611,23 @@
       ]
     },
     {
+      "name": "meta-ads-specialist",
+      "source": "./plugins/meta-ads-specialist",
+      "displayName": "Meta Ads Specialist",
+      "description": "Meta (Facebook/Instagram) Ads specialist structuring Advantage+ campaigns and creative-testing pipelines around clean conversion data. Use PROACTIVELY before launching a new Advantage+ campaign, when ROAS declines after a creative refresh, or before scaling a winning ad set.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Marketing",
+      "keywords": [
+        "meta-ads",
+        "facebook-ads",
+        "instagram-ads",
+        "advantage-plus"
+      ]
+    },
+    {
       "name": "ml-monitoring-drift-engineer",
       "source": "./plugins/ml-monitoring-drift-engineer",
       "displayName": "ML Monitoring & Drift Engineer",
@@ -1209,6 +1662,90 @@
       ]
     },
     {
+      "name": "monday-mcp-connector",
+      "source": "./plugins/monday-mcp-connector",
+      "displayName": "monday.com (Connector)",
+      "description": "Search boards, create and update items, assign owners, and set timelines in monday.com directly from Claude Code.",
+      "version": "0.1.0",
+      "author": {
+        "name": "monday.com"
+      },
+      "category": "Product",
+      "keywords": [
+        "monday",
+        "project-management",
+        "boards",
+        "mcp-connector"
+      ]
+    },
+    {
+      "name": "motion-graphics-animator",
+      "source": "./plugins/motion-graphics-animator",
+      "displayName": "Motion Graphics & UI Animator",
+      "description": "Motion designer specifying purposeful UI animation and micro-interactions — duration, easing, and reduced-motion fallback — instead of decorative animation. Use PROACTIVELY when adding a new UI transition, or when existing animation feels arbitrary rather than consistent.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Design",
+      "keywords": [
+        "motion-design",
+        "micro-interactions",
+        "animation"
+      ]
+    },
+    {
+      "name": "notion-mcp-connector",
+      "source": "./plugins/notion-mcp-connector",
+      "displayName": "Notion (Connector)",
+      "description": "Read and update Notion pages and databases from Claude Code — pull specs, update trackers, or draft a page — without copy-pasting content back and forth.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Notion"
+      },
+      "category": "Productivity",
+      "keywords": [
+        "notion",
+        "docs",
+        "wiki",
+        "mcp-connector"
+      ]
+    },
+    {
+      "name": "off-page-seo-link-builder",
+      "source": "./plugins/off-page-seo-link-builder",
+      "displayName": "Off-Page SEO & Link Building Strategist",
+      "description": "Off-page SEO and link-building strategist running digital PR, guest posting, and broken-link outreach to build topical authority safely. Use PROACTIVELY before a competitive keyword push, after a core-update ranking drop tied to authority signals, or when planning a quarterly outreach campaign.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "SEO",
+      "keywords": [
+        "seo",
+        "off-page-seo",
+        "link-building",
+        "digital-pr"
+      ]
+    },
+    {
+      "name": "on-page-seo-strategist",
+      "source": "./plugins/on-page-seo-strategist",
+      "displayName": "On-Page SEO Strategist",
+      "description": "On-page SEO specialist optimizing titles, headings, internal linking, content depth, and E-E-A-T signals to win rankings and AI Overview inclusion. Use PROACTIVELY before publishing new content, when a page underperforms its keyword difficulty, or during a content refresh cycle.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "SEO",
+      "keywords": [
+        "seo",
+        "on-page-seo",
+        "content-optimization",
+        "eeat"
+      ]
+    },
+    {
       "name": "onboarding-kit",
       "source": "./plugins/onboarding-kit",
       "displayName": "Onboarding Kit",
@@ -1225,6 +1762,23 @@
       ]
     },
     {
+      "name": "paid-media-strategist",
+      "source": "./plugins/paid-media-strategist",
+      "displayName": "Paid Media & Cross-Channel Budget Strategist",
+      "description": "Cross-channel paid media strategist allocating budget across Google Ads, Meta, and YouTube by blended CAC/ROAS rather than channel-by-channel silos. Use PROACTIVELY before a quarterly budget planning cycle, when blended CAC rises despite stable per-channel metrics, or when adding a new paid channel to the mix.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Marketing",
+      "keywords": [
+        "paid-media",
+        "media-mix",
+        "attribution",
+        "budget-allocation"
+      ]
+    },
+    {
       "name": "people-operations-coordinator",
       "source": "./plugins/people-operations-coordinator",
       "displayName": "People Operations Coordinator",
@@ -1238,6 +1792,23 @@
         "people-ops",
         "onboarding",
         "hr"
+      ]
+    },
+    {
+      "name": "perplexity-mcp-connector",
+      "source": "./plugins/perplexity-mcp-connector",
+      "displayName": "Perplexity (Connector)",
+      "description": "Run real-time web search and research through Perplexity's Sonar models from Claude Code — a second, independent research pass beyond Claude's own web search.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Perplexity"
+      },
+      "category": "Research",
+      "keywords": [
+        "perplexity",
+        "web-search",
+        "research",
+        "mcp-connector"
       ]
     },
     {
@@ -1305,6 +1876,23 @@
       ]
     },
     {
+      "name": "postgres-mcp-connector",
+      "source": "./plugins/postgres-mcp-connector",
+      "displayName": "PostgreSQL (via DBHub) (Connector)",
+      "description": "Query a PostgreSQL database directly from Claude Code — schema lookups, ad hoc analysis, or data checks — through DBHub, Bytebase's open-source database MCP server.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Bytebase"
+      },
+      "category": "Data Analysis",
+      "keywords": [
+        "postgresql",
+        "database",
+        "sql",
+        "mcp-connector"
+      ]
+    },
+    {
       "name": "prd",
       "source": "./plugins/prd",
       "displayName": "PRD",
@@ -1350,6 +1938,22 @@
         "process-improvement",
         "sop",
         "operations"
+      ]
+    },
+    {
+      "name": "product-owner",
+      "source": "./plugins/product-owner",
+      "displayName": "Product Owner",
+      "description": "Product Owner refining a backlog into sprint-ready items with INVEST user stories, explicit acceptance criteria, and a Definition of Ready the team actually agreed to. Use PROACTIVELY before sprint planning, or when a backlog item keeps causing mid-sprint clarification loops.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Product",
+      "keywords": [
+        "product-owner",
+        "backlog-refinement",
+        "user-stories"
       ]
     },
     {
@@ -1548,6 +2152,22 @@
       ]
     },
     {
+      "name": "requirement-analysis",
+      "source": "./plugins/requirement-analysis",
+      "displayName": "Requirement Analysis",
+      "description": "Requirements analyst extracting and structuring requirements from any source — website URL, PDF, Word, Excel, PowerPoint, or plain text — into a traceable, testable requirements set. Use PROACTIVELY at the start of a project when requirements exist only as scattered documents or a stakeholder deck.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Product",
+      "keywords": [
+        "requirements",
+        "business-analysis",
+        "elicitation"
+      ]
+    },
+    {
       "name": "resolving-code-review",
       "source": "./plugins/resolving-code-review",
       "displayName": "Resolving Code Review",
@@ -1694,6 +2314,23 @@
       ]
     },
     {
+      "name": "sentry-mcp-connector",
+      "source": "./plugins/sentry-mcp-connector",
+      "displayName": "Sentry (Connector)",
+      "description": "Pull error and performance data from Sentry into Claude Code so a crash investigation starts from the real stack trace, not a pasted screenshot.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Sentry"
+      },
+      "category": "DevOps",
+      "keywords": [
+        "sentry",
+        "errors",
+        "monitoring",
+        "mcp-connector"
+      ]
+    },
+    {
       "name": "site-reliability-engineer",
       "source": "./plugins/site-reliability-engineer",
       "displayName": "Site Reliability Engineer",
@@ -1708,6 +2345,40 @@
         "sre",
         "incident-response",
         "monitoring"
+      ]
+    },
+    {
+      "name": "slack-mcp-connector",
+      "source": "./plugins/slack-mcp-connector",
+      "displayName": "Slack (Connector)",
+      "description": "Search Slack history and post messages from Claude Code — pull context from a channel or draft a message — with scopes you can pin to exactly what you need.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Slack"
+      },
+      "category": "Communication",
+      "keywords": [
+        "slack",
+        "chat",
+        "notifications",
+        "mcp-connector"
+      ]
+    },
+    {
+      "name": "snyk-mcp-connector",
+      "source": "./plugins/snyk-mcp-connector",
+      "displayName": "Snyk (Connector)",
+      "description": "Run dependency, code, container, and infrastructure-as-code security scans through Snyk directly from Claude Code, instead of switching to a separate scanner.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Snyk"
+      },
+      "category": "Security",
+      "keywords": [
+        "snyk",
+        "security",
+        "vulnerability-scanning",
+        "mcp-connector"
       ]
     },
     {
@@ -1804,6 +2475,23 @@
         "executive-communications",
         "narrative",
         "investor-relations"
+      ]
+    },
+    {
+      "name": "stripe-mcp-connector",
+      "source": "./plugins/stripe-mcp-connector",
+      "displayName": "Stripe (Connector)",
+      "description": "Look up charges, customers, and subscription state directly from Stripe while debugging a billing issue, instead of switching to the Stripe dashboard.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Stripe"
+      },
+      "category": "Commercial & Finance",
+      "keywords": [
+        "stripe",
+        "payments",
+        "billing",
+        "mcp-connector"
       ]
     },
     {
@@ -2175,6 +2863,23 @@
         "skill-authoring",
         "quality-check",
         "skill-md"
+      ]
+    },
+    {
+      "name": "youtube-ads-strategist",
+      "source": "./plugins/youtube-ads-strategist",
+      "displayName": "YouTube Ads Strategist",
+      "description": "YouTube and video ads strategist sequencing skippable, non-skippable, bumper, and Demand Gen formats across the funnel for efficient view-through and conversion cost. Use PROACTIVELY before launching a video campaign, when view-through rate underperforms benchmark, or before choosing a format for a funnel stage.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Cognivexa"
+      },
+      "category": "Marketing",
+      "keywords": [
+        "youtube-ads",
+        "video-advertising",
+        "demand-gen",
+        "ppc"
       ]
     },
     {

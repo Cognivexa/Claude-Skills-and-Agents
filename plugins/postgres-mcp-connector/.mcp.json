@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "postgres": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@bytebase/dbhub",
+        "--dsn",
+        "${POSTGRES_DSN}"
+      ],
+      "env": {
+        "POSTGRES_DSN": "${POSTGRES_DSN}"
+      }
+    }
+  }
+}

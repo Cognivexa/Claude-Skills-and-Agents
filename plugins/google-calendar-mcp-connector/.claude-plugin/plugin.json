@@ -1,0 +1,8 @@
+{
+  "name": "google-calendar-mcp-connector",
+  "description": "Read and manage Google Calendar events from Claude — check availability, summarize a day's schedule, or schedule a meeting — through Google's own remote MCP server.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Google"
+  }
+}

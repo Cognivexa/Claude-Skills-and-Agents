@@ -1,0 +1,8 @@
+{
+  "name": "box-mcp-connector",
+  "description": "Search, read, and reason over files and folders in Box from Claude Code, with your existing Box permissions enforced on every request.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Box"
+  }
+}

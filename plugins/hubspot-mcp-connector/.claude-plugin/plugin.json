@@ -1,0 +1,8 @@
+{
+  "name": "hubspot-mcp-connector",
+  "description": "Pull contact, deal, and pipeline data from HubSpot into Claude Code for revenue analysis or account research without exporting a CSV first.",
+  "version": "0.1.0",
+  "author": {
+    "name": "HubSpot"
+  }
+}

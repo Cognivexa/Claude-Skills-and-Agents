@@ -1,0 +1,8 @@
+{
+  "name": "figma-mcp-connector",
+  "description": "Pull real design context — frames, components, variables, screenshots — from Figma into Claude Code so generated UI code matches the actual design, not a guess.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Figma"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "huggingface-mcp-connector",
+  "description": "Search models, datasets, and Spaces on the Hugging Face Hub from Claude Code — ground a model or dataset recommendation in what actually exists today.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Hugging Face"
+  }
+}

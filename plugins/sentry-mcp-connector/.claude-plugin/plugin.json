@@ -1,0 +1,8 @@
+{
+  "name": "sentry-mcp-connector",
+  "description": "Pull error and performance data from Sentry into Claude Code so a crash investigation starts from the real stack trace, not a pasted screenshot.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Sentry"
+  }
+}

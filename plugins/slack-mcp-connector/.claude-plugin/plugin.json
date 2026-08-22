@@ -1,0 +1,8 @@
+{
+  "name": "slack-mcp-connector",
+  "description": "Search Slack history and post messages from Claude Code — pull context from a channel or draft a message — with scopes you can pin to exactly what you need.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Slack"
+  }
+}

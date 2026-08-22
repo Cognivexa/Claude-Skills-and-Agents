@@ -1,0 +1,8 @@
+{
+  "name": "atlassian-mcp-connector",
+  "description": "Search and update Jira, Confluence, Jira Service Management, and Bitbucket from Claude Code — turn a spec or meeting note straight into tickets.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Atlassian"
+  }
+}

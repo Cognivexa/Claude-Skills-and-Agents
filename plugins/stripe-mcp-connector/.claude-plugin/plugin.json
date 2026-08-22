@@ -1,0 +1,8 @@
+{
+  "name": "stripe-mcp-connector",
+  "description": "Look up charges, customers, and subscription state directly from Stripe while debugging a billing issue, instead of switching to the Stripe dashboard.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Stripe"
+  }
+}

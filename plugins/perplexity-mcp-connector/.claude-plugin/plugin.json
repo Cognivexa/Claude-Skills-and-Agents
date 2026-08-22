@@ -1,0 +1,8 @@
+{
+  "name": "perplexity-mcp-connector",
+  "description": "Run real-time web search and research through Perplexity's Sonar models from Claude Code — a second, independent research pass beyond Claude's own web search.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Perplexity"
+  }
+}

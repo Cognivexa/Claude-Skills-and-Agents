@@ -1,0 +1,8 @@
+{
+  "name": "filesystem-mcp-connector",
+  "description": "Give Claude direct read/write access to a specific local directory outside your current project — useful for scripts, notes, or files a chat session wouldn't otherwise reach.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Anthropic (MCP reference server)"
+  }
+}

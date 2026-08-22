@@ -1,0 +1,8 @@
+{
+  "name": "notion-mcp-connector",
+  "description": "Read and update Notion pages and databases from Claude Code — pull specs, update trackers, or draft a page — without copy-pasting content back and forth.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Notion"
+  }
+}

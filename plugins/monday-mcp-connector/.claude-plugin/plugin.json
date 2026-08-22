@@ -1,0 +1,8 @@
+{
+  "name": "monday-mcp-connector",
+  "description": "Search boards, create and update items, assign owners, and set timelines in monday.com directly from Claude Code.",
+  "version": "0.1.0",
+  "author": {
+    "name": "monday.com"
+  }
+}

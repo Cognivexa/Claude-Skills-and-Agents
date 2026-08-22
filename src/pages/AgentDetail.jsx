@@ -2,11 +2,14 @@ import { useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { AGENTS, getAgent } from '../data/agents.js'
 import { SKILLS, getSkill } from '../data/skills.js'
+import { CONNECTORS } from '../data/connectors.js'
 import { renderAgentMarkdown } from '../data/render.js'
 import { MARKETPLACE_REPO, MARKETPLACE_NAME, OTHER_COMPATIBLE_TOOLS } from '../data/marketplace.js'
 import AgentCard from '../components/AgentCard.jsx'
 import CopyCommand from '../components/CopyCommand.jsx'
 import AgentInstallTabs from '../components/AgentInstallTabs.jsx'
+import InstallButton from '../components/InstallButton.jsx'
+import CompatibilityBadges from '../components/CompatibilityBadges.jsx'
 import MarkdownLite from '../components/MarkdownLite.jsx'
 
 export default function AgentDetail() {
@@ -43,9 +46,24 @@ export default function AgentDetail() {
       </div>
 
       <div className="detail-desc">{agent.shortDescription}</div>
-      <div>
+      <div className="detail-actions-row">
         <span className="category-pill">{agent.category}</span>
+        <InstallButton type="agent" item={agent} hasMatchingSkill={!!getSkill(agent.slug)} />
       </div>
+      <CompatibilityBadges type="agent" hasMatchingSkill={!!getSkill(agent.slug)} />
+
+      {agent.exampleAsk && (
+        <div className="panel" style={{ marginBottom: 20 }}>
+          <div className="panel-header">
+            <span className="panel-title">Try asking</span>
+          </div>
+          <div className="panel-body">
+            <div className="code-block">
+              {(Array.isArray(agent.exampleAsk) ? agent.exampleAsk : [agent.exampleAsk]).join('\n')}
+            </div>
+          </div>
+        </div>
+      )}
 
       <div className="install-block">
         <div className="install-heading">
@@ -60,7 +78,7 @@ export default function AgentDetail() {
         <CopyCommand label="1. Add this repo as a marketplace — run once, ever" command={`/plugin marketplace add ${MARKETPLACE_REPO}`} />
         <div className="install-warning">
           Type this exactly as shown — just the repo, nothing appended. This step installs <strong>nothing</strong>{' '}
-          — it only tells Claude Code where to find plugins in this repo. None of the {SKILLS.length + AGENTS.length}{' '}
+          — it only tells Claude Code where to find plugins in this repo. None of the {SKILLS.length + AGENTS.length + CONNECTORS.length}{' '}
           plugins are downloaded until you run step 2 for the specific one you want. You only run this once per
           machine, no matter how many agents or skills from this repo you plan to install afterward.
         </div>

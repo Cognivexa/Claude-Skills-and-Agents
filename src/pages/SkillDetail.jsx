@@ -2,11 +2,14 @@ import { useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { SKILLS, getSkill } from '../data/skills.js'
 import { AGENTS } from '../data/agents.js'
+import { CONNECTORS } from '../data/connectors.js'
 import { renderSkillMarkdown } from '../data/render.js'
 import { MARKETPLACE_REPO, MARKETPLACE_NAME, OTHER_COMPATIBLE_TOOLS } from '../data/marketplace.js'
 import SkillCard from '../components/SkillCard.jsx'
 import CopyCommand from '../components/CopyCommand.jsx'
 import SkillInstallTabs from '../components/SkillInstallTabs.jsx'
+import InstallButton from '../components/InstallButton.jsx'
+import CompatibilityBadges from '../components/CompatibilityBadges.jsx'
 import MarkdownLite from '../components/MarkdownLite.jsx'
 
 export default function SkillDetail() {
@@ -49,9 +52,24 @@ export default function SkillDetail() {
       </div>
 
       <div className="detail-desc">{skill.description}</div>
-      <div>
+      <div className="detail-actions-row">
         <span className="category-pill">{skill.category}</span>
+        <InstallButton type="skill" item={skill} />
       </div>
+      <CompatibilityBadges type="skill" />
+
+      {skill.exampleAsk && (
+        <div className="panel" style={{ marginBottom: 20 }}>
+          <div className="panel-header">
+            <span className="panel-title">Try asking</span>
+          </div>
+          <div className="panel-body">
+            <div className="code-block">
+              {(Array.isArray(skill.exampleAsk) ? skill.exampleAsk : [skill.exampleAsk]).join('\n')}
+            </div>
+          </div>
+        </div>
+      )}
 
       <div className="install-block">
         <div className="install-heading">
@@ -66,7 +84,7 @@ export default function SkillDetail() {
         <CopyCommand label="1. Add this repo as a marketplace — run once, ever" command={`/plugin marketplace add ${MARKETPLACE_REPO}`} />
         <div className="install-warning">
           Type this exactly as shown — just the repo, nothing appended. This step installs <strong>nothing</strong>{' '}
-          — it only tells Claude Code where to find plugins in this repo. None of the {SKILLS.length + AGENTS.length}{' '}
+          — it only tells Claude Code where to find plugins in this repo. None of the {SKILLS.length + AGENTS.length + CONNECTORS.length}{' '}
           plugins are downloaded until you run step 2 for the specific one you want. You only run this once per
           machine, no matter how many agents or skills from this repo you plan to install afterward.
         </div>

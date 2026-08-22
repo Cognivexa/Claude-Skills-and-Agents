@@ -5619,6 +5619,349 @@ After review is complete:
 
 **Presumptive blockers:** surface and propose the simpler design for each of these; escalate to Required only when the change actively makes structure worse: a refactor that relocates complexity instead of reducing it; a change that pushes a file past the size boundary with no decomposition; feature logic added to a shared module; a near-duplicate of an existing canonical helper; a silent fallback that hides an unclear invariant.`,
   },
+  {
+    slug: 'full-stack-developer',
+    name: 'Full Stack Developer',
+    author: 'Cognivexa',
+    category: 'Code & Dev',
+    stars: 1240,
+    forks: 96,
+    addedDate: '2026-08-21',
+    icon: '🧩',
+    description:
+      'Ship a feature end-to-end — data model, API contract, UI, auth, and tests — as one coherent change instead of disconnected frontend/backend work.',
+    argumentHint: '[feature-description]',
+    tags: ['full-stack', 'api-design', 'twelve-factor'],
+    exampleAsk: "Add a 'forgot password' flow: API endpoint, database migration, and the UI form",
+    intro:
+      'Full-stack work fails at the seams: a data model that does not match the API contract, an API that does not match what the UI needs, auth checked in one layer but not the other. This skill designs the seams first.',
+    howItWorks: [
+      'Map the feature to a data model change before writing any endpoint or component',
+      'Design the API contract (REST or GraphQL) and agree on it before implementing either side',
+      'Implement the backend first — model, endpoint, authorization — then the UI against the real contract',
+      'Wire authentication/authorization consistently at the API layer, not just hidden in the UI',
+      'Write tests across the seam: an API contract test plus a UI test that hits the real endpoint',
+      'Check the change against 12-factor basics (config via env, no state on the app server, logs to stdout) before calling it deployable',
+    ],
+    files: ['skills/full-stack-developer/SKILL.md'],
+  },
+  {
+    slug: 'product-owner',
+    name: 'Product Owner',
+    author: 'Cognivexa',
+    category: 'Product',
+    stars: 870,
+    forks: 61,
+    addedDate: '2026-08-21',
+    icon: '🗂️',
+    description:
+      'Refine a backlog into sprint-ready items: INVEST user stories, explicit acceptance criteria, and a Definition of Ready the team actually agreed to.',
+    argumentHint: '[backlog-item-or-epic]',
+    tags: ['product-owner', 'backlog-refinement', 'user-stories'],
+    exampleAsk: 'Slice this epic into sprint-ready stories with acceptance criteria',
+    intro:
+      'Refinement is where ambiguity either gets resolved or gets pushed into the sprint as rework. This skill forces every item through a Definition of Ready before it is allowed onto the sprint board.',
+    howItWorks: [
+      'Slice the epic or item into pieces small enough to fit in a single sprint',
+      'Write each piece as an INVEST user story (Independent, Negotiable, Valuable, Estimable, Small, Testable)',
+      'Attach explicit, testable acceptance criteria — not "works correctly", but the specific behavior expected',
+      'Check the item against a Definition of Ready: understood by both business and technical sides, sized, and unblocked',
+      'Order the backlog by value and dependency, not just by who asked most recently',
+      'During the sprint, spend more time inspecting the built item against acceptance criteria than re-writing them upfront',
+    ],
+    files: ['skills/product-owner/SKILL.md'],
+  },
+  {
+    slug: 'requirement-analysis',
+    name: 'Requirement Analysis',
+    author: 'Cognivexa',
+    category: 'Product',
+    stars: 792,
+    forks: 54,
+    addedDate: '2026-08-21',
+    icon: '📑',
+    description:
+      'Extract and structure requirements from any source — a website URL, PDF, Word doc, Excel sheet, PowerPoint deck, or plain text — into a traceable, testable requirements set.',
+    argumentHint: '[source-url-or-file]',
+    tags: ['requirements', 'business-analysis', 'elicitation'],
+    exampleAsk: 'Extract the requirements from this PDF spec and flag anything contradictory',
+    intro:
+      'Requirements buried in a 40-slide deck or a scraped webpage are not requirements yet — they are raw material. This skill turns any source format into requirements written at a consistent altitude: what the system must do, not how it will be built.',
+    howItWorks: [
+      'Ingest the source regardless of format — fetch and parse the URL, or read the PDF/DOCX/XLSX/PPTX/TXT file',
+      'Extract every explicit and implied requirement statement, keeping a pointer back to its exact source location',
+      'Classify each as functional, non-functional (performance, security, availability), or a constraint',
+      'Rewrite each at a consistent altitude — what the system must do, never a specific database, framework, or UI choice',
+      'Flag contradictions, gaps, and requirements written at the wrong level of detail for stakeholder review',
+      'Build a traceability matrix linking each requirement back to its source and forward to the backlog item that will implement it',
+    ],
+    files: ['skills/requirement-analysis/SKILL.md'],
+  },
+  {
+    slug: 'flowchart-diagram-architect',
+    name: 'Flowchart & Diagram Architect',
+    author: 'Cognivexa',
+    category: 'Media & Graphics',
+    stars: 615,
+    forks: 42,
+    addedDate: '2026-08-21',
+    icon: '🧭',
+    description:
+      'Turn a process, system, or workflow description into the right diagram — flowchart, sequence, or C4 architecture — in Mermaid, picking the type that actually answers the reader\'s question.',
+    argumentHint: '[process-or-system-description]',
+    tags: ['diagrams', 'flowcharts', 'mermaid', 'c4-model'],
+    exampleAsk: 'Draw a C4 container diagram for this service',
+    intro:
+      'The most common diagramming mistake is picking the wrong diagram type, not drawing it badly. A flowchart for branching logic, a sequence diagram for message order, a C4 diagram for system/container boundaries — each answers a different question.',
+    howItWorks: [
+      'Identify the question the diagram needs to answer before choosing a diagram type',
+      'Pick the matching type: flowchart for branching process logic, sequence for message/call order, C4 (Context/Container/Component) for architecture boundaries',
+      'Draft in Mermaid starting from the smallest set of nodes and relationships that communicates the idea',
+      'Replace generic labels with the domain\'s actual language, and strip anything that does not help the reader',
+      'Split into multiple focused diagrams rather than cramming every level into one',
+      'Store the diagram source alongside the code it documents so it can be diffed and kept current',
+    ],
+    files: ['skills/flowchart-diagram-architect/SKILL.md'],
+  },
+  {
+    slug: 'data-visualization-analyst',
+    name: 'Data Visualization Analyst',
+    author: 'Cognivexa',
+    category: 'Data & Analysis',
+    stars: 703,
+    forks: 49,
+    addedDate: '2026-08-21',
+    icon: '📈',
+    description:
+      'Pick the chart type the business question actually demands, then build a dashboard around the one question it needs to answer in under five seconds.',
+    argumentHint: '[dataset-or-metric]',
+    tags: ['data-visualization', 'dashboards', 'chart-design'],
+    exampleAsk: 'What chart should I use to show monthly signups by channel?',
+    intro:
+      'A chart chosen because the tool defaults to it, not because it answers the question, is the most common visualization failure. The verb in the business question picks the chart: "compare" means bars, "track" means lines, "show proportion" means a stacked bar, "relate" means a scatter plot.',
+    howItWorks: [
+      'Write the business question in one sentence before touching a charting tool',
+      'Let the verb in that question pick the chart type: compare → bars, track over time → lines, part-to-whole → stacked bar (rarely a pie), correlate → scatter',
+      'Put the most important comparison in a preattentive channel — length or 2D position — not color or area',
+      'Design every dashboard around the one primary question it must answer in under five seconds',
+      'Encode categories with more than color alone — pattern, icon, or label — so it still works for colorblind readers',
+      'Strip 3D effects, gradients, and decorative backgrounds; they make charts harder to read, not more appealing',
+    ],
+    files: ['skills/data-visualization-analyst/SKILL.md'],
+  },
+  {
+    slug: 'motion-graphics-animator',
+    name: 'Motion Graphics & UI Animator',
+    author: 'Cognivexa',
+    category: 'Media & Graphics',
+    stars: 548,
+    forks: 37,
+    addedDate: '2026-08-21',
+    icon: '🎞️',
+    description:
+      'Design purposeful UI motion and micro-interactions — duration, easing, and a reduced-motion fallback — instead of decorative animation nobody asked for.',
+    argumentHint: '[interaction-or-transition]',
+    tags: ['motion-design', 'micro-interactions', 'animation'],
+    exampleAsk: 'Design the hover and click states for this button, with a reduced-motion fallback',
+    intro:
+      'In 2026 the trend moved away from flashy animation toward subtle, functional motion: every animation should tell the user something happened, not just look impressive.',
+    howItWorks: [
+      'Name the single purpose of the animation — feedback, orientation, or state change — before specifying it',
+      'Set duration in the 200-300ms range for standard transitions; keep micro-interactions under 300ms',
+      'Use spring-based or eased curves that accelerate then decelerate, never linear motion',
+      'Keep timing and easing consistent for the same class of action across the whole interface',
+      'Respect prefers-reduced-motion and provide a non-animated equivalent that still communicates the state change',
+      'Cut any animation that does not pass the purpose test from the first step',
+    ],
+    files: ['skills/motion-graphics-animator/SKILL.md'],
+  },
+  {
+    slug: 'database-architect',
+    name: 'Database Architect',
+    author: 'Cognivexa',
+    category: 'Code & Dev',
+    stars: 981,
+    forks: 72,
+    addedDate: '2026-08-21',
+    icon: '🗄️',
+    description:
+      'Design a relational schema from real query patterns — normalization, indexing, constraints, and naming — instead of guessing at structure upfront.',
+    argumentHint: '[data-model-description]',
+    tags: ['database-design', 'indexing', 'normalization'],
+    exampleAsk: 'Design a schema for a multi-tenant SaaS app with per-tenant billing',
+    intro:
+      'Indexes exist to support query patterns, not schema symmetry. A schema designed before the queries it will serve are known usually needs indexes added — or removed — once real traffic arrives.',
+    howItWorks: [
+      'If this is a live database (not a paper design), ask for the engine (Postgres, MySQL, etc.), the database name, and how to reach it — never ask for the raw password in chat, only where it lives (an env var name, a secrets manager path)',
+      "Check whether a matching connector is already active via /mcp; if not, tell the user which one would help (e.g. postgres-mcp-connector) and ask before installing it — capability-concierge covers this tell-then-confirm-then-install pattern in depth",
+      'Collect the actual query patterns (reads, writes, filters, joins) the schema needs to serve',
+      'Normalize to 3NF by default; denormalize only where a measured query cost justifies it',
+      'Choose the most precise, restrictive data type for each column as a first line of defense against bad data',
+      'Add NOT NULL, UNIQUE, CHECK, and foreign key constraints at design time, not as an afterthought',
+      'Build indexes from the collected query patterns, then periodically audit for unused indexes that only cost writes',
+      'Apply consistent snake_case naming and document non-obvious decisions in a schema README',
+    ],
+    files: ['skills/database-architect/SKILL.md'],
+  },
+  {
+    slug: 'data-warehouse-architect',
+    name: 'Data Warehouse Architect',
+    author: 'Cognivexa',
+    category: 'Data & Analysis',
+    stars: 664,
+    forks: 45,
+    addedDate: '2026-08-21',
+    icon: '🏛️',
+    description:
+      'Design a Kimball star-schema consumption layer on a medallion (bronze/silver/gold) lakehouse, with ELT transformations managed as version-controlled dbt models.',
+    argumentHint: '[reporting-need-or-source-systems]',
+    tags: ['data-warehouse', 'dimensional-modeling', 'dbt'],
+    exampleAsk: 'Design a star schema for order and shipment fact tables',
+    intro:
+      'Most mature 2026 warehouse architectures pair an Inmon-style governed core with a Kimball-style star schema on top: normalized and conformed in Silver, denormalized and fast in Gold, so analysts get speed without the warehouse losing traceability to source.',
+    howItWorks: [
+      'Define the grain of each fact table first — the exact thing one row represents',
+      'Model facts as measures and foreign keys only; keep dimension tables wide with descriptive attributes',
+      'Land raw source data unchanged in a Bronze layer, conform it in Silver, and expose the star schema in Gold',
+      'Keep every dimension one join from the fact table (star schema) unless a specific case justifies snowflaking',
+      'Manage all transformations as version-controlled SQL (ELT via dbt) rather than a black-box ETL job',
+      'Document lineage from source table through Silver to the Gold model consumers actually query',
+    ],
+    files: ['skills/data-warehouse-architect/SKILL.md'],
+  },
+  {
+    slug: 'aws-cloud-architect',
+    name: 'AWS Cloud Architect',
+    author: 'Cognivexa',
+    category: 'DevOps',
+    stars: 1102,
+    forks: 88,
+    addedDate: '2026-08-21',
+    icon: '☁️',
+    description:
+      'Design AWS workloads against the Well-Architected Framework\'s six pillars, matching compute and database choice to actual traffic and access patterns instead of defaulting to EC2 and RDS.',
+    argumentHint: '[workload-description]',
+    tags: ['aws', 'well-architected', 'cloud-architecture'],
+    exampleAsk: 'Review this workload against the Well-Architected Framework',
+    intro:
+      'AWS offers 15+ purpose-built database engines and multiple compute models for a reason: matching the service to the actual access pattern beats a one-size-fits-all default on both cost and reliability.',
+    howItWorks: [
+      'Classify the workload\'s traffic pattern — spiky, steady, or predictable and sustained',
+      'Match compute to that pattern: Lambda for spiky, Fargate for steady services, EC2 with Reserved Instances/Savings Plans for predictable sustained load',
+      'Classify the data access pattern before picking a database: Aurora for relational, DynamoDB for high-scale key/value, a purpose-built engine for graph/time-series/vector needs',
+      'Apply cost allocation tags and budgets so spend is attributable before it becomes a problem',
+      'Review the workload against all six Well-Architected pillars, not cost optimization alone',
+      'Run it through the AWS Well-Architected Tool and record the high-risk issues it surfaces',
+    ],
+    files: ['skills/aws-cloud-architect/SKILL.md'],
+  },
+  {
+    slug: 'azure-cloud-architect',
+    name: 'Azure Cloud Architect',
+    author: 'Cognivexa',
+    category: 'DevOps',
+    stars: 887,
+    forks: 66,
+    addedDate: '2026-08-21',
+    icon: '🌀',
+    description:
+      'Stand up an Azure landing zone — management groups, policy, identity, networking — and apply the Well-Architected Framework\'s five pillars before workloads land on it.',
+    argumentHint: '[workload-or-environment-description]',
+    tags: ['azure', 'landing-zone', 'well-architected'],
+    exampleAsk: 'Set up a landing zone for a new Azure subscription',
+    intro:
+      'A workload deployed before the landing zone exists inherits whatever ad hoc policy, logging, and network setup came before it. Azure\'s Cloud Adoption Framework exists so that foundation is decided once, not per project.',
+    howItWorks: [
+      'Establish the management group hierarchy before any subscription gets a workload',
+      'Apply a baseline policy set: enforce tagging, restrict allowed regions, deny public IPs by default',
+      'Centralize logging across subscriptions from day one, not after the first incident',
+      'Match workload placement to traffic pattern: serverless (Functions, Logic Apps) for event-driven, always-on VMs only for genuinely constant load',
+      'Set cost management budgets and alerts per subscription before spend, not after the invoice',
+      'Review the design against all five Well-Architected pillars — reliability, cost, operational excellence, performance, security',
+    ],
+    files: ['skills/azure-cloud-architect/SKILL.md'],
+  },
+  {
+    slug: 'aws-service-selection-advisor',
+    name: 'AWS Service Selection Advisor',
+    author: 'Cognivexa',
+    category: 'DevOps',
+    stars: 592,
+    forks: 40,
+    addedDate: '2026-08-21',
+    icon: '🧮',
+    description:
+      'Given a workload\'s traffic and data-access pattern, recommend the right AWS compute, database, and storage services with a real cost comparison — instead of defaulting to whatever is familiar.',
+    argumentHint: '[workload-requirements]',
+    tags: ['aws', 'service-selection', 'cost-optimization'],
+    exampleAsk: 'Should this workload use Lambda or Fargate?',
+    intro:
+      'DynamoDB and Aurora alone cover roughly 90% of new AWS workloads, but the other 10% is where defaulting to a familiar service quietly costs the most — either in overpayment or in migration debt later.',
+    howItWorks: [
+      'Classify the workload\'s traffic pattern (spiky, steady, predictable) and its data access pattern (relational, key-value, document, graph, time-series, vector)',
+      'Shortlist at least two viable services per layer (compute, database, storage) rather than jumping to one',
+      'Compare the shortlist on cost at the workload\'s actual expected scale, not list price at hello-world scale',
+      'Weigh integration fit — how cleanly each option connects to the rest of the AWS services already in use',
+      'Call out migration and lock-in risk explicitly for each option, especially purpose-built engines',
+      'Recommend one option with the tradeoffs stated, not a menu without a decision',
+    ],
+    files: ['skills/aws-service-selection-advisor/SKILL.md'],
+  },
+  {
+    slug: 'capability-concierge',
+    name: 'Capability Concierge',
+    author: 'Cognivexa',
+    category: 'Utility',
+    stars: 421,
+    forks: 29,
+    addedDate: '2026-08-22',
+    icon: '🛎️',
+    description:
+      'Finds the right skill, agent, or connector in this catalog for a task — or notices mid-task that one is needed but not installed — explains the match, and asks for explicit confirmation before installing anything. Use when unsure which capability fits a task, or when a task in progress needs a skill, agent, or connector that is not yet installed.',
+    tags: ['catalog', 'discovery', 'auto-install'],
+    exampleAsk: "I need to design a database schema but I'm not sure which skill to use",
+    files: ['skills/capability-concierge/SKILL.md', 'skills/capability-concierge/reference/catalog-index.md'],
+    referenceFiles: {
+      'reference/catalog-index.md':
+        '_This file is generated by `scripts/generate-marketplace.mjs` from the live catalog and overwritten on every build — do not hand-edit it._',
+    },
+    bodyMarkdown: `You are the front door to this catalog of skills, agents, and connectors. You exist for two moments: someone doesn't know which capability fits their task, or a task already underway just hit a wall that needs one. In both cases your job is the same — find the real match, explain it plainly, and never install anything the user hasn't explicitly said yes to.
+
+## Step 1: Read the index before saying anything
+
+Read \`reference/catalog-index.md\` in full. It is generated straight from the live catalog on every build — every row in it is real and installable today. Never recommend, describe, or imply the existence of a skill, agent, or connector that is not a row in that file. If you are not sure something exists, that file is the only source of truth — not your general knowledge of what this catalog "probably" contains.
+
+## Step 2: Match by capability, not keywords
+
+Read the task (the user's original request, or the wall a different skill/agent just hit) and match it against what each catalog entry's "What it does" column actually claims — not just literal word overlap. Shortlist the 1-3 strongest fits. If two entries overlap (e.g. an agent and a skill with the same slug), mention both and explain the difference: the agent is a Claude Code-only subagent; the skill also works in Claude Desktop and Codex.
+
+## Step 3: Explain before asking
+
+For each shortlisted match, state in one or two sentences:
+- Whether it is a **skill**, an **agent**, or a **connector** — these are different things with different reach (agents: Claude Code only; skills: Claude Code + Desktop + Codex; connectors: real third-party MCP servers needing real credentials).
+- What installing it actually does — copies a file into \`.claude/skills/\` or \`.claude/agents/\`, runs \`/plugin install\`, or (for a connector) registers a live server that will need an API key, token, or OAuth login you do not have yet.
+- The exact command from the index you would run.
+
+## Step 4: Ask — and mean it
+
+**MUST DO**
+- Ask an explicit yes/no question before running any install command, every time, with no exceptions for "obvious" matches.
+- Wait for the user's actual answer before touching Bash, the Write tool, or any \`/plugin\` command.
+- On yes, run the exact command from the index (via Bash, or by telling the user to run it if you don't have Bash access in this context), then verify it worked — check \`/plugin\`, \`/agents\`, or \`/mcp\` as appropriate — before continuing.
+- On no, say what you'll do instead: proceed without the capability, use a rougher manual approach, or stop and let the user decide.
+- If a task you're already helping with (under a different skill or agent) turns out to need something from the index to continue, stop and name exactly what's missing and why, using this same explain-then-ask sequence, before you take another action toward finishing that task.
+- If nothing in the index is a real match, say so plainly. Offer the closest partial match only when it is genuinely close, and say what part of the task it wouldn't cover.
+
+**MUST NOT DO**
+- Never install, download, or run a plugin install command without an explicit yes for that specific item.
+- Never treat silence, a vague "sure", or moving on to describe the next step as consent — ask again if the answer wasn't a clear yes.
+- Never invent a capability that isn't a row in \`reference/catalog-index.md\`.
+- Never embed a real credential (API key, token, password) in a command you show the user or run yourself — for connectors, tell them which environment variable or config field it belongs in and let them provide it.
+
+## Output format
+
+Structure your response as: (1) what you understood the task to need, (2) the matched skill/agent/connector(s) with the one-line explanation from Step 3, (3) the exact install command, (4) a direct yes/no question. Nothing after the question until you have an answer.`,
+  },
 ]
 
 export function getSkill(slug) {

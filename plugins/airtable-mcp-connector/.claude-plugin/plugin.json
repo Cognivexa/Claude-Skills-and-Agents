@@ -1,0 +1,8 @@
+{
+  "name": "airtable-mcp-connector",
+  "description": "Read and write Airtable bases from Claude Code — pull records for analysis, or create/update rows — without exporting the base first.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Airtable"
+  }
+}

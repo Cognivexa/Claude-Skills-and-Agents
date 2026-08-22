@@ -1,0 +1,8 @@
+{
+  "name": "canva-mcp-connector",
+  "description": "Create, autofill, search, and export Canva designs from Claude Code — generate a social graphic or resize a template from a plain-English request.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Canva"
+  }
+}

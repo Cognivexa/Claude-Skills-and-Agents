@@ -1,0 +1,8 @@
+{
+  "name": "aws-documentation-mcp-connector",
+  "description": "Search and fetch official AWS documentation, converted to markdown, directly into Claude Code — answers grounded in the actual current docs, not a training-data guess about a service that may have changed.",
+  "version": "0.1.0",
+  "author": {
+    "name": "AWS Labs (Amazon)"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "intercom-mcp-connector",
+  "description": "Query conversations, contacts, and companies, and read or update Help Center articles from Claude Code — draft support content grounded in real tickets.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Intercom"
+  }
+}

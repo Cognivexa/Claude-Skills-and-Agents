@@ -1,0 +1,8 @@
+{
+  "name": "snyk-mcp-connector",
+  "description": "Run dependency, code, container, and infrastructure-as-code security scans through Snyk directly from Claude Code, instead of switching to a separate scanner.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Snyk"
+  }
+}

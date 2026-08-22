@@ -1,0 +1,8 @@
+{
+  "name": "linear-mcp-connector",
+  "description": "Find, create, and update Linear issues, projects, and comments from Claude Code without leaving the terminal to open the Linear app.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Linear"
+  }
+}

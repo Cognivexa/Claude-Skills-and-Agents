@@ -1,0 +1,8 @@
+{
+  "name": "asana-mcp-connector",
+  "description": "Read and update Asana tasks and projects from Claude Code — check status, create follow-up tasks, or summarize a project's open work.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Asana"
+  }
+}
